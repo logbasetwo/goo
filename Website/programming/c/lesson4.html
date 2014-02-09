@@ -1,0 +1,198 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style type="text/css">
+
+h1{
+	/* padding:5px; */
+	height:40px;
+}
+.pre{
+	font-family:courier;
+	font-size:.87em;
+	margin-left:65px;
+}
+.extra{
+	padding:5px;
+}
+.special-pre{
+	font-family:courier;
+	font-size:.87em;
+	margin-left:100px;
+}
+
+body{
+	margin-left:25px;
+	margin-right:25px;
+}
+.unix{
+	margin-left:65px;
+}
+table{
+	width:100%;
+}
+td span{
+    float:right;
+}
+td span:first-child{ /* compatible to >=IE7 */
+    float:left;
+}
+A:link {text-decoration: none}
+A:visited {color:blue;}
+A:active {color:blue;}
+A:hover {color:#00BB00;}
+
+</style>
+
+<title>
+C Programming Lesson 4
+</title>
+</head>
+<body>
+<table>
+	<tr>
+		<td colspan="5"><span><h1>C Programming</h1></span><span><h2>Lesson 4 - More on Printing and Variables</h2></span></td>
+	</tr>
+</table>
+<hr>
+
+<table>
+	<tr>
+		<td colspan="5"><span><a href="lesson3.html"><- Previous Lesson</a></span><span><a href="lesson5.html">Next Lesson -></a></span></td>
+	</tr>
+</table>
+<hr>
+<p>	
+I'm hoping you tried printing multiple lines when looking at the key questions for the last lesson. You probably tried something like this:
+<p>
+<pre>
+	#include &lt;stdio.h&gt;
+	
+	int main(){
+		printf("I am printing this statement ");
+		printf("on two lines.");
+		return(0);
+	}
+</pre>
+This however would output:
+<p>
+<pre>
+	I am printing this statement on two lines.
+</pre>
+What you need is to tell the program that the next statement is on a new line. You could technically write a program like this:
+<p>
+<pre>
+	#include &lt;stdio.h&gt; intmain(){ printf("I am printing this statement "); printf("on two lines."); return(0); }
+</pre>
+... but I wouldn't recommend it. To tell the program to print on a new line you can insert a \n at the end of your statement within the quotes.
+<p>
+<pre>
+	#include &lt;stdio.h&gt;
+	
+	int main(){
+		printf("I am printing this statement \n");
+		printf("on two lines.");
+		return(0);
+	}
+</pre>
+\n is acting like a character. \ is not printed to the screen and the combination of \n prints a new line. If you wanted to print quotes within a print statement, you would have to make sure the compiler new you were not ending the statement with those quotes. To do this you would type <b>\"</b>. The output of the above program would now be:
+<p>
+<pre>
+	I am printing this statement 
+	on two lines.
+</pre>
+<p>
+To go through these lessons, you should probably have a basic understanding of Algebra. That will make this next part of the lesson much easier. In Algebra you have variables which stand for a specific value or any possible value that works in the equation they are in. Variable work exactly the same in programming.
+<p>
+<pre>
+	int x = 10;
+</pre>
+This statement is assigning the value 10 to the integer <i>x</i>.X can now be used later in the program. If you wanted to print the value of x, your entire program would look like this:
+<p>
+<pre>
+	#include &lt;stdio.h&gt;
+	
+	int main(){
+		int x = 10;
+		printf("%d", x);
+		return(0);
+	}
+</pre>
+Notice that there are no quotes around the variable <i>x</i>. Instead there is %d within the quotes. This tells the compiler to display a digit to the screen. After the end quote is placed in, it uses the variable to place in the digit. If we just printed x in quotes the output would be:
+<p>
+<pre>
+	x
+</pre>
+The output of our program is rather:
+<p>
+<pre>
+	10
+</pre>
+Variables can be modified just like in mathematics:
+<p>
+<pre>
+	#include &lt;stdio.h&gt;
+	
+	int main(){
+		int x = 5 + 3 * 7;
+		printf("%d", x);
+		return(0);
+	}
+</pre>
+Here the output would be 15. Order of operations is kept. Multiplication and division are calculated first and then addition and subtraction. If we wanted the calculation to be 5 + 3 and that * 7, we could change it by adding in parentheses. 
+<p>
+<pre>
+	#include &lt;stdio.h&gt;
+	
+	int main(){
+		int x = (5 + 3) * 7;
+		printf("%d", x);
+		return(0);
+	}
+</pre>
+Now the output would be 56.
+<p>
+Variable names can be virutally anything but have some rules:
+<p class="extra"></p>
+<pre>
+	* Variable names should not be more than 31 characters in length (And this would also be a pain to type out each time. Keep it short!)
+	
+	* No commas, spaces or special symbols other than an underscore are allowed in the variable name.
+	
+	* The first character of the variable name must either be a letter or underscore. It should not start with the digit.
+	
+	* Variable names CAN CONTAIN capital letters.
+</pre>
+<p class="extra">
+</p>
+What happens if you assign a different value to a variable later in a program?
+<p>
+<pre>
+	#include &lt;stdio.h&gt;
+	
+	int main(){
+		int x = 10;
+		printf("%d \n", x);
+		x = 6;
+		printf("%d", x);
+		return(0);
+	}
+</pre>
+Here 10 would be printed and then 6 would be printed on a new line. Notice I did not declare what variable type x was the second time. If I did, I would be calling two different variables with the same name. This is not allowed in ANSI-C (The type of the C language we are programming in.) If we put in the following code, 6 would be printed to the screen, because the value has been changed. The original value is not used:
+<p>
+<pre>
+	#include &lt;stdio.h&gt;
+	
+	int main(){
+		int x = 10;
+		x = 6;
+		printf("%d", x);
+		return(0);
+	}
+</pre>
+There is much more we can do with variables, but we will revisit them in another section.
+<p>
+<a href="lesson4-review.html">Click here to try the key questions.</a> <br>
+<a href="lesson5.html">Click here to go to the next lesson.</a>
+</body>
+</html>

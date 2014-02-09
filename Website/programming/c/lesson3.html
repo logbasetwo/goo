@@ -1,0 +1,135 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style type="text/css">
+
+h1{
+	/* padding:5px; */
+	height:40px;
+}
+.pre{
+	font-family:courier;
+	font-size:.87em;
+	margin-left:65px;
+}
+.extra{
+	padding:5px;
+}
+.special-pre{
+	font-family:courier;
+	font-size:.87em;
+	margin-left:100px;
+}
+
+body{
+	margin-left:25px;
+	margin-right:25px;
+}
+.unix{
+	margin-left:65px;
+}
+table{
+	width:100%;
+}
+td span{
+    float:right;
+}
+td span:first-child{ /* compatible to >=IE7 */
+    float:left;
+}
+A:link {text-decoration: none}
+A:visited {color:blue;}
+A:active {color:blue;}
+A:hover {color:#00BB00;}
+
+</style>
+
+<title>
+C Programming Lesson 3
+</title>
+</head>
+<body>
+<table>
+	<tr>
+		<td colspan="5"><span><h1>C Programming</h1></span><span><h2>Lesson 3 - Explaining Your Program</h2></span></td>
+	</tr>
+</table>
+<hr>
+
+<table>
+	<tr>
+		<td colspan="5"><span><a href="lesson2.html"><- Previous Lesson</a></span><span><a href="lesson4.html">Next Lesson -></a></span></td>
+	</tr>
+</table>
+<hr>
+<p>	
+So what exactly did your program do? The first line of your program is including a header file:
+<p>
+<pre>
+	#include &lt;stdio.h&gt;
+</pre>
+ This file has all the necessary information to use the commands used in this program. STDIO stands for Standard Input/Output. 
+ Chances are you will include this in every c program. The next line is left blank. It does not need to bee blank, and as many lines 
+ as pleases you could be entered. Unlike python, where whitespace is important, whitespace does not matter. That means that all 
+ spaces and carriage returns are ignored. Before the program is compiled, it is run through preprocessing. This takes all comments 
+ and whitespace out of the code so that it can just focus on the content of the program. We will talk about comments later in this 
+ lesson.
+ <p>
+<pre>
+	int main(){
+</pre>
+ The next line is ignored by the preprocessor but is noted by the compiler. The compiler notes that it is a function that returns an integer.
+ If you have looked at my <a href="../html-css.html">HTML and CSS</a> section of my website, you can think of this as the body of the program.
+ All commands will be within this section or referenced in this section.
+ <p>
+<pre>
+	printf("Hello World");
+</pre>
+ This line is taking the print function from the standard input output header (printf) and using it to display the words <b>Hello World</b> to 
+ the screen. You can replace <b>Hello World</b> With anything, and it will display it on the screen. The semicolon at the end is 
+ very important. This tells the compiler that it is a statement, telling the program to do something when it is run. Without this 
+ semi-colon, the compiler will not know what this line of code does and will return an error.
+ <p>
+<pre>
+	return(0);
+</pre>
+Remember that I said the <b>int main()</b> function returned an integer? Here it is. This is telling the compiler that the function is complete.
+All functions return something. This is one function you will always have. You can always have it return a different number, but the program 
+will not exit cleanly. I suggest always returning a zero at the end of your program because that is what is usally expected. A 
+semicolon is present again telling the compiler that this is a statement.
+<pre>
+	}
+</pre>
+Code::Blocks should put this closing bracket in by default when every you type an opening bracket({). It will do the same thing for 
+parenthesis and sqaure brackets ([]). This is containing the contents of <b>int main</b> If you type your instructions out of 
+<b>int main()</b> your debugger will give you an error. So now that you know how your program works, let's teach it to someone else!
+When writing a program, it is good to get in the habit of writing comments. This helps someone who did not write the program themselves 
+to understnad it. In C, comments can either be written with a double slash (//) or can be contained with an opening (/*) and a closing
+(*/). Some examples of comments are displayed below:
+<p>
+<pre>
+	//This is a comment
+	
+	/* This is also a comment,
+	which can be displayed on multiple
+	lines */
+</pre>
+As I said earlier, the preprocessor takes comments out just like whitespace, so comments will not be run in the program.
+<p>
+<pre>
+	/* Program that displays the words Hello World to the screen */
+	
+	#include <stdio.h> //Includes the Standard Input Output Header File
+	
+	int main() //Main function that is used in all programs and returns an integer
+	{
+		printf("Hello World"); //Prints Hello World to the Console
+		return(0); //Returns and integer ending the program
+	}
+</pre>
+That is how I would add comments to this program. Now that you are done with this lesson, you can review your first key questions!
+<p>
+<a href="lesson3-review.html">Click here to try the key questions.</a> <br>
+<a href="lesson4.html">Click here to go to the next lesson.</a>
+</body>
+</html>

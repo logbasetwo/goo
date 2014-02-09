@@ -1,0 +1,218 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style type="text/css">
+
+h1{
+	/* padding:5px; */
+	height:40px;
+}
+.pre{
+	font-family:courier;
+	font-size:.87em;
+	margin-left:65px;
+}
+.extra{
+	padding:5px;
+}
+.special-pre{
+	font-family:courier;
+	font-size:.87em;
+	margin-left:100px;
+}
+
+body{
+	margin-left:25px;
+	margin-right:25px;
+}
+.unix{
+	margin-left:65px;
+}
+table{
+	width:100%;
+}
+td span{
+    float:right;
+}
+td span:first-child{ /* compatible to >=IE7 */
+    float:left;
+}
+A:link {text-decoration: none}
+A:visited {color:blue;}
+A:active {color:blue;}
+A:hover {color:#00BB00;}
+
+</style>
+<title>
+C Programming Lesson 1
+</title>
+
+</head>
+<body>
+<table>
+	<tr>
+		<td colspan="5"><span><h1>C Programming</h1></span><span><h2>Lesson 1 - A Simple Program</h2></span></td>
+	</tr>
+</table>
+<hr>
+
+<table>
+	<tr>
+		<td colspan="5"><span><a href="../c.html"><- Back to Main Page</a></span><span><a href="lesson2.html">Next Lesson -></a></span></td>
+	</tr>
+</table>
+<hr>
+<p>	
+Before we can start programming, we need to decide what application we will do our programming in. Technically we can open a text editor 
+	and type in there. I wouldn't advise doing this in the future, but for our first example we will use one to get some concepts down.
+
+	
+<table>
+	<tr>
+		<td>
+		<p>
+		Windows: <br>
+		<p class ="pre">
+		* Open Notepad
+		</p>
+		<p class ="pre">
+		* Click <u>File</u> then <u>Save As</u>
+		</p>
+		<p class ="pre">
+		* Pull down the menu next to <u>Save as type</u> and click on <u>All Files</u>
+		</p>
+		<p class ="pre">
+		* Choose whatever folder you want to save your file in
+		</p>
+		<p class ="pre">
+		* In the File name box, type any file name you want ending with ".c" (EX: test.c)
+		</p>
+		<p class = "extra">
+		</p>
+		  
+	
+	
+		Mac OS X:<br>
+		<p class ="pre">
+		* Open TextEdit
+		</p>
+		<p class="pre">
+		* Click on <u>Format</u> then <u>Make Plain Text</u>
+		</p>
+		<p class="pre">
+		* Click on <u>File</u> then <u>Save As</u>
+		</p>
+		<p class="pre">
+		* Click the arrow next to the <u>Save As</u> box to show more information
+		</p>
+		<p class="pre">
+		* Uncheck the check boxes next to:
+		</p>
+
+		<p class="special-pre">
+		* <u>Hide Extension</u>
+		</p>
+		<p class="special-pre">
+		* <u>If no extension is provided use ".txt"</u>
+		</p>
+		<p class ="pre">
+		* Choose whatever folder you want to save your file in
+		</p>
+		<p class ="pre">
+		* In the file name box, type any file name you want ending with ".c" (EX: test.c)
+		</p>
+		<p class="pre">
+		* Leave the <u>Plain Text Encoding</u> alone
+		</p>
+		<p class="pre">
+		* Click <u>Save</u>
+		</p>
+		<p class="pre">
+		* If a warning appears about saving as a ".c" extension type click on the option that allows the user to save to ".c"
+		</p>
+	
+		  
+		Linux:
+		<p class="pre">
+		I assume that if you are using linux, you will probably know how to open and create a text file. Since there are so many 
+		distributions out there, I am not going to make a step by step list. Chances are you have a program like Gedit or Pluma 
+		which can edit text documents just like Notepad or TextEdit. If you do not have a Graphical User Interface (GUI) than you 
+		will have to create a file and edit it through UNIX commands. For this information you can head over to my UNIX command reference 
+		and tutorial below:
+		</p>
+		<p class="unix">
+		<a href="../unix.html">Unix Command Reference and Tutorial</a>
+		</p>
+
+		</td>
+	</tr>
+</table>
+	  
+	<p>
+	<b>NOTE: You should try to keep capital letters, spaces, and characters other than - and _ out of filenames.</b>
+	This will keep you from getting errors in some situations. 
+	<p>
+	Great! Now we are ready to start with our first program. <br>
+	<p>
+	I would recommend typing what you see below verbatim. It will help you create your own programs in the future without having to look 
+	up or copy and paste the fundementals. Don't worry about what each section does yet, because that will be covered in the next section.
+	<p>
+	<pre>
+	#include &lt;stdio.h&gt;
+	
+	int main()
+	{
+		printf("Hello World");
+		return(0);
+	}
+	</pre>
+	<p>
+	Once you have completed typing this, save your file. Now if you close the file you should be able to open it back up again and see the 
+	code you just typed. But how do you run it? Hold your horses, we still need to compile this program. 
+	<p>
+	A compiler transforms source code written in a programming language into machine language which the computer can read. C is a very versatile 
+	language because of the compiling process that it goes through. Once it is compiled, it can run over and over at a much faster rate 
+	than other languages. The compiler we will be using in this example is GCC.
+	<p>
+	Windows:
+	<p>
+	The easiest way to install gcc in windows is to install MinGW. <a href="http://sourceforge.net/projects/mingw/files/latest/download?source=files">Click 
+	here to download.</a> (WARNING: Will download after 5 seconds of clicking the link.) If you want to read about it first <a href="http://sourceforge.net/projects/mingw/files/">
+	click here.</a>
+	<p>
+	Mac OS X:
+	<p>
+	The GCC compiler should be downloaded on your mac by default. Open up terminal and type in <b>gcc --help</b>. If directions are 
+	not displayed you do not have GCC installed. If so you can download xcode which includes gcc from <a href="https://developer.apple.com/xcode/">here</a>. 
+	Or you can skip running this program and move to the next Lesson where we will install a program that contains all the necessary elements.
+	<p>
+	Linux:
+	<p>
+	Follow the same instructions that are listed under Mac OS X. If gcc is installed try looking <a href="http://gcc.gnu.org/wiki/InstallingGCC">here</a>. 
+	Otherwise just search in Google "Install gcc linux".
+	<p>
+	Once your gcc compiler is installed then open up Command Prompt(Windows) or Terminal(Mac OS X and Linux).
+	<p>
+	Navigate to the folder your file is stored in. To see what files are in the directory you are in type "dir". In Mac OS X and Linux 
+	only, you can also type "ls". Move into directories within the current directory by typing "cd " and then the folder name. To move 
+	back a directory type "cd ..".
+	<p>
+	Once you are in the correct folder, type in the following replacing test with your filename:
+	<br>
+	<pre>
+	gcc test.c -o test
+	</pre>
+	For more information on gcc
+	<a href="https://www.cs.duke.edu/acm-contest/compile.html#compc">click here.</a>
+	<p>
+	You have just created an executable file. This file should be located in the same folder that your c file is in. Either type "test"
+	(Your filename without the .c extension) or double click the file that has just appeared in that folder. In Linux/Mac OS X you should 
+	type "./" infront of the filename like this: <b>./test</b>.
+	The output should look something like this:
+	<p>
+	<img src="execute.jpg">
+	<p>
+	You are done with this lesson! <a href="lesson2.html">Click here to go to the next lesson.</a>
+	
+</body>
+</html>

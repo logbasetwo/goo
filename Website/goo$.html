@@ -1,0 +1,308 @@
+<!Doctype HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+ <head>
+		
+<!--Start code for refreshing the page -->
+
+   <script type="text/JavaScript">
+    <!--
+      function timedRefresh(timeoutPeriod) {
+	 setTimeout("location.reload(true);",timeoutPeriod);
+     }
+	//   -->
+    </script>
+	
+
+<!-- Clock... -->
+
+<style type="text/css">
+#clock { font-family: Arial, Helvetica, sans-serif; font-size: 0.8em; color: white; background-color: black; border: 2px solid gray; padding: 4px; }
+</style>
+
+
+<script type="text/javascript">
+<!--
+
+function init ( )
+{
+  timeDisplay = document.createTextNode ( "" );
+  document.getElementById("clock").appendChild ( timeDisplay );
+}
+
+function updateClock ( )
+{
+  var currentTime = new Date ( );
+
+  var currentHours = currentTime.getHours ( );
+  var currentMinutes = currentTime.getMinutes ( );
+  var currentSeconds = currentTime.getSeconds ( );
+
+
+  currentMinutes = ( currentMinutes < 10 ? "0" : "" ) + currentMinutes;
+  currentSeconds = ( currentSeconds < 10 ? "0" : "" ) + currentSeconds;
+
+  var timeOfDay = ( currentHours < 12 ) ? "AM" : "PM";
+
+
+  currentHours = ( currentHours > 12 ) ? currentHours - 12 : currentHours;
+
+
+  currentHours = ( currentHours == 0 ) ? 12 : currentHours;
+
+  var currentTimeString = currentHours + ":" + currentMinutes + ":" + currentSeconds + " " + timeOfDay;
+
+
+  document.getElementById("clock").firstChild.nodeValue = currentTimeString;
+}
+
+// -->
+</script>
+
+<!-- Now onto some html! -->
+
+  <title>
+	Goo$ - Beta
+  </title>
+ </head>
+<body bgcolor="110000">
+<body onload="JavaScript:timedRefresh(300000); updateClock(); setInterval('updateClock()', 1000 )">
+
+<marquee>
+<img src="goo$-41413.jpg" width="60" height ="30">
+<font color="green">
+BETA
+</font>
+</marquee>
+<img src="goo$-41413a.jpg" width="175" height ="90">
+
+<font color="eeffff">
+<table align="right">
+ <tr>
+  <td>
+	Current time (EST):
+
+<div style="clear: both;"> </div>
+
+
+
+<div style="width: 10em; text-align: center; margin: 20px auto;">
+  <span id="clock">&nbsp;</span>
+</div>
+   </td>
+  </tr>
+</table>
+<br>
+
+
+
+//Goo$ version 1.0.4
+<p>
+</font>
+
+<font color="eeee11" size="4">
+
+Welcome to the BETA version of Goo$! More updates are expected in the future, and expect rapid changes.
+<br>
+<p>
+
+</font>
+
+<font color="00dd55">
+
+Version 1.0.3 is now out! As you probably have noticed, the original Goo homepage has changed drastically. Temporarily, we are calling this Goo2. At some point,
+we will post the code here in Goo$. However, for now you can right click the homepage and "View Page Source". The code isn't pretty, but it works. We'll be getting
+to working on that shortly. :) 
+<p>
+Goo$ will mainly be a teaching tool on programming. It will target beginners, but will eventually have tutorials for various ranges of abilities. We are very early 
+in the process of making basic HTML tutorials.  
+<p>
+<br>
+Click <a href="index.html">here</a> to go back to the home page. How does Goo2 look?
+</font>
+<p>
+<br>
+<font color="eeffff">
+OLD INFORMATION:
+</font>
+
+<font color="00dd55">
+<p>
+Version 1.0.2 has been released with more browser support. See your browser information at the bottom of this page. If you see nothing indicating this, then 
+you may or may not recieve browser support in the future. We will try to optimize this website for as many browsers and systems as we can.
+<p>
+Goo$ is currently in BETA mode. Work starting on 4/14/2013 and is still in an early stage of design process. Version 1.0.1 has been released with added time,
+in the upper right hand corner. Currently JavaScript is required to run most of this page, and will probably stay that way. A five minute refresh period has been 
+added, and will be changed if this becomes too annoying to the viewer. Software has been changed to Notepad++. Thanks for such a great debugger!
+<p>
+<br>
+Check out our Google Custom Search Engine! For right now, you can search the existing webpage. These will later be stored under
+a section of the website called "Archives". You will still be able to search and view this content, although some may be selected to be 
+removed. There is no new content to add. Thanks for your cooperation.
+<p>
+UPDATE: Check out version 2.0.2
+<br>
+<p>
+<br>
+
+</font>
+
+<font color="eeffff">
+Last Update: 4/27/13
+
+
+<!-- Today's Date: -->
+
+
+<script language="javascript"> 
+<!-- 
+today = new Date(); 
+
+document.write("<BR>Today's Date: ", today.getMonth()+1,"/",today.getDate(),"/",today.getYear()-100);
+
+
+//--> 
+</script> 
+<p>
+<div style="width: 500px">
+<script>
+  (function() {
+    var cx = '010049289771078357493:7hdjg9x3w6c';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:search></gcse:search>
+</div>
+
+
+<!-- Google Custom Search: -->
+
+
+
+
+
+Goo$ Google Custom Search version 2.0.2
+
+
+
+
+<!-- Start Javascript code for Browser info -->
+
+<p align="right">
+<Script Language="JavaScript">
+var nVer = navigator.appVersion;
+var nAgt = navigator.userAgent;
+var browserName  = navigator.appName;
+var fullVersion  = ''+parseFloat(navigator.appVersion); 
+var majorVersion = parseInt(navigator.appVersion,10);
+var nameOffset,verOffset,ix;
+
+// In Opera, the true version is after "Opera" or after "Version"
+if ((verOffset=nAgt.indexOf("Opera"))!=-1) {
+ browserName = 1;
+ fullVersion = nAgt.substring(verOffset+6);
+ if ((verOffset=nAgt.indexOf("Version"))!=-1) 
+   fullVersion = nAgt.substring(verOffset+8);
+}
+// In MSIE, the true version is after "MSIE" in userAgent
+else if ((verOffset=nAgt.indexOf("MSIE"))!=-1) {
+ browserName = 3;
+ fullVersion = nAgt.substring(verOffset+5);
+}
+// In Chrome, the true version is after "Chrome" 
+else if ((verOffset=nAgt.indexOf("Chrome"))!=-1) {
+ browserName = 2;
+ fullVersion = nAgt.substring(verOffset+7);
+}
+// In Safari, the true version is after "Safari" or after "Version" 
+else if ((verOffset=nAgt.indexOf("Safari"))!=-1) {
+ browserName = 4;
+ fullVersion = nAgt.substring(verOffset+7);
+ if ((verOffset=nAgt.indexOf("Version"))!=-1) 
+   fullVersion = nAgt.substring(verOffset+8);
+}
+// In Firefox, the true version is after "Firefox" 
+else if ((verOffset=nAgt.indexOf("Firefox"))!=-1) {
+ browserName = 5;
+ fullVersion = nAgt.substring(verOffset+8);
+}
+// In most other browsers, "name/version" is at the end of userAgent 
+else if ( (nameOffset=nAgt.lastIndexOf(' ')+1) < 
+          (verOffset=nAgt.lastIndexOf('/')) ) 
+{
+ browserName = nAgt.substring(nameOffset,verOffset);
+ fullVersion = nAgt.substring(verOffset+1);
+ if (browserName.toLowerCase()==browserName.toUpperCase()) {
+  browserName = navigator.appName;
+ }
+}
+// trim the fullVersion string at semicolon/space if present
+if ((ix=fullVersion.indexOf(";"))!=-1)
+   fullVersion=fullVersion.substring(0,ix);
+if ((ix=fullVersion.indexOf(" "))!=-1)
+   fullVersion=fullVersion.substring(0,ix);
+
+majorVersion = parseInt(''+fullVersion,10);
+if (isNaN(majorVersion)) {
+ fullVersion  = ''+parseFloat(navigator.appVersion); 
+ majorVersion = parseInt(navigator.appVersion,10);
+}
+
+document.write('<span style=\"color:lightgreen;\">Browser Information:<br>');
+
+if (browserName == 2)
+  {
+
+
+  document.write('<img src="imageChrome.jpg" width="23" height="24">');
+  document.write('<span style=\"color:white;\"> Google Chrome <\/span>');
+
+
+  }
+if (browserName == 1)
+  {
+  document.write('<img src="opera.jpg" width="24" height="24">');
+  document.write('<span style=\"color:white;\">Opera <\/span>');
+
+  }
+
+if (browserName == 3)
+  {
+  document.write('<img src="msie.jpg" width="28" height="22">');
+  document.write('<span style=\"color:white;\">Microsoft Internet Explorer <\/span>');
+
+  }
+
+if (browserName == 4)
+  {
+  document.write('<img src="safari.jpg" width="24" height="24">');
+  document.write('<span style=\"color:white;\">Safari <\/span>');
+
+  }
+
+if (browserName == 5)
+  {
+  document.write('<img src="firefox.jpg" width="20" height="24">');
+  document.write('<span style=\"color:white;\"> Mozilla Firefox ');
+
+  }
+
+
+document.write('<span style=\"color:white;\">'
+ +' '+fullVersion+'<br>'
+)
+
+
+
+</script>
+</p>
+
+<!-- NOTHING SHOULD BE BETWEEN THIS COMMENT AND THE </p> TAG ABOVE!!! </body> SHOULD BE DIRECTLY BELOW!!! -->
+
+</body>
+</html>

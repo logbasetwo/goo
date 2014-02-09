@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+ <head>
+
+
+<style type="text/css">
+
+.gradientbuttons ul{
+padding: 3px 0;
+margin-left: 0;
+margin-top: 1px;
+margin-bottom: 0;
+font: bold 13px Verdana;
+list-style-type: none;
+text-align: center;
+}
+
+.gradientbuttons li{
+display: inline;
+margin: 0;
+}
+
+.gradientbuttons li a{
+text-decoration: none;
+padding: 5px 7px;
+margin-right: 5px;
+border: 1px solid #778;
+color: white;
+border:1px solid gray;
+background: #3282c2;
+border-radius: 8px; /*w3c border radius*/
+box-shadow: 3px 3px 4px rgba(0,0,0,.5); /* w3c box shadow */
+-moz-border-radius: 8px; /* mozilla border radius */
+-moz-box-shadow: 3px 3px 4px rgba(0,0,0,.5); /* mozilla box shadow */
+background: -moz-linear-gradient(center top, #a4ccec, #72a6d4 25%, #3282c2 45%, #357cbd 85%, #72a6d4); /* mozilla gradient background */
+-webkit-border-radius: 8px; /* webkit border radius */
+-webkit-box-shadow: 3px 3px 4px rgba(0,0,0,.5); /* webkit box shadow */
+background: -webkit-gradient(linear, center top, center bottom, from(#a4ccec), color-stop(25%, #72a6d4), color-stop(45%, #3282c2), color-stop(85%, #357cbd), to(#72a6d4)); /* webkit gradient background */
+}
+
+.gradientbuttons li a:hover{
+color: lightyellow;
+}
+
+.redtheme li a{
+font-size:18px;
+background: darkred;
+background: -moz-linear-gradient(center top, #f5795d, #e55e3f 25%, #d02700 45%, #e55e3f 85%, #f5595d);
+background: -webkit-gradient(linear, center top, center bottom, from(#f5795d), color-stop(25%, #e55e3f), color-stop(45%, #d02700), color-stop(85%, #e55e3f), to(#f5795d)); 
+}
+
+
+</style>
+  <title>
+Knights of The Periodic Table
+  </title>
+ </head>
+<body bgcolor="navy">
+<font color="White">
+ <marquee>
+ <scrolldelay = -50>
+  Hydrogen Helium Lithium Berilium Boron Carbon Nitrogen Oxygen Flourine Titanium Radon Aluminum Potassium Xenon Neon Iron Plutonium Argon Cobalt Calcium Barium Sodium Krypton Silicon Platinum Iodine Sulfur Manganese Magnesium Zinc Rubidium Tungsten
+ </marquee>
+
+
+<center>
+	<h1>
+	Knights of the Periodic Table 
+	</h1>
+
+Team: 2045-100
+</font>
+<p>
+<img src="Front_Picture.jpg" width="40%" height="40%">
+
+<div align="center">
+	<label id="quiz_name_id"></label><br>
+
+	<div id="question_area">
+		<label id="question_number"></label><br>
+		<font color = "white"><font size = 5>
+		<label id="pose" rows='5' cols='40' disabled=true></label><br><br>
+		<div id="radioset">
+		<input type="radio" name="choice" id="ans0" value="a" onclick="DisableControl('btn', false)"><label id="lbl0"></label><br>
+		<input type="radio" name="choice" id="ans1" value="b" onclick="DisableControl('btn', false)"><label id="lbl1"></label><br>
+		<input type="radio" name="choice" id="ans2" value="c" onclick="DisableControl('btn', false)"><label id="lbl2"></label><br>
+		<input type="radio" name="choice" id="ans3" value="d" onclick="DisableControl('btn', false)"><label id="lbl3"></label><br><br>
+		</div>
+		<div id="checkboxes">
+		<input type="checkbox" name="answer" id="chkA" value="a"><br>
+		<input type="checkbox" name="answer" id="chkB" value="b"><br>
+		<input type="checkbox" name="answer" id="chkC" value="c"><br>
+		<input type="checkbox" name="answer" id="chkD" value="d"><br><br>
+		</div>
+		<font color = "white">
+		<label id="result">  </label>
+	</div>
+	<div id="response">
+		<button id='btn' onclick="ChangeState()">Start Quiz</button>
+	</div>
+
+</div>
+</body>
+
+<script language=javascript type="text/javascript">
+{
+	var quiz_name = " ";
+	var questions = [
+'I am a noble gas',
+'I am a soft silvery alkali metal with a weight of about 6', 
+'I am found in teeth',
+'My atomic number is 5',
+'I am found in most life forms on earth',
+'I am the most abundant gas in the atmosphere',
+'I am 20% of the atmosphere',
+'When ionized I glow quite nicely',
+'I smell quite potent alone',
+'In the Civil War I was the main element in a musket ball'
+];
+	var choices = [
+	'He|Au|Pb|Ca',
+	'S|Li|Mg|Al',
+	'Si|Pb|Ca|Na',
+	'Ti|H|F|B',
+	'F|Pb|C|Au',
+	'Mg|N|Ar|U',
+	'O|Ni|Zn|Si',
+	'S|Pb|H|Ne',
+	'I|K|Zn|S',
+	'Mg|U|Pb|Ti'
+	];
+	
+	var answers = [0,1,2,3,2,1,0,3,3,2];
+	var correct = "";
+	
+	var score = 0;
+	var pointvalues = [10, 5, 1, 0];
+	var awardpoint_idx = 0;
+	var correcttext = "";
+	var done = false;
+	
+	var next_question = true; 
+	var q = 0;
+	
+	SetText('quiz_name_id', quiz_name);
+	HideControl('checkboxes','none');
+	HideControl('question_area','none');
+	
+	function SetText(id, txt)
+	{
+		document.all(id).innerHTML = txt;
+	}
+	function HideControl(id, setting)
+	{
+		document.all(id).style.display = setting;
+	}
+	function DisableControl(id, setting)
+	{
+		document.all(id).disabled = setting;
+	}
+		
+	function ChangeState() {
+		if (done)
+		{
+			HideControl('btn','none');
+			SetText('result','Final Score: ' + score);
+		}
+		else if (next_question)
+		{
+	     document.all('question_area').style.display = 'block';
+		 document.all('btn').innerHTML = "Submit";
+		 LoadQuestion(q++);
+		 next_question = !next_question;
+		}
+		else
+		{
+		 if (CheckQuestion(q) || awardpoint_idx == 3)
+		 {
+		 // add points
+		 score += pointvalues[awardpoint_idx];
+		 
+		 if (awardpoint_idx == 3)
+		 {
+			SetText('result', 'Wrong Elements. Please Move On.');
+		 
+		 }
+		 document.all('btn').innerHTML = "Next Question";
+		 next_question = !next_question;
+		 
+		for (c = 0; c < 4; c++)
+		{
+			DisableControl('ans' + c, true);
+		}
+		 if (q == questions.length)
+		 {
+			done = true;
+			ChangeState();
+		 }
+		 }
+		}
+	}
+	
+	function LoadQuestion(i)
+	{
+		SetText('pose', questions[i]);
+		var possibles = choices[i].split('|');
+		for (c = 0; c < 4; c++)
+		{
+			SetText('lbl' + c, possibles[c]);
+			DisableControl('ans' + c, false);
+			document.all('lbl' + c).style.color = 'white';
+			document.all('lbl' + c).style.fontWeight = 'normal';
+			document.all('ans' + c).checked = false;
+			
+		}
+		DisableControl('btn', true);
+		correct = answers[i];
+		correcttext = possibles[i];
+		awardpoint_idx = 0;
+		if (i == 0)
+		{
+		SetText('result','  ');
+		}
+		else
+		{
+		SetText('result','Score: ' + score);
+		}
+	}
+	
+	function CheckQuestion() {
+		if (document.all('ans'+ correct).checked == true)
+		{
+			SetText('result','Correct!');
+			document.all('lbl' + correct).style.color = '#00FF00';
+			return true;
+		}
+		else
+			for (c = 0; c < 4; c++)
+			{
+				if (document.all('ans' + c).checked == true)
+				{
+					document.all('ans' + c).checked = false;
+					DisableControl('ans' + c, true);
+					document.all('lbl' + c).style.color = 'red';
+				}
+			}
+			SetText('result', 'Incorrect.  Try again.');
+			awardpoint_idx++;
+		};
+
+}
+</script>
+
+<p>
+<br>
+<p>
+<div class="gradientbuttons redtheme">
+<ul>
+<li><a href="knightsoftheperiodictable.html">Start Over</li>
+</ul>
+</div>
+
+</center>
+</body>
+</html>

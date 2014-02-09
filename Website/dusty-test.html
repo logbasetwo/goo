@@ -1,0 +1,786 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>State College,PA Weather</title>
+  <meta http-equiv="refresh" content="150" ;="">
+  <link rel="alternate" type="application/rss+xml" 
+   title="State College,PA Weather" 
+   href="wxrss.xml">
+
+  <script language="JavaScript">
+function createDaySelect(name)
+{
+	document.write("<select name=" + name + " size='1'>");
+	var mydate = new Date();
+	var myday = mydate.getDate();
+	var daystring = "";
+	
+	for (var i = 1; i <= 31; ++i) {
+		if(i<10) {
+			daystring = "0" + i;
+			document.write(daystring);
+		} else {
+			daystring = i;
+			document.write(daystring);
+		}
+		if (myday == daystring) {
+			document.write("<option selected='selected' value='" + daystring + "'>" + daystring + "</option>");
+		} else {
+			document.write("<option value='" + daystring + "'>" + daystring + "</option>");
+		}
+	}
+	document.write("</select>");
+}
+
+function createMonthlySelect(name)
+{
+	var month = new Array;
+	month[0]="Jan";
+	month[1]="Feb";
+	month[2]="Mar";
+	month[3]="Apr";
+	month[4]="May";
+	month[5]="Jun";
+	month[6]="Jul";
+	month[7]="Aug";
+	month[8]="Sep";
+	month[9]="Oct";
+	month[10]="Nov";
+	month[11]="Dec";
+	
+	var mydate = new Date();
+	var mymonth = mydate.getMonth();
+	var monthstring = "";
+	
+	document.write("<select name=" + name + " size='1'>");
+	
+	for (var i = 0; i < 12; ++i) {
+		if(i<9) {
+			monthstring = "0" + (i+1);
+		} else {
+			monthstring = i+1;
+		}
+		
+		if(mymonth+1 == monthstring) {
+			document.write("<option selected='selected' value='" + monthstring + "'>" + month[i] + "</option>");
+		} else {
+			document.write("<option value='" + monthstring + "'>" + month[i] + "</option>");
+		}
+	}
+	document.write("</select>");
+}
+
+function createYearlySelect(name)
+{
+	var mydate = new Date();
+	var myyear = (mydate.getYear() % 1900) + 1900;
+	var yearstring = "";
+	
+	document.write("<select name=" + name + " size='1'>");
+	
+	for (var i = 0; i < 51; ++i)
+    {
+		if (i < 10)
+        {
+			yearstring = "200" + i;
+		} 
+        else 
+        {
+			yearstring = "20" + i;
+		}
+		
+        if (myyear == yearstring) 
+        {
+			document.write("<option selected='selected' value='" + yearstring + "'>" + yearstring + "</option>");
+		} 
+        else 
+        {
+			document.write("<option value='" + yearstring + "'>" + yearstring + "</option>");
+		}
+	}
+	document.write("</select>");
+}
+
+function openNoaaFile(month, year)
+{
+    var url = "NOAA/NOAA-";
+    url = url + year;
+    if (month != '')
+    {
+        url = url + "-";
+        url = url + month;
+    }
+
+    url = url + ".txt";
+    window.location=url;
+}
+
+function openARCFile(day, month, year)
+{
+    var url = "Archive/ARC-" + year + "-" + month + "-" + day + ".txt";
+    window.location=url;
+}
+
+function openURL(urlname)
+{
+    window.location=urlname;
+}
+
+  </script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22819393-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</head>
+<body
+ style="background-image: url(django_bg.jpg);">
+<form method="post">
+<div align="center">
+
+<table cellpadding="1" cellspacing="1" border="0" width="95%" align="center">
+<tbody>
+  <tr>
+    <td width="100%">
+      <table cellspacing="1" cellpadding="0" width="100%" align="center" border="0">
+      <tbody>
+        <tr>
+          <td width="35%" valign="top">
+            <font color="#000000">
+            <table cellspacing="1" cellpadding="0" width="100%" align="left" border="0">
+            <tbody>
+              <tr>
+                <td align="center">
+<table cellspacing="1" cellpadding="0" width="100%" align="left" border="0">
+<tbody>
+  <tr>
+    <td align="center">
+      <table cellspacing="1" cellpadding="0" width="100%" align="left" border="1">
+      <tbody>
+        <tr height="20">
+          <td width="50%">
+            <font face="Tw Cen MT" color="#000000">
+            <strong>Temperature:</strong>
+            </font>
+          </td>
+          <td width="50%" align="left">
+            <font face="Tw Cen MT" color="#000000">
+            <b>72.7 F</b>
+            </font>
+          </td>
+        </tr>
+        <tr height="20">
+          <td width="50%">
+            <font face="Tw Cen MT" color="#000000">
+            <strong>Wind Chill:</strong>
+            </font>
+          </td>
+          <td width="50%" align="left">
+            <font face="Tw Cen MT" color="#000000">
+            <b>72.7 F</b>
+            </font>
+          </td>
+        </tr>
+        <tr height="20">
+          <td width="50%">
+            <font face="Tw Cen MT" color="#000000">
+            <strong>Heat Index:</strong>
+            </font>
+          </td>
+          <td width="50%" align="left">
+            <font face="Tw Cen MT" color="#000000">
+            <b>72.7 F</b>
+            </font>
+          </td>
+        </tr>
+        <tr height="20">
+          <td width="50%">
+            <font face="Tw Cen MT" color="#000000">
+            <strong>Dewpoint:</strong>
+            </font>
+          </td>
+          <td width="50%" align="left">
+            <font face="Tw Cen MT" color="#000000">
+            <b>41.9 F</b>
+            </font>
+          </td>
+        </tr>
+        <tr height="20">
+          <td width="50%">
+            <font face="Tw Cen MT" color="#000000">
+            <strong>Humidity:</strong>
+            </font>
+          </td>
+          <td width="50%" align="left">
+            <font face="Tw Cen MT" color="#000000">
+            <b>33 %</b>
+            </font>
+          </td>
+        </tr>
+        <tr height="20">
+          <td width="50%">
+            <font face="Tw Cen MT" color="#000000">
+            <strong>Barometer:</strong>
+            </font>
+          </td>
+          <td width="50%" align="left">
+            <font face="Tw Cen MT" color="#000000">
+            <b>29.831&nbsp; in&nbsp;-</b>
+            </font>
+          </td>
+        </tr>
+        <tr height="20">
+          <td width="50%">
+            <font face="Tw Cen MT" color="#000000">
+            <strong>Wind:</strong>
+            </font>
+          </td>
+          <td width="50%" align="left">
+            <font face="Tw Cen MT" color="#000000">
+            <b>SW&nbsp;&nbsp;at&nbsp;&nbsp;
+            2&nbsp; mph</b>
+            </font>
+          </td>
+        </tr>
+        <tr height="20">
+          <td width="50%">
+            <font face="Tw Cen MT" color="#000000">
+            <strong>High Wind:</strong>
+            </font>
+          </td>
+          <td width="50%" align="left">
+            <font face="Tw Cen MT" color="#000000">
+            <b>10  mph at 
+            17:32</b>
+            </font>
+          </td>
+        </tr>
+        <tr height="20">
+          <td width="50%">
+            <font face="Tw Cen MT" color="#000000">
+            <strong>Recent Avg Wind:</strong>
+            </font>
+          </td>
+          <td width="50%" align="left">
+            <font face="Tw Cen MT" color="#000000">
+            <b>0  mph</b>
+            </font>
+          </td>
+        </tr>
+        <tr height="20">
+          <td width="50%">
+            <font face="Tw Cen MT" color="#000000">
+            <strong>Recent Beaufort Scale:</strong>
+            </font>
+          </td>
+          <td width="50%" align="left">
+            <font face="Tw Cen MT" color="#000000">
+            <b>Calm</b>
+            </font>
+          </td>
+        </tr>
+        <tr height="20">
+          <td width="50%">
+            <font face="Tw Cen MT" color="#000000">
+            <strong>Today's Rain:</strong>
+            </font>
+          </td>
+          <td width="50%" align="left">
+            <font face="Tw Cen MT" color="#000000">
+            <b>0.00&nbsp; in</b>
+            </font>
+          </td>
+        </tr>
+        <tr height="20">
+          <td width="50%">
+            <font face="Tw Cen MT" color="#000000">
+            <strong>Rain Rate:</strong>
+            </font>
+          </td>
+          <td width="50%" align="left">
+            <font face="Tw Cen MT" color="#000000">
+            <b>0.00&nbsp; in/hr</b>
+            </font>
+          </td>
+        </tr>
+        <tr height="20">
+          <td width="50%">
+            <font face="Tw Cen MT" color="#000000">
+            <strong>High Rain Rate:</strong>
+            </font>
+          </td>
+          <td width="50%" align="left">
+            <font face="Tw Cen MT" color="#000000">
+            <b>0.00  in/hr at 
+            -----</b>
+            </font>
+          </td>
+        </tr>
+        <tr height="20">
+          <td width="50%">
+            <font face="Tw Cen MT" color="#000000">
+            <strong>Storm Total:</strong>
+            </font>
+          </td>
+          <td width="50%" align="left">
+            <font face="Tw Cen MT" color="#000000">
+            <b>0.00&nbsp; in</b>
+            </font>
+          </td>
+        </tr>
+        <tr height="20">
+          <td width="50%">
+            <font face="Tw Cen MT" color="#000000">
+            <strong>Monthly Rain:</strong>
+            </font>
+          </td>
+          <td width="50%" align="left">
+            <font face="Tw Cen MT" color="#000000">
+            <b>1.54&nbsp; in</b>
+            </font>
+          </td>
+        </tr>
+        <tr height="20">
+          <td width="50%">
+            <font face="Tw Cen MT" color="#000000">
+            <strong>Yearly Rain (JAN):</strong>
+            </font>
+          </td>
+          <td width="50%" align="left">
+            <font face="Tw Cen MT" color="#000000">
+            <b>9.97&nbsp; in</b>
+            </font>
+          </td>
+        </tr>
+        <tr height="20">
+          <td width="50%">
+            <font face="Tw Cen MT" color="#000000">
+            <strong>Air Density:</strong>
+            </font>
+          </td>
+          <td width="50%" align="left">
+            <font face="Tw Cen MT" color="#000000">
+            <b>1.186&nbsp; kg/m^3</b>
+            </font>
+          </td>
+        </tr>
+        <tr height="20">
+          <td width="50%">
+            <font face="Tw Cen MT" color="#000000">
+            <strong>Est. Cumulus Base:</strong>
+            </font>
+          </td>
+          <td width="50%" align="left">
+            <font face="Tw Cen MT" color="#000000">
+            <b>7017&nbsp; ft</b>
+            </font>
+          </td>
+        </tr>
+        <tr height="20">
+          <td width="50%">
+            <font face="Tw Cen MT" color="#000000">
+            <strong>High Temperature:</strong>
+            </font>
+          </td>
+          <td width="50%" align="left">
+            <font face="Tw Cen MT" color="#000000">
+            <b>84.0 F at 
+            16:29</b>
+            </font>
+          </td>
+        </tr>
+        <tr height="20">
+          <td width="50%">
+            <font face="Tw Cen MT" color="#000000">
+            <strong>Low Temperature:</strong>
+            </font>
+          </td>
+          <td width="50%" align="left">
+            <font face="Tw Cen MT" color="#000000">
+            <b>61.5 F at 
+            00:00</b>
+            </font>
+          </td>
+        </tr>
+        <tr height="20">
+          <td width="50%">
+            <font face="Tw Cen MT" color="#000000">
+            <strong>High Heat Index:</strong>
+            </font>
+          </td>
+          <td width="50%" align="left">
+            <font face="Tw Cen MT" color="#000000">
+            <b>81.9 F at 
+            16:29</b>
+            </font>
+          </td>
+        </tr>
+        <tr height="20">
+          <td width="50%">
+            <font face="Tw Cen MT" color="#000000">
+            <strong>Low Wind Chill:</strong>
+            </font>
+          </td>
+          <td width="50%" align="left">
+            <font face="Tw Cen MT" color="#000000">
+            <b>61.5 F at 
+            00:00</b>
+            </font>
+          </td>
+        </tr>
+        <tr height="20">
+          <td width="50%">
+            <font face="Tw Cen MT" color="#000000">
+            <strong>High Humidity:</strong>
+            </font>
+          </td>
+          <td width="50%" align="left">
+            <font face="Tw Cen MT" color="#000000">
+            <b>63 % at 
+            07:51</b>
+            </font>
+          </td>
+        </tr>
+        <tr height="20">
+          <td width="50%">
+            <font face="Tw Cen MT" color="#000000">
+            <strong>Low Humidity:</strong>
+            </font>
+          </td>
+          <td width="50%" align="left">
+            <font face="Tw Cen MT" color="#000000">
+            <b>29 % at 
+            15:22</b>
+            </font>
+          </td>
+        </tr>
+        <tr height="20">
+          <td width="50%">
+            <font face="Tw Cen MT" color="#000000">
+            <strong>High Dewpoint:</strong>
+            </font>
+          </td>
+          <td width="50%" align="left">
+            <font face="Tw Cen MT" color="#000000">
+            <b>53.2 F at 
+            09:14</b>
+            </font>
+          </td>
+        </tr>
+        <tr height="20">
+          <td width="50%">
+            <font face="Tw Cen MT" color="#000000">
+            <strong>Low Dewpoint:</strong>
+            </font>
+          </td>
+          <td width="50%" align="left">
+            <font face="Tw Cen MT" color="#000000">
+            <b>41.6 F at 
+            11:17</b>
+            </font>
+          </td>
+        </tr>
+        <tr height="20">
+          <td width="50%">
+            <font face="Tw Cen MT" color="#000000">
+            <strong>High Barometer:</strong>
+            </font>
+          </td>
+          <td width="50%" align="left">
+            <font face="Tw Cen MT" color="#000000">
+            <b>30.015  in at 
+            00:00</b>
+            </font>
+          </td>
+        </tr>
+        <tr height="20">
+          <td width="50%">
+            <font face="Tw Cen MT" color="#000000">
+            <strong>Low Barometer:</strong>
+            </font>
+          </td>
+          <td width="50%" align="left">
+            <font face="Tw Cen MT" color="#000000">
+            <b>29.815  in at 
+            18:43</b>
+            </font>
+          </td>
+        </tr>
+      </tbody>
+      </table>
+    </td>
+  </tr>
+</tbody>
+</table>
+
+                </td>
+              </tr>
+              <tr>
+                <td width="100%" align="center">
+                  <br>
+                  <a href="http://radblast.wunderground.com/cgi-bin/radar/WUNIDS_composite?centerlat=40.79392624&centerlon=-77.84435272&radius=120&type=N0R&frame=0&num=5&delay=15&width=460&height=460&newmaps=1&r=1296525207">
+                  <img src="http://radblast.wunderground.com/cgi-bin/radar/WUNIDS_composite?centerlat=40.79392624&centerlon=-77.84435272&radius=120&type=N0R&frame=0&num=5&delay=15&width=460&height=460&newmaps=1&r=1296525207" 
+                   border="1" height="240" width="280" alt="RADAR">
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+            </table>
+          </font>
+        </td>
+        <td width="65%" valign="top">
+          <table cellpadding="2" cellspacing="2" border="0" width="100%" align="center">
+          <tbody>
+            <tr>
+              <td>
+<table cellpadding="1" cellspacing="1" border="0" width="95%" align="center">
+<tbody>
+	<tr>
+	  <td>
+		<table cellpadding="2" cellspacing="2" border="0" width="100%" align="center">
+		<tbody>
+		  <tr>
+			<td width="100%" align="center" valign="top">
+			  <big><b><font size="6" face="Arial, Helvetica, sans-serif" color="#000000">
+			  State College,PA Weather</font></b></big>
+			</td>
+		  </tr>
+		  <tr>
+			<td width="100%" align="center" valign="top">
+			  <font size="2" face="Arial, Helvetica, sans-serif" color="#000000">
+			  <b>40.8 N - 77.9 W - 
+			  1300 ft</b></font>
+			</td>
+		  </tr>
+		  <tr>
+			<td valign="top" align="center">
+			  <font size="4" face="Arial, Helvetica, sans-serif" color="#000000">
+			  05/20/13 21:09:10
+			  </font>
+			</td>
+		  </tr>
+          <tr>
+            <td width="100%" align="center" valign="top">
+              <font size="2" face="Arial, Helvetica, sans-serif" color="#000000">
+              Sunrise:05:50 - Sunset:20:27 - Moon:Waxing 77% Full
+              </font>
+            </td>
+          </tr>
+		</tbody>
+		</table>
+	  </td>
+	</tr>
+</tbody>
+</table>
+
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <table cellpadding="2" cellspacing="2" border="0" width="100%" align="center">
+                <tbody>
+                  <tr>
+                    <td align="center">
+                        <table cellpadding="2" cellspacing="2" border="0" width="100%" align="center">
+                        <tbody>
+                          <tr>
+                            <td align="center">
+                              <img src="tempdaycomp.png"
+                                   style="background: url(chart_bg.png) no-repeat center">
+                            </td>
+                             <td align="center">
+                              <img src="heatchillcomp.png"
+                                   style="background: url(chart_bg.png) no-repeat center">
+                            </td>
+                          </tr>
+                        </tbody>
+                        </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="center">
+                        <table cellpadding="2" cellspacing="2" border="0" width="100%" align="center">
+                        <tbody>
+                          <tr>
+                            <td align="center">
+                              <img src="tempdial.png"
+                                   style="background: url(dial_bg.png) 50% 50% no-repeat">
+                            </td>
+                            <td align="center">
+                              <img src="wind.png"
+                                   style="background: url(dial_bg.png) 50% 50% no-repeat">
+                            </td>
+                            <td align="center">
+                              <img src="humiddial.png"
+                                   style="background: url(dial_bg.png) 50% 50% no-repeat">
+                            </td>
+                          </tr>
+                        </tbody>
+                        </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="center">
+                        <table cellpadding="2" cellspacing="2" border="0" width="100%" align="center">
+                        <tbody>
+                          <tr>
+                            <td align="center">
+                              <img src="netRainDay.png"
+                                   style="border: none; background: url(dial_bg.png) 50% 50% no-repeat">
+                            </td>
+                            <td align="center">
+                              <img src="netRainMonth.png"
+                                   style="background: url(dial_bg.png) 50% 50% no-repeat">
+                            </td>
+                            <td align="center">
+                              <img src="netRainYear.png"
+                                   style="background: url(dial_bg.png) 50% 50% no-repeat">
+                            </td>
+                          </tr>
+                        </tbody>
+                        </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="center">
+                        <table cellpadding="2" cellspacing="2" border="0" width="100%" align="center">
+                        <tbody>
+                          <tr>
+                            <td align="center">
+                              <img src="rainday.png"
+                                   style="background: url(chart_bg.png) no-repeat center">
+                            </td>
+                             <td align="center">
+                              <img src="baromday.png"
+                                   style="background: url(chart_bg.png) no-repeat center">
+                            </td>
+                          </tr>
+                        </tbody>
+                        </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="center">
+                      <br>
+                      <hr width="96%">
+                    </td>
+                  </tr>
+                </tbody>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <table cellpadding="2" cellspacing="2" border="0" width="100%" height="40" align="center">
+                <tbody>
+                  <tr>
+                    <td width="15%" align="center" valign="top"> <input name="button2" type="button"
+                      onClick="openURL('almanac.htm')" value="     Almanac    "></td>
+                    <td width="15%" align="center" valign="top"> <input name="button2" type="button"
+                      onClick="openURL('Daily.htm')" value=" Last 24 Hours "></td>
+                    <td width="15%" align="center" valign="top"> <input name="button2" type="button"
+                      onClick="openURL('Weekly.htm')" value="  Last 7 Days  "></td>
+                    <td width="15%" align="center" valign="top">
+                      <input type="button" value=" Last 28 Days "
+                      onclick="openURL('Monthly.htm')">
+                    </td>
+                    <td width="15%" align="center" valign="top">
+                      <input name="button" type="button"
+                      onClick="openURL('Yearly.htm')" value=" Last 365 Days ">
+                    </td>
+                    <td width="15%" align="center" valign="top">
+                      <input type="button" value="    Forecast     "
+                       onClick="openURL('http://www.wunderground.com/cgi-bin/findweather/getForecast?query=16801')">
+                    </td>
+                  </tr>
+                </tbody>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <table cellpadding="2" cellspacing="2" border="0" width="100%" height="30" align="center">
+                <tbody>
+                  <tr>
+                    <td width="100%" align="center" valign="middle">
+                      <font face="Tw Cen MT" color="#000000">
+                      Climatological Summaries:&nbsp;
+                      </font>
+                      <script language="JavaScript">
+                       createMonthlySelect("month");
+                       createYearlySelect("year");
+                      </script>
+    
+                      <input type="button" value="Monthly Report"
+                      onclick="openNoaaFile(this.form.month.value, this.form.year.value)">
+                      <input type="button" value="Yearly Report "
+                      onclick="openNoaaFile('',this.form.year.value)">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td width="100%" align="center" valign="middle">
+                      <font face="Tw Cen MT" color="#000000">
+                      Browse Archive Records:&nbsp;
+                      </font>
+                      <script language="JavaScript">
+                       createDaySelect("day");
+                       createMonthlySelect("month1");
+                       createYearlySelect("year1");
+                      </script>
+                      <input type="button" value="Browse Day Records"
+                      onclick="openARCFile(this.form.day.value, this.form.month1.value, this.form.year1.value)">
+                    </td>
+                  </tr>
+                </tbody>
+                </table>
+              </td>
+            </tr>
+          </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+  </td>
+  </tr>
+  <tr>
+  <td width="100%">
+    <hr width="100%" size="4">
+    <table cellpadding="2" cellspacing="2" border="0" width="100%">
+      <tbody>
+        <tr>
+          <td width="40%" valign="bottom" align="left">
+            <small><font face="Arial, Helvetica, sans-serif" align="left" color="blue">
+            0 years, 2 months, 9 days, 3 hours, 49 minutes, 57 seconds
+            </font></small>
+          </td>
+          <td width="20%" valign="bottom" align="center">
+            <small><font face="Arial, Helvetica, sans-serif" align="center" color="blue">
+            <a href="http://www.wviewweather.com">wviewweather.com</a>
+            </font></small>
+          </td>
+          <td width="40%" valign="bottom" align="right">
+            <small><font face="Arial, Helvetica, sans-serif" align="right" color="blue">
+            wview 5.17.3&nbsp;WMR918
+            </font></small>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </td>
+  </tr>
+</tbody>
+</table>
+</div>
+</body>
+</html>

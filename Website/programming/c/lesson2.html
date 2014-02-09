@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style type="text/css">
+
+h1{
+	/* padding:5px; */
+	height:40px;
+}
+.pre{
+	font-family:courier;
+	font-size:.87em;
+	margin-left:65px;
+}
+.extra{
+	padding:5px;
+}
+.special-pre{
+	font-family:courier;
+	font-size:.87em;
+	margin-left:100px;
+}
+
+body{
+	margin-left:25px;
+	margin-right:25px;
+}
+.unix{
+	margin-left:65px;
+}
+table{
+	width:100%;
+}
+td span{
+    float:right;
+}
+td span:first-child{ /* compatible to >=IE7 */
+    float:left;
+}
+A:link {text-decoration: none}
+A:visited {color:blue;}
+A:active {color:blue;}
+A:hover {color:#00BB00;}
+
+</style>
+
+<title>
+C Programming Lesson 2
+</title>
+</head>
+<body>
+<table>
+	<tr>
+		<td colspan="5"><span><h1>C Programming</h1></span><span><h2>Lesson 2 - Installing Codeblocks</h2></span></td>
+	</tr>
+</table>
+<hr>
+
+<table>
+	<tr>
+		<td colspan="5"><span><a href="lesson1.html"><- Previous Lesson</a></span><span><a href="lesson3.html">Next Lesson -></a></span></td>
+	</tr>
+</table>
+<hr>
+<p>	
+Although it is possible to program in a text editor, it can be quite a pain. Trying to use the command line for the first time could 
+have also been daunting in the last lesson. Good news, this isn't how most programmers develop software. An easier way to write, 
+compile and run code is within an integrated development environment (IDE). An IDE contains all the necessary tools to program without 
+having to open up a command line interface. For these lessons I will be using <a href="http://www.codeblocks.org/">Code::Blocks.</a> 
+I would suggest downloading this because it is the easiest way to get started on programming in the c language. Code::Blocks is open 
+source and works on virtually any operating system. <a href="http://www.codeblocks.org/downloads/binaries">Download it here.</a>
+<p>
+Once you have downloaded it, open it in your downloads folder and follow the instructions to install. I suggest leaving everything 
+to its default settings. Once it is open it should look very similar to this:
+<center><img src="codeblocks1.jpg" height="600px" width="800px"></center>
+<p>
+Close the <b>Start here</b> tab. Click <b>File</b> then hover over <b>New</b>. Select the <b>Empty File</b> option. Type in the code 
+we made last time. If you don't remember I have provided it below:
+<p>
+<pre>
+	#include &lt;stdio.h&gt;
+	
+	int main()
+	{
+		printf("Hello World");
+		return(0);
+	}
+</pre>
+Now click <b>File</b> then <b>Save File As</b> and choose where you want your file to be saved to and name it. Remember to include 
+the <b>.c</b> extension. You should notice that colors have been added to each element of the program. This will make longer programs 
+easier to read. 
+<p>
+<center><img src="codeblocks2.jpg"></center>
+</p>
+At this point, you could click Build then Compile and then Run from the Build tab in the menu, but it is just easier if you hit F9. 
+This will do all three tasks at once. A terminal interface should pop up with the words <b>Hello World</b> displayed. And that's it!
+We'll talk about how this program works in the next section. <a href="lesson3.html">Click here to go to the next lesson.</a>
+
+</body>
+</html>

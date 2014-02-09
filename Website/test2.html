@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div align="left">
+<label id="quiz_name_id"></label><br><br>
+
+<div id="question_area">
+<label id="question_number"></label><br>
+<textarea id="pose" rows='5' cols='40' disabled=true></textarea>
+
+<div id="radioset">
+<input type="radio" name="choice" id="ans0" value="a" onclick="DisableControl('btn', false)"><label id="lbl0"></label><br>
+<input type="radio" name="choice" id="ans1" value="b" onclick="DisableControl('btn', false)"><label id="lbl1"></label><br>
+<input type="radio" name="choice" id="ans2" value="c" onclick="DisableControl('btn', false)"><label id="lbl2"></label><br>
+<input type="radio" name="choice" id="ans3" value="d" onclick="DisableControl('btn', false)"><label id="lbl3"></label><br><br>
+</div>
+<div id="checkboxes">
+<input type="checkbox" name="answer" id="chkA" value="a"><br>
+<input type="checkbox" name="answer" id="chkB" value="b"><br>
+<input type="checkbox" name="answer" id="chkC" value="c"><br>
+<input type="checkbox" name="answer" id="chkD" value="d"><br><br>
+</div>
+<label id="result">  </label>
+</div>
+<div id="response">
+<button id='btn' onclick="ChangeState()">Start Quiz</button>
+</div>
+
+</div>
+</body>
+
+<script language=javascript type="text/javascript">
+{
+var quiz_name = "Knights of The Periodic Table";
+var questions = ['Question1', 'Question2', 'Question3', 'Question4'];
+var choices = ['one|two|three|four',
+'one|two|three|four',
+'one|two|three|four',
+'one|two|three|four'];
+var answers = [0,1,2,3];
+var correct = "";
+var score = 0;
+var pointvalues = [10, 5, 1, 0];
+var awardpoint_idx = 0;
+var correcttext = "";
+var done = false;
+var next_question = true; 
+var q = 0;
+SetText('quiz_name_id', quiz_name);
+HideControl('checkboxes','none');
+HideControl('question_area','none');
+function SetText(id, txt)
+{
+document.all(id).innerHTML = txt;
+}
+function HideControl(id, setting)
+{
+document.all(id).style.display = setting;
+}
+function DisableControl(id, setting)
+{
+document.all(id).disabled = setting;
+}
+function ChangeState() {
+if (done)
+{
+DisableControl('btn', true);
+SetText('btn','Quiz is Complete');
+alert("Final Score is " + score);
+SetText('result','Your final score is ' + score);
+}
+else if (next_question)
+{
+    document.all('question_area').style.display = "inline";
+document.all('btn').innerHTML = "Submit";
+LoadQuestion(q++);
+next_question = !next_question;
+}
+else
+{
+if (CheckQuestion(q) || awardpoint_idx == 3)
+{
+// add points
+score += pointvalues[awardpoint_idx];
+ 
+if (awardpoint_idx == 3)
+{
+SetText('result', 'The correct answer is <u>' + correcttext + '</u>. Moving On.');
+}
+ 
+document.all('btn').innerHTML = "Next Question";
+next_question = !next_question;
+ 
+for (c = 0; c < 4; c++)
+{
+DisableControl('ans' + c, true);
+}
+if (q == questions.length)
+{
+done = true;
+ChangeState();
+}
+}
+}
+}
+function LoadQuestion(i)
+{
+SetText('pose', questions[i]);
+var possibles = choices[i].split('|');
+for (c = 0; c < 4; c++)
+{
+SetText('lbl' + c, possibles[c]);
+DisableControl('ans' + c, false);
+document.all('lbl' + c).style.color = 'black';
+document.all('lbl' + c).style.fontWeight = 'normal';
+document.all('ans' + c).checked = false;
+}
+DisableControl('btn', true);
+correct = answers[i];
+correcttext = possibles[i];
+awardpoint_idx = 0;
+if (i == 0)
+{
+SetText('result','  ');
+}
+else
+{
+SetText('result','Your cumulative score is ' + score);
+}
+}
+function CheckQuestion() {
+if (document.all('ans'+ correct).checked == true)
+{
+SetText('result','Correct!');
+document.all('lbl' + correct).style.fontWeight = "bold";
+return true;
+}
+else
+for (c = 0; c < 4; c++)
+{
+if (document.all('ans' + c).checked == true)
+{
+document.all('ans' + c).checked = false;
+DisableControl('ans' + c, true);
+document.all('lbl' + c).style.color = 'red';
+}
+}
+SetText('result', 'Incorrect.  Try again.');
+awardpoint_idx++;
+};
+
+}
+</script>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+<body>
+<img src="https://www.google.com/images/srpr/logo4w.png">
+<button onclick="add_google_logo();">Add Google Logo</button>
+<script>
+    function add_google_logo() {
+        var src = "http://google.com/images/logo.gif";
+        show_image("http://google.com/images/logo.gif", 276,110, "Google Logo");
+    }
+
+
+    function show_image(src, width, height, alt) {
+        var img = document.createElement("img");
+        img.src = src;
+        img.width = width;
+        img.height = height;
+        img.alt = alt;
+        document.body.appendChild(img);
+    }
+</script>
+</body>
+</html>
