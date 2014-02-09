@@ -1,4 +1,4 @@
-goo
+Goo
 ===
 
 goo.centreweb.net repository
