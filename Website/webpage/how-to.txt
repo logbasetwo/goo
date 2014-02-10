@@ -1,0 +1,25 @@
+From the page:
+
+http://www.javascriptkit.com/script/script2/simpleimagetrail.shtml
+
+Description: Use this script to add a simple image trail to your webpage. A single image follows the mouse around, and is configurable in the following ways:
+
+    *
+
+      Image trail can be set to disappear after x seconds (or always visible)
+    *
+
+      The trail's x and y offsets can be explicitly set. This allows you, for example, to set the trail to be further away from the mouse than by default.
+    *
+
+      Image trail automatically disappears when it's close to the document's horizontal and vertical edges, so no ugly browser scrollbars appears. 
+
+This script works in both IE4+ and NS6+. Enjoy!
+
+Example: Move your cursor!
+
+Directions
+
+Step 1: Simply insert the below script into the <BODY> section of your page:
+
+Be sure to customize  the three variables inside script.

@@ -1,0 +1,6 @@
+<html>
+<body>
+<a href="index.html"><img src="logo1.bmp"></a>
+<center><h1><b>Welcome to goo.centreweb.net!</b></h1></center>
+</body>
+</html>

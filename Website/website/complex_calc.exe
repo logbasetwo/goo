@@ -1,0 +1,144 @@
+Print "CALCULATOR PROGRAM ------ Matthew Balogh (2013)"
+'Based off of example, with own interpretations.
+call main
+
+sub main
+    print ""
+    print "1. Add"
+    print "2. Subtract"
+    print "3. Multiply"
+    print "4. Divide"
+    input "What is your choice? " ; choice
+    if choice = 1 then
+     goto [add]
+
+[add]
+           input "First Number: " ; num1
+            input "Second Number: " ; num2
+             Print num1 + num2
+             goto [end]
+             end if
+
+
+    if choice = 2 then
+     goto [subtract]
+
+[subtract]
+           input "First Number: " ; num1
+            input "Second Number: " ; num2
+             Print num1 - num2
+             goto [end]
+             end if
+
+    if choice = 3 then
+     goto [mult]
+
+[mult]
+           input "First Number: " ; num1
+            input "Second Number: " ; num2
+             Print num1 * num2
+             goto [end]
+             end if
+
+    if choice = 4 then
+     goto [div]
+
+[div]
+           input "First Number: " ; num1
+            input "Second Number: " ; num2
+             Print num1 / num2
+             goto [end]
+             end if
+
+    if choice = 1 then
+      goto [end]
+    else
+        call main
+        [end]
+    end if
+
+Input "Go again? (Yes, press 1. No, press 2.) " ; restart
+
+If restart = 1 then call main
+If restart = 2 then
+end if
+end sub
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

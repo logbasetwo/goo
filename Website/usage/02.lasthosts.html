@@ -1,0 +1,287 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang='en'>
+<head>
+<meta http-equiv="description" content="Awstats - Advanced Web Statistics for goo.centreweb.net">
+<meta http-equiv="keywords" content="goo.centreweb.net, free, advanced, realtime, web, server, logfile, log, analyzer, analysis, statistics, stats, perl, analyse, performance, hits, visits">
+<meta name="robots" content="index,follow">
+<title>Statistics of goo.centreweb.net</title>
+<STYLE TYPE="text/css">
+<!--
+BODY { font: 12px arial, verdana, helvetica, sans-serif; background-color: #FFFFFF; }
+TH { font: 12px arial, verdana, helvetica, sans-serif; text-align:center; color: #000000; }
+TH.AWL { font-size: 14px; font-weight: bold; }
+TD { font: 12px arial, verdana, helvetica, sans-serif; text-align:center; color: #000000; }
+.AWL { font: 12px arial, verdana, helvetica, sans-serif; text-align:left; color: #000000; }
+B { font-weight: bold; }
+A { font: 12px arial, verdana, helvetica, sans-serif; }
+A:link    { color: #0011BB; text-decoration: none; }
+A:visited { color: #0011BB; text-decoration: none; }
+A:hover   { color: #605040; text-decoration: underline; }
+DIV { font: 12px arial,verdana,helvetica; text-align:justify; }
+.TABLEBORDER { background-color: #ECECEC; }
+.TABLEFRAME { background-color: #CCCCDD; padding: 2px 2px 2px 2px; margin-top: 0 }
+.TABLEDATA { background-color: #FFFFFF; }
+.TABLETITLEFULL  { font: 14px verdana, arial, helvetica, sans-serif; font-weight: bold; background-color: #CCCCDD; text-align: center; margin-bottom: 0; padding: 2px; }
+.TABLETITLEBLANK { font: 14px verdana, arial, helvetica, sans-serif; background-color: #FFFFFF; }
+.CFormFields { font: 14px verdana, arial, helvetica; }
+.CTooltip { position:absolute; top:0px; left:0px; z-index:2; width:280; visibility:hidden; font: 8pt MS Comic Sans,arial,sans-serif; background-color: #FFFFE6; padding: 8px; border: 1px solid black; }
+.tablecontainer  { width: 100% }
+@media projection {
+.tablecontainer { page-break-before: always; }
+}
+//-->
+</STYLE>
+</head>
+
+<body>
+	<DIV CLASS="CTooltip" ID="tt1">
+	A new visits is defined as each new <b>incoming visitor</b> (viewing or browsing a page) who was not connected to your site during last <b>60 mn</b>.
+	</DIV>
+	<DIV CLASS="CTooltip" ID="tt2">
+	Number of client hosts (<b>IP address</b>) who came to visit the site (and who viewed at least one <b>page</b>).<br>
+	This data refers to the number of <b>different physical persons</b> who had reached the site in any one day.
+	</DIV>
+	<DIV CLASS="CTooltip" ID="tt3">
+	Number of times a <b>page</b> of the site is <b>viewed</b> (Sum for all visitors for all visits).<br>
+	This piece of data differs from "hits" in that it counts only HTML pages as oppose to images and other files.
+	</DIV>
+	<DIV CLASS="CTooltip" ID="tt4">
+	Number of times a <b>page, image, file</b> of the site is <b>viewed</b> or <b>downloaded</b> by someone.<br>
+	This piece of data is provided as a reference only, since the number of "pages" viewed is often prefered for marketing purposes.
+	</DIV>
+	<DIV CLASS="CTooltip" ID="tt5">
+	This piece of information refers to the amount of data downloaded by all <b>pages</b>, <b>images</b> and <b>files</b> within your site.<br>
+	Units are in KB, MB or GB (KiloBytes, MegaBytes or GigaBytes)
+	</DIV>
+	<DIV CLASS="CTooltip" ID="tt13">
+	Awstats recognizes each access to your site after a <b>search</b> from the <b>73 most popular Internet Search Engines and Directories</b> (such as Yahoo, Altavista, Lycos, Google, Voila, etc...).
+	</DIV>
+	<DIV CLASS="CTooltip" ID="tt14">
+	List of all <b>external pages</b> which were used to link (and enter) to your site (Only the <b>25</b> most often used external pages are shown).
+	Links used by the results of the search engines are excluded here because they have already been included on the previous line within this table.
+	</DIV>
+	<DIV CLASS="CTooltip" ID="tt15">
+	This table shows the list of the most frequently <b>keywords</b> utilized to find your site from Internet Search Engines and Directories.
+	(Keywords from the <b>73</b> most popular Search Engines and Directories are recognized by Awstats, such as Yahoo, Altavista, Lycos, Google, Voila, etc...).
+	</DIV>
+	<DIV CLASS="CTooltip" ID="tt16">
+	Robots (sometimes refer to Spiders) are <b>automatic computer visitors</b> used by many search engines that scan your web site to index it and rank it, collect statistics on Internet Web sites and/or see if your site is still online.<br>
+	Awstats is able to recognize up to <b>298</b> robots.
+	</DIV>
+	<DIV CLASS="CTooltip" ID="tt17">
+	All time related statistics are based on server time.<br>
+	</DIV>
+	<DIV CLASS="CTooltip" ID="tt18">
+	Here, reported data are: <b>average values</b> (calculated from all data between the first and last visit)
+	</DIV>
+	<DIV CLASS="CTooltip" ID="tt19">
+	Here, reported data are: <b>cumulative sums</b> (calculated from all data between the first and last visit)
+	</DIV>
+
+	<DIV CLASS="CTooltip" ID="tt201"> No description for this error. </DIV>
+	<DIV CLASS="CTooltip" ID="tt202"> Request was understood by server but will be processed later. </DIV>
+	<DIV CLASS="CTooltip" ID="tt204"> Server has processed the request but there is no document to send. </DIV>
+	<DIV CLASS="CTooltip" ID="tt206"> Partial content. </DIV>
+	<DIV CLASS="CTooltip" ID="tt301"> Requested document was moved and is now at another address given in answer. </DIV>
+	<DIV CLASS="CTooltip" ID="tt302"> No description for this error. </DIV>
+	<DIV CLASS="CTooltip" ID="tt400"> Syntax error, server didn't understand request. </DIV>
+	<DIV CLASS="CTooltip" ID="tt401"> Tried to reach an <b>URL where a login/password pair was required</b>.<br>A high number within this item could mean that someone (such as a hacker) is attempting to crack, or enter into your site (hoping to enter a secured area by trying different login/password pairs, for instance). </DIV>
+	<DIV CLASS="CTooltip" ID="tt403"> Tried to reach an <b>URL not configured to be reachable, even with an login/password pair</b> (for example, an URL within a directory not defined as "browsable".). </DIV>
+	<DIV CLASS="CTooltip" ID="tt404"> Tried to reach a <b>non existing URL</b>. This error often means that there is an invalid link somewhere in your site or that a visitor mistyped a certain URL. </DIV>
+	<DIV CLASS="CTooltip" ID="tt408"> Server has taken <b>too much time</b> to respond to a request. This error frequently involves either a slow CGI script which the server was required to kill or an extremely congested web server. </DIV>
+	<DIV CLASS="CTooltip" ID="tt500"> Internal error. This error is often caused by a CGI program that had finished abnormally (coredump for example). </DIV>
+	<DIV CLASS="CTooltip" ID="tt501"> Unknown requested action. </DIV>
+	<DIV CLASS="CTooltip" ID="tt502"> Code returned by a HTTP server that works as a proxy or gateway when a real, targeted server doesn't answer successfully to the client's request. </DIV>
+	<DIV CLASS="CTooltip" ID="tt503"> Internal server error. </DIV>
+	<DIV CLASS="CTooltip" ID="tt504"> Gateway Time-out. </DIV>
+	<DIV CLASS="CTooltip" ID="tt505"> HTTP Version Not Supported. </DIV>
+
+<script language="javascript" type="text/javascript">
+function ShowTip(fArg)
+{
+	var tooltipOBJ = (document.getElementById) ? document.getElementById('tt' + fArg) : eval("document.all['tt" + fArg + "']");
+	if (tooltipOBJ != null) {
+		var tooltipLft = (document.body.offsetWidth?document.body.offsetWidth:document.body.style.pixelWidth) - (tooltipOBJ.offsetWidth?tooltipOBJ.offsetWidth:(tooltipOBJ.style.pixelWidth?tooltipOBJ.style.pixelWidth:300)) - 30;
+		if (navigator.appName != 'Netscape') {
+			var tooltipTop = (document.body.scrollTop>=0?document.body.scrollTop+10:event.clientY+10);
+			if ((event.clientX > tooltipLft) && (event.clientY < (tooltipOBJ.scrollHeight?tooltipOBJ.scrollHeight:tooltipOBJ.style.pixelHeight) + 10)) {
+				tooltipTop = (document.body.scrollTop?document.body.scrollTop:document.body.offsetTop) + event.clientY + 20;
+			}
+			tooltipOBJ.style.pixelLeft = tooltipLft; tooltipOBJ.style.pixelTop = tooltipTop;
+		}
+		else {
+			var tooltipTop = 10;
+			tooltipOBJ.style.left = tooltipLft; tooltipOBJ.style.top = tooltipTop;
+		}
+		tooltipOBJ.style.visibility = "visible";
+	}
+}
+function HideTip(fArg)
+{
+	var tooltipOBJ = (document.getElementById) ? document.getElementById('tt' + fArg) : eval("document.all['tt" + fArg + "']");
+	if (tooltipOBJ != null) {
+		tooltipOBJ.style.visibility = "hidden";
+	}
+}
+</script>
+
+<a name="SUMMARY">&nbsp;</a>
+
+
+<table>
+<tr><td width=120 class=AWL style="font-size: 18px arial,verdana,helvetica; font-weight: bold">AWStats
+</td>
+<td class=AWL><a href="http://awstats.sourceforge.net" target="awstatshome"><img src="/awstats-icons/other/awstats_logo1.png" border=0 alt="awstats Official Web Site" title="awstats Official Web Site"></a></td></tr>
+<tr><td class=AWL colspan=2>Free realtime logfile analyzer for advanced web statistics</td></tr>
+</table>
+<a name="MENU">&nbsp;</a><br>
+<table>
+<tr><th class=AWL>Statistics of : </th><td class=AWL><font style="font-size: 14px;">goo.centreweb.net</font></td></tr>
+<tr><th class=AWL valign=top>Last Update :</th><td class=AWL><font style="font-size: 14px;">01 Mar 2013 - 00:11</font></td></tr>
+</table>
+<br>
+<a name="HOSTSLIST">&nbsp;</a><BR>
+<div class="tablecontainer">
+<TABLE CLASS="TABLEFRAME" BORDER=0 CELLPADDING=2 CELLSPACING=0 WIDTH="100%">
+<TR><TD class="TABLETITLEFULL" width="70%" onmouseover="ShowTip(19);" onmouseout="HideTip(19);">Last visit </TD><TD class="TABLETITLEBLANK">&nbsp;</TD></TR>
+<TR><TD colspan=2><TABLE CLASS="TABLEDATA" BORDER=1 BORDERCOLOR="#ECECEC" CELLPADDING=2 CELLSPACING=0 WIDTH="100%"><TR bgcolor="#ECECEC"><TH>Hosts : 89 Known, 41 Unknown (unresolved ip) - 47 Unique visitors</TH><TH bgcolor="#4477DD" width=80>Pages</TH><TH bgcolor="#66F0FF" width=80>Hits</TH><TH bgcolor="#339944" width=80>Bytes</TH><TH width=120>Last visit</TH></TR>
+<tr><td CLASS=AWL>180.76.5.7</td><TD>1</TD><TD>1</TD><TD>3.89 KB</TD><td>28 Feb 2013 - 14:38</td></tr>
+<tr><td CLASS=AWL>180.76.5.20</td><TD>1</TD><TD>1</TD><TD>4.29 KB</TD><td>28 Feb 2013 - 07:37</td></tr>
+<tr><td CLASS=AWL>208.115.113.90</td><TD>7</TD><TD>7</TD><TD>32.27 KB</TD><td>27 Feb 2013 - 03:59</td></tr>
+<tr><td CLASS=AWL>180.76.5.142</td><TD>2</TD><TD>2</TD><TD>7.78 KB</TD><td>26 Feb 2013 - 22:33</td></tr>
+<tr><td CLASS=AWL>180.76.5.172</td><TD>1</TD><TD>1</TD><TD>0 Bytes</TD><td>26 Feb 2013 - 06:48</td></tr>
+<tr><td CLASS=AWL>msnbot-157-55-35-32.search.msn.com</td><TD>1</TD><TD>1</TD><TD>393 Bytes</TD><td>25 Feb 2013 - 14:49</td></tr>
+<tr><td CLASS=AWL>91.231.40.52</td><TD>1</TD><TD>1</TD><TD>3.89 KB</TD><td>25 Feb 2013 - 10:45</td></tr>
+<tr><td CLASS=AWL>180.76.5.67</td><TD>1</TD><TD>1</TD><TD>3.89 KB</TD><td>24 Feb 2013 - 19:21</td></tr>
+<tr><td CLASS=AWL>91.231.40.53</td><TD>5</TD><TD>5</TD><TD>18.11 KB</TD><td>24 Feb 2013 - 07:56</td></tr>
+<tr><td CLASS=AWL>180.76.5.11</td><TD>1</TD><TD>1</TD><TD>3.89 KB</TD><td>22 Feb 2013 - 19:12</td></tr>
+<tr><td CLASS=AWL>msnbot-157-55-35-113.search.msn.com</td><TD>1</TD><TD>1</TD><TD>393 Bytes</TD><td>20 Feb 2013 - 02:33</td></tr>
+<tr><td CLASS=AWL>msnbot-157-55-33-253.search.msn.com</td><TD>1</TD><TD>1</TD><TD>239 Bytes</TD><td>20 Feb 2013 - 02:18</td></tr>
+<tr><td CLASS=AWL>msnbot-65-55-217-233.search.msn.com</td><TD>1</TD><TD>2</TD><TD>203.80 KB</TD><td>18 Feb 2013 - 22:16</td></tr>
+<tr><td CLASS=AWL>180.76.5.171</td><TD>2</TD><TD>2</TD><TD>7.78 KB</TD><td>18 Feb 2013 - 19:19</td></tr>
+<tr><td CLASS=AWL>41.206.15.18.vgccl.net</td><TD>7</TD><TD>14</TD><TD>1.27 MB</TD><td>18 Feb 2013 - 16:10</td></tr>
+<tr><td CLASS=AWL>208-115-111-74-reverse.wowrack.com</td><TD>3</TD><TD>3</TD><TD>5.13 KB</TD><td>18 Feb 2013 - 13:42</td></tr>
+<tr><td CLASS=AWL>50-57-68-10.static.cloud-ips.com</td><TD>1</TD><TD>1</TD><TD>332 Bytes</TD><td>18 Feb 2013 - 09:08</td></tr>
+<tr><td CLASS=AWL>ortons-proxy.peterboroughschools.org.uk</td><TD>1</TD><TD>2</TD><TD>203.80 KB</TD><td>18 Feb 2013 - 09:08</td></tr>
+<tr><td CLASS=AWL>static.104.113.9.5.clients.your-server.de</td><TD>3</TD><TD>3</TD><TD>10.33 KB</TD><td>18 Feb 2013 - 05:39</td></tr>
+<tr><td CLASS=AWL>msnbot-157-56-93-187.search.msn.com</td><TD>1</TD><TD>1</TD><TD>0 Bytes</TD><td>18 Feb 2013 - 02:33</td></tr>
+<tr><td CLASS=AWL>msnbot-131-253-24-138.search.msn.com</td><TD>1</TD><TD>1</TD><TD>332 Bytes</TD><td>17 Feb 2013 - 22:28</td></tr>
+<tr><td CLASS=AWL>180.76.6.231</td><TD>1</TD><TD>1</TD><TD>3.89 KB</TD><td>16 Feb 2013 - 16:28</td></tr>
+<tr><td CLASS=AWL>180.76.6.17</td><TD>1</TD><TD>1</TD><TD>0 Bytes</TD><td>16 Feb 2013 - 04:25</td></tr>
+<tr><td CLASS=AWL>msnbot-65-55-24-236.search.msn.com</td><TD>1</TD><TD>1</TD><TD>0 Bytes</TD><td>15 Feb 2013 - 21:25</td></tr>
+<tr><td CLASS=AWL>217.23.231.71</td><TD>1</TD><TD>2</TD><TD>203.80 KB</TD><td>15 Feb 2013 - 06:15</td></tr>
+<tr><td CLASS=AWL>202.46.56.46</td><TD>1</TD><TD>1</TD><TD>3.89 KB</TD><td>15 Feb 2013 - 00:11</td></tr>
+<tr><td CLASS=AWL>119.63.193.196</td><TD>1</TD><TD>1</TD><TD>3.89 KB</TD><td>15 Feb 2013 - 00:01</td></tr>
+<tr><td CLASS=AWL>187-14-162-130.user.veloxzone.com.br</td><TD>1</TD><TD>2</TD><TD>203.80 KB</TD><td>14 Feb 2013 - 18:36</td></tr>
+<tr><td CLASS=AWL>180.76.5.88</td><TD>1</TD><TD>1</TD><TD>3.89 KB</TD><td>14 Feb 2013 - 16:02</td></tr>
+<tr><td CLASS=AWL>spider-100-43-83-144.yandex.com</td><TD>1</TD><TD>3</TD><TD>167.09 KB</TD><td>13 Feb 2013 - 10:49</td></tr>
+<tr><td CLASS=AWL>50-56-58-47.static.cloud-ips.com</td><TD>1</TD><TD>1</TD><TD>3.89 KB</TD><td>13 Feb 2013 - 10:16</td></tr>
+<tr><td CLASS=AWL>66ob.scansafe.net</td><TD>1</TD><TD>2</TD><TD>203.80 KB</TD><td>12 Feb 2013 - 09:26</td></tr>
+<tr><td CLASS=AWL>197.243.230.100</td><TD>1</TD><TD>2</TD><TD>203.80 KB</TD><td>12 Feb 2013 - 07:40</td></tr>
+<tr><td CLASS=AWL>msnbot-157-56-229-87.search.msn.com</td><TD>1</TD><TD>1</TD><TD>3.89 KB</TD><td>10 Feb 2013 - 20:22</td></tr>
+<tr><td CLASS=AWL>spider-100-43-83-159.yandex.com</td><TD>5</TD><TD>5</TD><TD>19.44 KB</TD><td>10 Feb 2013 - 14:38</td></tr>
+<tr><td CLASS=AWL>180.76.5.189</td><TD>3</TD><TD>3</TD><TD>11.66 KB</TD><td>10 Feb 2013 - 14:12</td></tr>
+<tr><td CLASS=AWL>msnbot-157-55-32-56.search.msn.com</td><TD>1</TD><TD>1</TD><TD>3.89 KB</TD><td>09 Feb 2013 - 16:22</td></tr>
+<tr><td CLASS=AWL>msnbot-65-55-24-243.search.msn.com</td><TD>1</TD><TD>1</TD><TD>3.89 KB</TD><td>09 Feb 2013 - 06:05</td></tr>
+<tr><td CLASS=AWL>baiduspider-180-76-5-158.crawl.baidu.com</td><TD>1</TD><TD>1</TD><TD>3.89 KB</TD><td>08 Feb 2013 - 17:38</td></tr>
+<tr><td CLASS=AWL>c-67-166-227-55.hsd1.ga.comcast.net</td><TD>1</TD><TD>2</TD><TD>203.80 KB</TD><td>07 Feb 2013 - 18:39</td></tr>
+<tr><td CLASS=AWL>180.76.5.55</td><TD>1</TD><TD>1</TD><TD>283 Bytes</TD><td>07 Feb 2013 - 16:26</td></tr>
+<tr><td CLASS=AWL>66.249.82.215</td><TD>1</TD><TD>5</TD><TD>42.78 KB</TD><td>06 Feb 2013 - 19:48</td></tr>
+<tr><td CLASS=AWL>baiduspider-180-76-5-163.crawl.baidu.com</td><TD>1</TD><TD>1</TD><TD>261 Bytes</TD><td>05 Feb 2013 - 13:08</td></tr>
+<tr><td CLASS=AWL>180.76.5.183</td><TD>1</TD><TD>1</TD><TD>3.89 KB</TD><td>04 Feb 2013 - 15:31</td></tr>
+<tr><td CLASS=AWL>180.76.5.66</td><TD>1</TD><TD>1</TD><TD>795 Bytes</TD><td>01 Feb 2013 - 14:18</td></tr>
+<tr><td CLASS=AWL>66.249.85.122</td><TD>1</TD><TD>2</TD><TD>203.80 KB</TD><td>01 Feb 2013 - 13:18</td></tr>
+<tr><td CLASS=AWL>180.76.5.113</td><TD>1</TD><TD>1</TD><TD>3.89 KB</TD><td>01 Feb 2013 - 01:49</td></tr>
+<tr><td CLASS=AWL>176.45.84.137</td><TD>&nbsp;</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>utmb-129-109-12-140.utmb.edu</td><TD>&nbsp;</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>c-68-38-110-103.hsd1.pa.comcast.net</td><TD>&nbsp;</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>168.10.26.106</td><TD>&nbsp;</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>erlanger.kyschools.us</td><TD>&nbsp;</TD><TD>1</TD><TD>12.60 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>rrcs-208-105-73-66.nyc.biz.rr.com</td><TD>&nbsp;</TD><TD>2</TD><TD>26.33 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>cpe-75-82-199-135.socal.res.rr.com</td><TD>&nbsp;</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>31.106.90.163</td><TD>&nbsp;</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>cpe-76-95-87-122.socal.res.rr.com</td><TD>&nbsp;</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>ip68-111-94-246.oc.oc.cox.net</td><TD>&nbsp;</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>152.26.63.2</td><TD>&nbsp;</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>37.123.79.2</td><TD>&nbsp;</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>c-174-51-172-21.hsd1.co.comcast.net</td><TD>&nbsp;</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>ool-44c11d53.dyn.optonline.net</td><TD>&nbsp;</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>69-92-206-204.cpe.cableone.net</td><TD>&nbsp;</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>pool-173-77-117-146.nycmny.east.verizon.net</td><TD>&nbsp;</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>108-94-144-221.lightspeed.nworla.sbcglobal.net</td><TD>&nbsp;</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>50-90-252-58.res.bhn.net</td><TD>&nbsp;</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>wsip-98-188-150-2.sd.sd.cox.net</td><TD>&nbsp;</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>65-79-218-194.ptsi.net</td><TD>&nbsp;</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>msnbot-199-30-20-113.search.msn.com</td><TD>&nbsp;</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>95.211.21.68</td><TD>&nbsp;</TD><TD>1</TD><TD>0 Bytes</TD><td>-</td></tr>
+<tr><td CLASS=AWL>bba118299.alshamil.net.ae</td><TD>&nbsp;</TD><TD>1</TD><TD>12.60 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>bcproxy1.milwaukee.k12.wi.us</td><TD>&nbsp;</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>host-2-96-237-215.as13285.net</td><TD>&nbsp;</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>dhcp-212-50.monroe.lane.edu</td><TD>&nbsp;</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>212.28.244.28</td><TD>&nbsp;</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>5ad34806.bb.sky.com</td><TD>&nbsp;</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>baiduspider-220-181-108-106.crawl.baidu.com</td><TD>&nbsp;</TD><TD>1</TD><TD>8.44 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>168.184.14.10</td><TD>&nbsp;</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>c-71-199-81-174.hsd1.fl.comcast.net</td><TD>&nbsp;</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>pool-96-236-213-148.pitbpa.fios.verizon.net</td><TD>&nbsp;</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>mwg10.lausd.net</td><TD>&nbsp;</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>173-17-121-236.client.mchsi.com</td><TD>&nbsp;</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>pool-71-162-226-160.phlapa.east.verizon.net</td><TD>&nbsp;</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>205.235.52.27</td><TD>&nbsp;</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>baiduspider-220-181-108-94.crawl.baidu.com</td><TD>&nbsp;</TD><TD>1</TD><TD>12.60 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>97-88-145-245.dhcp.mrqt.mi.charter.com</td><TD>&nbsp;</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>host86-143-68-32.range86-143.btcentralplus.com</td><TD>&nbsp;</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>212.219.240.75</td><TD>&nbsp;</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>pool-100-2-90-159.nycmny.fios.verizon.net</td><TD>&nbsp;</TD><TD>2</TD><TD>406.95 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>203.sub-70-199-87.myvzw.com</td><TD>&nbsp;</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>c-76-19-55-60.hsd1.nh.comcast.net</td><TD>&nbsp;</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>196.201.35.46</td><TD>&nbsp;</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>host-92-22-240-63.as13285.net</td><TD>&nbsp;</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>204.38.89.214</td><TD>&nbsp;</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>76-224-160-116.lightspeed.cntmoh.sbcglobal.net</td><TD>&nbsp;</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>71-81-127-9.dhcp.spbg.sc.charter.com</td><TD>&nbsp;</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>c-67-176-156-232.hsd1.il.comcast.net</td><TD>&nbsp;</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>pool-173-71-68-41.cmdnnj.fios.verizon.net</td><TD>&nbsp;</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>74-93-242-93-isp-in.hfc.comcastbusiness.net</td><TD>&nbsp;</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>host-2-96-34-96.as13285.net</td><TD>&nbsp;</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>cpe-76-173-255-118.socal.res.rr.com</td><TD>&nbsp;</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>75.10.235.141</td><TD>&nbsp;</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>pool-72-68-88-51.nwrknj.east.verizon.net</td><TD>&nbsp;</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>host86-141-179-71.range86-141.btcentralplus.com</td><TD>&nbsp;</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>spider9.mail.ru</td><TD>&nbsp;</TD><TD>18</TD><TD>402.35 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>ool-44c5f96e.dyn.optonline.net</td><TD>&nbsp;</TD><TD>1</TD><TD>12.60 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>216.56.35.3</td><TD>&nbsp;</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>74-128-97-140.dhcp.insightbb.com</td><TD>&nbsp;</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>baiduspider-123-125-71-14.crawl.baidu.com</td><TD>&nbsp;</TD><TD>1</TD><TD>8.44 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>adsl-184-47-170-83.asm.bellsouth.net</td><TD>&nbsp;</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>5e060c4f.bb.sky.com</td><TD>&nbsp;</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>vc-cpt-105-251-251-195.umts.vodacom.co.za</td><TD>&nbsp;</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>ip70-170-93-20.lv.lv.cox.net</td><TD>&nbsp;</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>ip98-162-229-115.ok.ok.cox.net</td><TD>&nbsp;</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>crow.ufs.ac.za</td><TD>&nbsp;</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>pool-96-239-77-159.nycmny.east.verizon.net</td><TD>&nbsp;</TD><TD>2</TD><TD>211.92 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>cpc22-stok16-2-0-cust57.1-4.cable.virginmedia.com</td><TD>&nbsp;</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>msnbot-199-30-16-43.search.msn.com</td><TD>&nbsp;</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>img-spider-199-36-240-17.yandex.com</td><TD>&nbsp;</TD><TD>2</TD><TD>129.22 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>155.42.175.197</td><TD>&nbsp;</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>94.197.127.135.threembb.co.uk</td><TD>&nbsp;</TD><TD>1</TD><TD>8.44 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>mccreary.kyschools.us</td><TD>&nbsp;</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>ycar12.mobile.bf1.yahoo.com</td><TD>&nbsp;</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>150.176.249.100</td><TD>&nbsp;</TD><TD>2</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>baiduspider-220-181-108-184.crawl.baidu.com</td><TD>&nbsp;</TD><TD>1</TD><TD>12.60 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>c16-244.blackberry.net</td><TD>&nbsp;</TD><TD>2</TD><TD>406.95 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>64.184.19.157</td><TD>&nbsp;</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>50-201-226-2-static.hfc.comcastbusiness.net</td><TD>&nbsp;</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>mad2336d0.tmodns.net</td><TD>&nbsp;</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>c16-236.blackberry.net</td><TD>&nbsp;</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>iskon6300.duo.carnet.hr</td><TD>&nbsp;</TD><TD>1</TD><TD>7.79 KB</TD><td>-</td></tr>
+</TABLE></TD></TR></TABLE></div>
+
+<br><br><br>
+<FONT COLOR="#000000"><b>Advanced Web Statistics 5.0 (build 1.345)</b> - <a href="http://awstats.sourceforge.net" target="awstatshome">Created by awstats</a></font><br>
+<br>
+
+
+</body>
+</html>

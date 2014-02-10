@@ -1,0 +1,246 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang='en'>
+<head>
+<meta http-equiv="description" content="Awstats - Advanced Web Statistics for goo.centreweb.net">
+<meta http-equiv="keywords" content="goo.centreweb.net, free, advanced, realtime, web, server, logfile, log, analyzer, analysis, statistics, stats, perl, analyse, performance, hits, visits">
+<meta name="robots" content="index,follow">
+<title>Statistics of goo.centreweb.net</title>
+<STYLE TYPE="text/css">
+<!--
+BODY { font: 12px arial, verdana, helvetica, sans-serif; background-color: #FFFFFF; }
+TH { font: 12px arial, verdana, helvetica, sans-serif; text-align:center; color: #000000; }
+TH.AWL { font-size: 14px; font-weight: bold; }
+TD { font: 12px arial, verdana, helvetica, sans-serif; text-align:center; color: #000000; }
+.AWL { font: 12px arial, verdana, helvetica, sans-serif; text-align:left; color: #000000; }
+B { font-weight: bold; }
+A { font: 12px arial, verdana, helvetica, sans-serif; }
+A:link    { color: #0011BB; text-decoration: none; }
+A:visited { color: #0011BB; text-decoration: none; }
+A:hover   { color: #605040; text-decoration: underline; }
+DIV { font: 12px arial,verdana,helvetica; text-align:justify; }
+.TABLEBORDER { background-color: #ECECEC; }
+.TABLEFRAME { background-color: #CCCCDD; padding: 2px 2px 2px 2px; margin-top: 0 }
+.TABLEDATA { background-color: #FFFFFF; }
+.TABLETITLEFULL  { font: 14px verdana, arial, helvetica, sans-serif; font-weight: bold; background-color: #CCCCDD; text-align: center; margin-bottom: 0; padding: 2px; }
+.TABLETITLEBLANK { font: 14px verdana, arial, helvetica, sans-serif; background-color: #FFFFFF; }
+.CFormFields { font: 14px verdana, arial, helvetica; }
+.CTooltip { position:absolute; top:0px; left:0px; z-index:2; width:280; visibility:hidden; font: 8pt MS Comic Sans,arial,sans-serif; background-color: #FFFFE6; padding: 8px; border: 1px solid black; }
+.tablecontainer  { width: 100% }
+@media projection {
+.tablecontainer { page-break-before: always; }
+}
+//-->
+</STYLE>
+</head>
+
+<body>
+	<DIV CLASS="CTooltip" ID="tt1">
+	A new visits is defined as each new <b>incoming visitor</b> (viewing or browsing a page) who was not connected to your site during last <b>60 mn</b>.
+	</DIV>
+	<DIV CLASS="CTooltip" ID="tt2">
+	Number of client hosts (<b>IP address</b>) who came to visit the site (and who viewed at least one <b>page</b>).<br>
+	This data refers to the number of <b>different physical persons</b> who had reached the site in any one day.
+	</DIV>
+	<DIV CLASS="CTooltip" ID="tt3">
+	Number of times a <b>page</b> of the site is <b>viewed</b> (Sum for all visitors for all visits).<br>
+	This piece of data differs from "hits" in that it counts only HTML pages as oppose to images and other files.
+	</DIV>
+	<DIV CLASS="CTooltip" ID="tt4">
+	Number of times a <b>page, image, file</b> of the site is <b>viewed</b> or <b>downloaded</b> by someone.<br>
+	This piece of data is provided as a reference only, since the number of "pages" viewed is often prefered for marketing purposes.
+	</DIV>
+	<DIV CLASS="CTooltip" ID="tt5">
+	This piece of information refers to the amount of data downloaded by all <b>pages</b>, <b>images</b> and <b>files</b> within your site.<br>
+	Units are in KB, MB or GB (KiloBytes, MegaBytes or GigaBytes)
+	</DIV>
+	<DIV CLASS="CTooltip" ID="tt13">
+	Awstats recognizes each access to your site after a <b>search</b> from the <b>73 most popular Internet Search Engines and Directories</b> (such as Yahoo, Altavista, Lycos, Google, Voila, etc...).
+	</DIV>
+	<DIV CLASS="CTooltip" ID="tt14">
+	List of all <b>external pages</b> which were used to link (and enter) to your site (Only the <b>25</b> most often used external pages are shown).
+	Links used by the results of the search engines are excluded here because they have already been included on the previous line within this table.
+	</DIV>
+	<DIV CLASS="CTooltip" ID="tt15">
+	This table shows the list of the most frequently <b>keywords</b> utilized to find your site from Internet Search Engines and Directories.
+	(Keywords from the <b>73</b> most popular Search Engines and Directories are recognized by Awstats, such as Yahoo, Altavista, Lycos, Google, Voila, etc...).
+	</DIV>
+	<DIV CLASS="CTooltip" ID="tt16">
+	Robots (sometimes refer to Spiders) are <b>automatic computer visitors</b> used by many search engines that scan your web site to index it and rank it, collect statistics on Internet Web sites and/or see if your site is still online.<br>
+	Awstats is able to recognize up to <b>298</b> robots.
+	</DIV>
+	<DIV CLASS="CTooltip" ID="tt17">
+	All time related statistics are based on server time.<br>
+	</DIV>
+	<DIV CLASS="CTooltip" ID="tt18">
+	Here, reported data are: <b>average values</b> (calculated from all data between the first and last visit)
+	</DIV>
+	<DIV CLASS="CTooltip" ID="tt19">
+	Here, reported data are: <b>cumulative sums</b> (calculated from all data between the first and last visit)
+	</DIV>
+
+	<DIV CLASS="CTooltip" ID="tt201"> No description for this error. </DIV>
+	<DIV CLASS="CTooltip" ID="tt202"> Request was understood by server but will be processed later. </DIV>
+	<DIV CLASS="CTooltip" ID="tt204"> Server has processed the request but there is no document to send. </DIV>
+	<DIV CLASS="CTooltip" ID="tt206"> Partial content. </DIV>
+	<DIV CLASS="CTooltip" ID="tt301"> Requested document was moved and is now at another address given in answer. </DIV>
+	<DIV CLASS="CTooltip" ID="tt302"> No description for this error. </DIV>
+	<DIV CLASS="CTooltip" ID="tt400"> Syntax error, server didn't understand request. </DIV>
+	<DIV CLASS="CTooltip" ID="tt401"> Tried to reach an <b>URL where a login/password pair was required</b>.<br>A high number within this item could mean that someone (such as a hacker) is attempting to crack, or enter into your site (hoping to enter a secured area by trying different login/password pairs, for instance). </DIV>
+	<DIV CLASS="CTooltip" ID="tt403"> Tried to reach an <b>URL not configured to be reachable, even with an login/password pair</b> (for example, an URL within a directory not defined as "browsable".). </DIV>
+	<DIV CLASS="CTooltip" ID="tt404"> Tried to reach a <b>non existing URL</b>. This error often means that there is an invalid link somewhere in your site or that a visitor mistyped a certain URL. </DIV>
+	<DIV CLASS="CTooltip" ID="tt408"> Server has taken <b>too much time</b> to respond to a request. This error frequently involves either a slow CGI script which the server was required to kill or an extremely congested web server. </DIV>
+	<DIV CLASS="CTooltip" ID="tt500"> Internal error. This error is often caused by a CGI program that had finished abnormally (coredump for example). </DIV>
+	<DIV CLASS="CTooltip" ID="tt501"> Unknown requested action. </DIV>
+	<DIV CLASS="CTooltip" ID="tt502"> Code returned by a HTTP server that works as a proxy or gateway when a real, targeted server doesn't answer successfully to the client's request. </DIV>
+	<DIV CLASS="CTooltip" ID="tt503"> Internal server error. </DIV>
+	<DIV CLASS="CTooltip" ID="tt504"> Gateway Time-out. </DIV>
+	<DIV CLASS="CTooltip" ID="tt505"> HTTP Version Not Supported. </DIV>
+
+<script language="javascript" type="text/javascript">
+function ShowTip(fArg)
+{
+	var tooltipOBJ = (document.getElementById) ? document.getElementById('tt' + fArg) : eval("document.all['tt" + fArg + "']");
+	if (tooltipOBJ != null) {
+		var tooltipLft = (document.body.offsetWidth?document.body.offsetWidth:document.body.style.pixelWidth) - (tooltipOBJ.offsetWidth?tooltipOBJ.offsetWidth:(tooltipOBJ.style.pixelWidth?tooltipOBJ.style.pixelWidth:300)) - 30;
+		if (navigator.appName != 'Netscape') {
+			var tooltipTop = (document.body.scrollTop>=0?document.body.scrollTop+10:event.clientY+10);
+			if ((event.clientX > tooltipLft) && (event.clientY < (tooltipOBJ.scrollHeight?tooltipOBJ.scrollHeight:tooltipOBJ.style.pixelHeight) + 10)) {
+				tooltipTop = (document.body.scrollTop?document.body.scrollTop:document.body.offsetTop) + event.clientY + 20;
+			}
+			tooltipOBJ.style.pixelLeft = tooltipLft; tooltipOBJ.style.pixelTop = tooltipTop;
+		}
+		else {
+			var tooltipTop = 10;
+			tooltipOBJ.style.left = tooltipLft; tooltipOBJ.style.top = tooltipTop;
+		}
+		tooltipOBJ.style.visibility = "visible";
+	}
+}
+function HideTip(fArg)
+{
+	var tooltipOBJ = (document.getElementById) ? document.getElementById('tt' + fArg) : eval("document.all['tt" + fArg + "']");
+	if (tooltipOBJ != null) {
+		tooltipOBJ.style.visibility = "hidden";
+	}
+}
+</script>
+
+<a name="SUMMARY">&nbsp;</a>
+
+
+<table>
+<tr><td width=120 class=AWL style="font-size: 18px arial,verdana,helvetica; font-weight: bold">AWStats
+</td>
+<td class=AWL><a href="http://awstats.sourceforge.net" target="awstatshome"><img src="/awstats-icons/other/awstats_logo1.png" border=0 alt="awstats Official Web Site" title="awstats Official Web Site"></a></td></tr>
+<tr><td class=AWL colspan=2>Free realtime logfile analyzer for advanced web statistics</td></tr>
+</table>
+<a name="MENU">&nbsp;</a><br>
+<table>
+<tr><th class=AWL>Statistics of : </th><td class=AWL><font style="font-size: 14px;">goo.centreweb.net</font></td></tr>
+<tr><th class=AWL valign=top>Last Update :</th><td class=AWL><font style="font-size: 14px;">01 Aug 2013 - 00:10</font></td></tr>
+</table>
+<br>
+<a name="UNKOWNIP">&nbsp;</a><BR>
+<div class="tablecontainer">
+<TABLE CLASS="TABLEFRAME" BORDER=0 CELLPADDING=2 CELLSPACING=0 WIDTH="100%">
+<TR><TD class="TABLETITLEFULL" width="70%" onmouseover="ShowTip(19);" onmouseout="HideTip(19);">Unresolved IP Address </TD><TD class="TABLETITLEBLANK">&nbsp;</TD></TR>
+<TR><TD colspan=2><TABLE CLASS="TABLEDATA" BORDER=1 BORDERCOLOR="#ECECEC" CELLPADDING=2 CELLSPACING=0 WIDTH="100%"><TR bgcolor="#ECECEC"><TH>88 Unknown (unresolved ip)</TH><TH bgcolor="#4477DD" width=80>Pages</TH><TH bgcolor="#66F0FF" width=80>Hits</TH><TH bgcolor="#339944" width=80>Bytes</TH><TH width=120>Last visit</TH></TR>
+<tr><td CLASS=AWL>83.149.126.98</td><TD>9</TD><TD>9</TD><TD>84.63 KB</TD><td>26 Jul 2013 - 23:45</td></tr>
+<tr><td CLASS=AWL>208.115.113.90</td><TD>6</TD><TD>6</TD><TD>37.10 KB</TD><td>30 Jul 2013 - 21:04</td></tr>
+<tr><td CLASS=AWL>173.208.165.90</td><TD>5</TD><TD>5</TD><TD>9.69 KB</TD><td>20 Jul 2013 - 11:37</td></tr>
+<tr><td CLASS=AWL>173.208.180.234</td><TD>4</TD><TD>4</TD><TD>9.82 KB</TD><td>27 Jul 2013 - 10:32</td></tr>
+<tr><td CLASS=AWL>180.76.5.192</td><TD>3</TD><TD>3</TD><TD>0 Bytes</TD><td>26 Jul 2013 - 08:55</td></tr>
+<tr><td CLASS=AWL>69.197.129.42</td><TD>2</TD><TD>2</TD><TD>7.56 KB</TD><td>23 Jul 2013 - 02:19</td></tr>
+<tr><td CLASS=AWL>180.76.5.52</td><TD>2</TD><TD>2</TD><TD>0 Bytes</TD><td>23 Jul 2013 - 21:40</td></tr>
+<tr><td CLASS=AWL>180.76.5.146</td><TD>2</TD><TD>2</TD><TD>9.13 KB</TD><td>30 Jul 2013 - 08:18</td></tr>
+<tr><td CLASS=AWL>180.76.5.186</td><TD>2</TD><TD>2</TD><TD>2.78 KB</TD><td>30 Jul 2013 - 02:19</td></tr>
+<tr><td CLASS=AWL>180.76.5.24</td><TD>2</TD><TD>2</TD><TD>0 Bytes</TD><td>11 Jul 2013 - 09:53</td></tr>
+<tr><td CLASS=AWL>124.238.215.151</td><TD>2</TD><TD>2</TD><TD>2.53 KB</TD><td>23 Jul 2013 - 23:45</td></tr>
+<tr><td CLASS=AWL>180.76.5.11</td><TD>2</TD><TD>2</TD><TD>795 Bytes</TD><td>24 Jul 2013 - 09:36</td></tr>
+<tr><td CLASS=AWL>180.76.5.157</td><TD>1</TD><TD>1</TD><TD>8.16 KB</TD><td>19 Jul 2013 - 09:58</td></tr>
+<tr><td CLASS=AWL>180.76.5.92</td><TD>1</TD><TD>1</TD><TD>332 Bytes</TD><td>14 Jul 2013 - 10:33</td></tr>
+<tr><td CLASS=AWL>180.76.6.16</td><TD>1</TD><TD>1</TD><TD>0 Bytes</TD><td>12 Jul 2013 - 12:13</td></tr>
+<tr><td CLASS=AWL>180.76.5.195</td><TD>1</TD><TD>1</TD><TD>239 Bytes</TD><td>17 Jul 2013 - 09:17</td></tr>
+<tr><td CLASS=AWL>180.76.5.94</td><TD>1</TD><TD>1</TD><TD>239 Bytes</TD><td>15 Jul 2013 - 11:50</td></tr>
+<tr><td CLASS=AWL>180.76.5.197</td><TD>1</TD><TD>1</TD><TD>402 Bytes</TD><td>17 Jul 2013 - 13:36</td></tr>
+<tr><td CLASS=AWL>193.62.43.121</td><TD>1</TD><TD>2</TD><TD>203.80 KB</TD><td>10 Jul 2013 - 08:30</td></tr>
+<tr><td CLASS=AWL>202.46.61.31</td><TD>1</TD><TD>1</TD><TD>1.26 KB</TD><td>06 Jul 2013 - 16:58</td></tr>
+<tr><td CLASS=AWL>180.76.5.96</td><TD>1</TD><TD>1</TD><TD>0 Bytes</TD><td>21 Jul 2013 - 14:00</td></tr>
+<tr><td CLASS=AWL>180.76.5.101</td><TD>1</TD><TD>1</TD><TD>0 Bytes</TD><td>31 Jul 2013 - 14:17</td></tr>
+<tr><td CLASS=AWL>180.76.5.21</td><TD>1</TD><TD>1</TD><TD>0 Bytes</TD><td>02 Jul 2013 - 12:28</td></tr>
+<tr><td CLASS=AWL>180.76.5.145</td><TD>1</TD><TD>1</TD><TD>0 Bytes</TD><td>12 Jul 2013 - 00:15</td></tr>
+<tr><td CLASS=AWL>180.76.5.23</td><TD>1</TD><TD>1</TD><TD>0 Bytes</TD><td>04 Jul 2013 - 13:10</td></tr>
+<tr><td CLASS=AWL>180.76.6.211</td><TD>1</TD><TD>1</TD><TD>4.29 KB</TD><td>31 Jul 2013 - 08:08</td></tr>
+<tr><td CLASS=AWL>180.76.6.213</td><TD>1</TD><TD>1</TD><TD>0 Bytes</TD><td>03 Jul 2013 - 22:47</td></tr>
+<tr><td CLASS=AWL>180.76.5.147</td><TD>1</TD><TD>1</TD><TD>1.26 KB</TD><td>20 Jul 2013 - 03:42</td></tr>
+<tr><td CLASS=AWL>180.76.5.148</td><TD>1</TD><TD>1</TD><TD>0 Bytes</TD><td>23 Jul 2013 - 12:07</td></tr>
+<tr><td CLASS=AWL>180.76.5.166</td><TD>1</TD><TD>1</TD><TD>0 Bytes</TD><td>15 Jul 2013 - 22:08</td></tr>
+<tr><td CLASS=AWL>171.33.194.222</td><TD>1</TD><TD>8</TD><TD>347.12 KB</TD><td>03 Jul 2013 - 06:21</td></tr>
+<tr><td CLASS=AWL>69.197.128.114</td><TD>1</TD><TD>1</TD><TD>1.86 KB</TD><td>20 Jul 2013 - 01:22</td></tr>
+<tr><td CLASS=AWL>180.76.5.183</td><TD>1</TD><TD>1</TD><TD>0 Bytes</TD><td>27 Jul 2013 - 13:48</td></tr>
+<tr><td CLASS=AWL>180.76.5.61</td><TD>1</TD><TD>1</TD><TD>0 Bytes</TD><td>29 Jul 2013 - 11:08</td></tr>
+<tr><td CLASS=AWL>119.63.193.131</td><TD>1</TD><TD>1</TD><TD>1.26 KB</TD><td>06 Jul 2013 - 16:59</td></tr>
+<tr><td CLASS=AWL>180.76.5.66</td><TD>1</TD><TD>1</TD><TD>0 Bytes</TD><td>09 Jul 2013 - 23:23</td></tr>
+<tr><td CLASS=AWL>119.63.193.195</td><TD>1</TD><TD>1</TD><TD>1.26 KB</TD><td>09 Jul 2013 - 09:02</td></tr>
+<tr><td CLASS=AWL>180.76.5.10</td><TD>1</TD><TD>1</TD><TD>1.26 KB</TD><td>20 Jul 2013 - 03:42</td></tr>
+<tr><td CLASS=AWL>180.76.5.170</td><TD>1</TD><TD>1</TD><TD>0 Bytes</TD><td>25 Jul 2013 - 20:56</td></tr>
+<tr><td CLASS=AWL>180.76.5.15</td><TD>1</TD><TD>1</TD><TD>393 Bytes</TD><td>09 Jul 2013 - 08:34</td></tr>
+<tr><td CLASS=AWL>180.76.6.223</td><TD>1</TD><TD>1</TD><TD>1.11 KB</TD><td>10 Jul 2013 - 19:31</td></tr>
+<tr><td CLASS=AWL>180.76.5.171</td><TD>1</TD><TD>1</TD><TD>0 Bytes</TD><td>28 Jul 2013 - 08:56</td></tr>
+<tr><td CLASS=AWL>180.76.6.224</td><TD>1</TD><TD>1</TD><TD>0 Bytes</TD><td>06 Jul 2013 - 10:50</td></tr>
+<tr><td CLASS=AWL>180.76.5.54</td><TD>1</TD><TD>1</TD><TD>0 Bytes</TD><td>08 Jul 2013 - 10:10</td></tr>
+<tr><td CLASS=AWL>180.76.6.35</td><TD>1</TD><TD>1</TD><TD>261 Bytes</TD><td>05 Jul 2013 - 11:06</td></tr>
+<tr><td CLASS=AWL>180.76.5.179</td><TD>1</TD><TD>1</TD><TD>0 Bytes</TD><td>25 Jul 2013 - 09:10</td></tr>
+<tr><td CLASS=AWL>180.76.5.90</td><TD>1</TD><TD>1</TD><TD>0 Bytes</TD><td>22 Jul 2013 - 07:58</td></tr>
+<tr><td CLASS=AWL>180.76.5.59</td><TD>1</TD><TD>1</TD><TD>0 Bytes</TD><td>19 Jul 2013 - 18:08</td></tr>
+<tr><td CLASS=AWL>202.46.57.80</td><TD>1</TD><TD>1</TD><TD>1.26 KB</TD><td>09 Jul 2013 - 09:01</td></tr>
+<tr><td CLASS=AWL>41.72.125.41</td><TD>&nbsp</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>41.191.107.41</td><TD>&nbsp</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>117.200.150.144</td><TD>&nbsp</TD><TD>1</TD><TD>90.34 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>78.40.232.81</td><TD>&nbsp</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>85.154.81.82</td><TD>&nbsp</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>180.76.5.8</td><TD>&nbsp</TD><TD>1</TD><TD>14.26 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>155.139.32.10</td><TD>&nbsp</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>116.202.112.203</td><TD>&nbsp</TD><TD>1</TD><TD>90.34 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>180.76.6.21</td><TD>&nbsp</TD><TD>1</TD><TD>109.79 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>103.248.93.56</td><TD>&nbsp</TD><TD>1</TD><TD>90.34 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>85.62.233.162</td><TD>&nbsp</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>49.14.212.50</td><TD>&nbsp</TD><TD>1</TD><TD>90.34 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>2.29.154.8</td><TD>&nbsp</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>194.80.20.10</td><TD>&nbsp</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>202.89.231.7</td><TD>&nbsp</TD><TD>2</TD><TD>406.95 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>122.151.115.225</td><TD>&nbsp</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>39.48.85.127</td><TD>&nbsp</TD><TD>1</TD><TD>90.34 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>50.122.90.101</td><TD>&nbsp</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>117.212.183.111</td><TD>&nbsp</TD><TD>1</TD><TD>90.34 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>117.201.119.102</td><TD>&nbsp</TD><TD>1</TD><TD>90.34 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>213.55.115.253</td><TD>&nbsp</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>195.116.41.2</td><TD>&nbsp</TD><TD>1</TD><TD>173.99 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>117.221.209.164</td><TD>&nbsp</TD><TD>1</TD><TD>90.34 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>59.95.96.2</td><TD>&nbsp</TD><TD>1</TD><TD>90.34 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>37.208.208.83</td><TD>&nbsp</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>180.76.5.182</td><TD>&nbsp</TD><TD>1</TD><TD>3.72 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>59.92.174.209</td><TD>&nbsp</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>106.199.136.243</td><TD>&nbsp</TD><TD>1</TD><TD>90.34 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>69.158.183.55</td><TD>&nbsp</TD><TD>1</TD><TD>12.60 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>180.76.5.62</td><TD>&nbsp</TD><TD>1</TD><TD>14.26 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>90.205.82.137</td><TD>&nbsp</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>188.51.16.17</td><TD>&nbsp</TD><TD>1</TD><TD>90.34 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>59.94.196.247</td><TD>&nbsp</TD><TD>1</TD><TD>20.49 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>91.231.90.102</td><TD>&nbsp</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>123.238.179.196</td><TD>&nbsp</TD><TD>1</TD><TD>18.83 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>12.23.250.195</td><TD>&nbsp</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>197.67.230.25</td><TD>&nbsp</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>117.204.115.189</td><TD>&nbsp</TD><TD>1</TD><TD>90.34 KB</TD><td>-</td></tr>
+<tr><td CLASS=AWL>122.193.143.39</td><TD>&nbsp</TD><TD>1</TD><TD>203.48 KB</TD><td>-</td></tr>
+<TR><TD CLASS=AWL><font color="#666688">Known</font></TD><TD>106</TD><TD>297</TD><TD>17.90 MB</TD><TD>&nbsp;</TD></TR>
+</TABLE></TD></TR></TABLE></div>
+
+<br><br><br>
+<FONT COLOR="#000000"><b>Advanced Web Statistics 5.0 (build 1.345)</b> - <a href="http://awstats.sourceforge.net" target="awstatshome">Created by awstats</a></font><br>
+<br>
+
+
+</body>
+</html>

@@ -1,0 +1,289 @@
+
+<!DOCTYPE html>
+<html>
+ <head>
+
+<style type="text/css">
+
+p{ /* Makes it so that there only have to be a few paragraph tags <p> */
+padding:20px;
+}
+
+h1{ /* Modifies the title "Biology Exam" */
+padding:15px;
+font-family:Georgia;
+}
+
+
+.button {  /*Start Over Button with specific parameters */
+	-moz-box-shadow:inset 0px 1px 0px 0px #caefab;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #caefab;
+	box-shadow:inset 0px 1px 0px 0px #caefab;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #77d42a), color-stop(1, #5cb811) );
+	background:-moz-linear-gradient( center top, #77d42a 5%, #5cb811 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#77d42a', endColorstr='#5cb811');
+	background-color:#77d42a;
+	-webkit-border-top-left-radius:14px;
+	-moz-border-radius-topleft:14px;
+	border-top-left-radius:14px;
+	-webkit-border-top-right-radius:14px;
+	-moz-border-radius-topright:14px;
+	border-top-right-radius:14px;
+	-webkit-border-bottom-right-radius:14px;
+	-moz-border-radius-bottomright:14px;
+	border-bottom-right-radius:14px;
+	-webkit-border-bottom-left-radius:14px;
+	-moz-border-radius-bottomleft:14px;
+	border-bottom-left-radius:14px;
+	text-indent:0px;
+	border:1px solid #268a16;
+	display:inline-block;
+	color:#306108;
+	font-family:Georgia;
+	font-size:18px;
+	font-weight:bold;
+	font-style:normal;
+	height:43px;
+	line-height:43px;
+	width:131px;
+	text-decoration:none;
+	text-align:center;
+	text-shadow:1px 1px 0px #aade7c;
+}
+.button:hover { /*When hovering over the button, colors change. */
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #5cb811), color-stop(1, #77d42a) );
+	background:-moz-linear-gradient( center top, #5cb811 5%, #77d42a 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#5cb811', endColorstr='#77d42a');
+	background-color:#5cb811;
+}.button:active { /* When button is pressed, pixel density to top portion changes. */
+	position:relative;
+	top:1px;
+}</style>
+
+
+  <title>
+	The Biology Exam
+  </title> <!-- Displayed in the tab of the web browser -->
+  
+  
+ </head>
+ 
+<body bgcolor="1188FF">
+<font color="white">
+ 
+<br>
+
+<center>
+<!--Title at the top of the page: -->
+
+	<h1>
+	The Biology Exam
+	</h1> 
+
+Team: 2045 - 300
+</font>
+<p>
+<img src="picture.jpg" width="40%" height="40%">
+
+<div align="center">
+	<label id="quiz_name_id"></label><br>
+
+	<div id="question_area">
+		<label id="question_number"></label><br>
+		<font color = "white"><font size = 5>
+		<label id="pose" rows='5' cols='40' disabled=true></label><br><br>
+		<div id="radioset">
+		<input type="radio" name="choice" id="ans0" value="a" onclick="DisableControl('btn', false)"><label id="lbl0"></label><br>
+		<input type="radio" name="choice" id="ans1" value="b" onclick="DisableControl('btn', false)"><label id="lbl1"></label><br>
+		<input type="radio" name="choice" id="ans2" value="c" onclick="DisableControl('btn', false)"><label id="lbl2"></label><br>
+		<input type="radio" name="choice" id="ans3" value="d" onclick="DisableControl('btn', false)"><label id="lbl3"></label><br><br>
+		</div>
+		<div id="checkboxes">
+		<input type="checkbox" name="answer" id="chkA" value="a"><br>
+		<input type="checkbox" name="answer" id="chkB" value="b"><br>
+		<input type="checkbox" name="answer" id="chkC" value="c"><br>
+		<input type="checkbox" name="answer" id="chkD" value="d"><br><br>
+		</div>
+		<font color = "white">
+		<label id="result">  </label>
+	</div>
+	<div id="response">
+		<button id='btn' onclick="ChangeState()">Start Quiz</button>
+	</div>
+
+</div>
+</body>
+
+<script language=javascript type="text/javascript">
+{
+	var quiz_name = " ";
+	var questions = [ //questions that will be displayed to the screen
+'What are the two largest groups used in cell classification?',
+'What is cell theory?', 
+'What are the chemical elements that form most of living biological matter?',
+'What is homeostasis?',
+'What is metabolism?',
+'What is the basic unit of cell energy?',
+'What organelle is responsible for producing ATP?',
+'What type of transport requires energy to be used by the cell?',
+'What sugar-producing organelle does not exist in animal cells?',
+'What is a harmful by-product created by oxygen metabolism?',
+
+];
+	var choices = [ //multiple choice answers | seperates choices
+	'Animalia and Plantae|Protista and Bacterium|Eukaryotic and Prokaryotic|None of the Above',
+	'All living things are composed of cells.|Cells are in all physical things.|Animal cells are different than plant cells.|None of the above.',
+	'Oxygen, carbon, hydrogen and nitrogen|Beryllium, manganese, gold, and silver |Carbon and aluminium|Iron',
+	'The ability to use energy.|The ability to radiate energy.|The property of a system to regulate so that internal conditions remain stable and relatively constant.|A creature which walks on two legs.',
+	'The state of an organism when blood pressure is too high.| The specific portion of an enzyme that attaches to the substrate. | The evolution of features to make a species survive. |  The set of physical and chemical processes upon which the life of the cells of a living being depends.',
+	'Glucose|Salt|ATP|Hydrogen',
+	'Both Mitochondrion and Chloroplasts|Nucleus|Vacuole|Ribosome',
+	'Active|Sodium-Potassium|Passive|Mitochondrial',
+	'Lysosome|Cytoskeleton|Golgi Body|Chloroplast',
+	'Uranium|Carbon|Free Radicals|Catalyst',
+	];
+	
+	var answers = [2,0,0,2,3,2,0,0,3,2]; //The number of the correct answer choice, first choice being 0 and last choice being 3
+	var correct = "";
+	
+	var score = 0; //Score which will be modified by variable pointvalues
+	var pointvalues = [10, 5, 1, 0]; //10 points awarded for 1st guess, 5 for 2nd, 1 for 3rd, 0 for guessing completely incorrectly
+	var awardpoint_idx = 0;
+	var correcttext = "";
+	var done = false;
+	
+	var next_question = true; 
+	var q = 0;
+	
+	SetText('quiz_name_id', quiz_name);
+	HideControl('checkboxes','none');
+	HideControl('question_area','none');
+	
+	function SetText(id, txt)
+	{
+		document.all(id).innerHTML = txt; //Writes text to html which can be viewed under the <div> tag above
+	}
+	function HideControl(id, setting)
+	{
+		document.all(id).style.display = setting; 
+	}
+	function DisableControl(id, setting)
+	{
+		document.all(id).disabled = setting;
+	}
+		
+	function ChangeState() {
+		if (done)
+		{
+			HideControl('btn','none');
+			SetText('result','Final Score: ' + score); //Prints Final Score: and then variable score
+			
+		}
+		else if (next_question)
+		{
+	     document.all('question_area').style.display = 'block';
+		 document.all('btn').innerHTML = "Submit"; //Submit button at the bottom of each question
+		 LoadQuestion(q++);
+		 next_question = !next_question;
+		}
+		else
+		{
+		 if (CheckQuestion(q) || awardpoint_idx == 3)
+		 {
+		 // add points
+		 score += pointvalues[awardpoint_idx];
+		 
+		 if (awardpoint_idx == 3)
+		 {
+			SetText('result', 'Wrong Answers. Please Move On.');
+		 
+		 }
+		 document.all('btn').innerHTML = "Next Question"; //Button changes words from "Submit" to "Next Question"
+		 next_question = !next_question;
+		 
+		for (c = 0; c < 4; c++)
+		{
+			DisableControl('ans' + c, true);
+		}
+		 if (q == questions.length)
+		 {
+			done = true;
+			ChangeState();
+		 }
+		 }
+		}
+	}
+	
+	function LoadQuestion(i)
+	{
+		SetText('pose', questions[i]);
+		var possibles = choices[i].split('|');
+		for (c = 0; c < 4; c++)
+		{
+			SetText('lbl' + c, possibles[c]);
+			DisableControl('ans' + c, false);
+			document.all('lbl' + c).style.color = 'white';
+			document.all('lbl' + c).style.fontWeight = 'normal';
+			document.all('ans' + c).checked = false;
+			
+		}
+		DisableControl('btn', true);
+		correct = answers[i];
+		correcttext = possibles[i];
+		awardpoint_idx = 0;
+		if (i == 0)
+		{
+		SetText('result','  ');
+		}
+		else
+		{
+		SetText('result','Score: ' + score);
+		}
+	}
+	
+	function CheckQuestion() {
+		if (document.all('ans'+ correct).checked == true)
+		{
+			SetText('result','Correct!');
+			document.all('lbl' + correct).style.color = '#00FF00';
+			return true;
+		}
+		else
+			for (c = 0; c < 4; c++)
+			{
+				if (document.all('ans' + c).checked == true)
+				{
+					document.all('ans' + c).checked = false;
+					DisableControl('ans' + c, true);
+					document.all('lbl' + c).style.color = 'red';
+				}
+			}
+			SetText('result', 'Incorrect.  Try again.');
+			awardpoint_idx++;
+		};
+
+}
+</script>
+
+
+<br>
+<p>
+<a href="biology-exam.html" class="button">Start Over</a>
+
+</ul>
+</div>
+
+<p>
+<hr>
+<p>
+
+<marquee>
+ <scrolldelay = -50>
+Active Transport, Adaptation, Animalia, Biosphere, Cell, Dependent Variable, Eukarya, Evolution, Excretion, Hypothesis, Natural Selection, Organelle, Producers, Prokaryotic Cell,  Respiration, Species, Virus
+ </marquee>
+
+
+
+</center>
+</body>
+</html>

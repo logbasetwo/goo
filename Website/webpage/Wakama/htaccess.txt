@@ -1,0 +1,7 @@
+AuthUserFile /home/www/goo.centreweb.net/Wakama/.htpasswd
+AuthGroupFile /dev/null
+AuthName "By Invitation Only"
+AuthType Basic
+<Limit GET>
+Require valid-user
+</Limit>

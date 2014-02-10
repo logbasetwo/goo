@@ -1,0 +1,4 @@
+AuthType Basic
+AuthUserFile .htpasswd
+AuthName matthew
+require user matthew

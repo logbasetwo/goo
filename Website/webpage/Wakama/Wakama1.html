@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>
+Welcome to Wakama World!
+</title>
+</head>
+<! http://www.javascriptkit.com/script/script2/simpleimagetrail.shtml >
+<body bgcolor="green">
+<marquee>
+<h1> <font color="blue"><u>Welcome to Wakama World</u></font></h1>
+</marquee>
+<script type="text/javascript">
+
+/*
+Simple Image Trail script- By JavaScriptKit.com
+Visit http://www.javascriptkit.com for this script and more
+This notice must stay intact
+*/
+
+var trailimage=["walkingpenut.GIF", 60, 100] //image path, plus width and height
+var offsetfrommouse=[10,-20] //image x,y offsets from cursor position in pixels. Enter 0,0 for no offset
+var displayduration=0 //duration in seconds image should remain visible. 0 for always.
+
+if (document.getElementById || document.all)
+document.write('<div id="trailimageid" style="position:absolute;visibility:visible;left:0px;top:0px;width:1px;height:1px"><img src="'+trailimage[0]+'" border="0" width="'+trailimage[1]+'px" height="'+trailimage[2]+'px"></div>')
+
+function gettrailobj(){
+if (document.getElementById)
+return document.getElementById("trailimageid").style
+else if (document.all)
+return document.all.trailimagid.style
+}
+
+function truebody(){
+return (!window.opera && document.compatMode && document.compatMode!="BackCompat")? document.documentElement : document.body
+}
+
+function hidetrail(){
+gettrailobj().visibility="hidden"
+document.onmousemove=""
+
+}
+
+function followmouse(e){
+var xcoord=offsetfrommouse[0]
+var ycoord=offsetfrommouse[1]
+if (typeof e != "undefined"){
+xcoord+=e.pageX
+ycoord+=e.pageY
+}
+else if (typeof window.event !="undefined"){
+xcoord+=truebody().scrollLeft+event.clientX
+ycoord+=truebody().scrollTop+event.clientY
+}
+var docwidth=document.all? truebody().scrollLeft+truebody().clientWidth : pageXOffset+window.innerWidth-15
+var docheight=document.all? Math.max(truebody().scrollHeight, truebody().clientHeight) : Math.max(document.body.offsetHeight, window.innerHeight)
+if (xcoord+trailimage[1]+3>docwidth || ycoord+trailimage[2]> docheight)
+gettrailobj().display="none"
+else 
+gettrailobj().display=""
+gettrailobj().left=xcoord+"px"
+gettrailobj().top=ycoord+"px"
+}
+
+document.onmousemove=followmouse
+
+if (displayduration>0)
+setTimeout("hidetrail()", displayduration*1000)
+
+</script>
+
+<p align="left"><font face="arial" size="-2">This free script provided by<br>
+<a href="http://javascriptkit.com">JavaScript Kit</a></font></p>
+<p>
+This lonely pennut is happy to see you. He will follow your mouse where ever it goes.  It will never get sad when it sees you even though it is lonely now it won't be soon.  Help it however you can and report back to me if he finds a good freind.
+<p>
+(I will be making the messege board as soon as I can.)
+<p>
+<img src="goodvecationplanet.bmp">
+(above)good vecation planet.
+<p>
+<img src="badvecationplanet.bmp">
+(above)bad vecation planet.
+<p>
+<img src="peannutplanet.bmp">
+<p>
+(above Peannut Planet)
+<p>
+<p>
+<p>If you would like to see the pictures before the war click, during the war ,or right after the war click <a href="pictures-in-wakama.html">here</a>.
+<p>
+<img src="www2-computers-vs-earthlikebugs.bmp">
+<p>
+</body>
+</html>

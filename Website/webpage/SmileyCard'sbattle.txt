@@ -1,0 +1,14 @@
+<html>
+<head>
+<title>
+SmileyCard's 1st Annual Computer Fight/Game
+</title>
+</head>
+<body bgcolor="blue">
+
+<img src="SmileyCard's1stAnnual.bmp">
+<p>
+<img src="SmileyCard's1stAnnual2.bmp">
+<p>
+</body>
+</html>

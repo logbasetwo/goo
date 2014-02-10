@@ -1,0 +1,610 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang='en'>
+<head>
+<meta http-equiv="description" content="Awstats - Advanced Web Statistics for goo.centreweb.net">
+<meta http-equiv="keywords" content="goo.centreweb.net, free, advanced, realtime, web, server, logfile, log, analyzer, analysis, statistics, stats, perl, analyse, performance, hits, visits">
+<meta name="robots" content="index,follow">
+<title>Statistics of goo.centreweb.net</title>
+<STYLE TYPE="text/css">
+<!--
+BODY { font: 12px arial, verdana, helvetica, sans-serif; background-color: #FFFFFF; }
+TH { font: 12px arial, verdana, helvetica, sans-serif; text-align:center; color: #000000; }
+TH.AWL { font-size: 14px; font-weight: bold; }
+TD { font: 12px arial, verdana, helvetica, sans-serif; text-align:center; color: #000000; }
+.AWL { font: 12px arial, verdana, helvetica, sans-serif; text-align:left; color: #000000; }
+B { font-weight: bold; }
+A { font: 12px arial, verdana, helvetica, sans-serif; }
+A:link    { color: #0011BB; text-decoration: none; }
+A:visited { color: #0011BB; text-decoration: none; }
+A:hover   { color: #605040; text-decoration: underline; }
+DIV { font: 12px arial,verdana,helvetica; text-align:justify; }
+.TABLEBORDER { background-color: #ECECEC; }
+.TABLEFRAME { background-color: #CCCCDD; padding: 2px 2px 2px 2px; margin-top: 0 }
+.TABLEDATA { background-color: #FFFFFF; }
+.TABLETITLEFULL  { font: 14px verdana, arial, helvetica, sans-serif; font-weight: bold; background-color: #CCCCDD; text-align: center; margin-bottom: 0; padding: 2px; }
+.TABLETITLEBLANK { font: 14px verdana, arial, helvetica, sans-serif; background-color: #FFFFFF; }
+.CFormFields { font: 14px verdana, arial, helvetica; }
+.CTooltip { position:absolute; top:0px; left:0px; z-index:2; width:280; visibility:hidden; font: 8pt MS Comic Sans,arial,sans-serif; background-color: #FFFFE6; padding: 8px; border: 1px solid black; }
+.tablecontainer  { width: 100% }
+@media projection {
+.tablecontainer { page-break-before: always; }
+}
+//-->
+</STYLE>
+</head>
+
+<body>
+	<DIV CLASS="CTooltip" ID="tt1">
+	A new visits is defined as each new <b>incoming visitor</b> (viewing or browsing a page) who was not connected to your site during last <b>60 mn</b>.
+	</DIV>
+	<DIV CLASS="CTooltip" ID="tt2">
+	Number of client hosts (<b>IP address</b>) who came to visit the site (and who viewed at least one <b>page</b>).<br>
+	This data refers to the number of <b>different physical persons</b> who had reached the site in any one day.
+	</DIV>
+	<DIV CLASS="CTooltip" ID="tt3">
+	Number of times a <b>page</b> of the site is <b>viewed</b> (Sum for all visitors for all visits).<br>
+	This piece of data differs from "hits" in that it counts only HTML pages as oppose to images and other files.
+	</DIV>
+	<DIV CLASS="CTooltip" ID="tt4">
+	Number of times a <b>page, image, file</b> of the site is <b>viewed</b> or <b>downloaded</b> by someone.<br>
+	This piece of data is provided as a reference only, since the number of "pages" viewed is often prefered for marketing purposes.
+	</DIV>
+	<DIV CLASS="CTooltip" ID="tt5">
+	This piece of information refers to the amount of data downloaded by all <b>pages</b>, <b>images</b> and <b>files</b> within your site.<br>
+	Units are in KB, MB or GB (KiloBytes, MegaBytes or GigaBytes)
+	</DIV>
+	<DIV CLASS="CTooltip" ID="tt13">
+	Awstats recognizes each access to your site after a <b>search</b> from the <b>73 most popular Internet Search Engines and Directories</b> (such as Yahoo, Altavista, Lycos, Google, Voila, etc...).
+	</DIV>
+	<DIV CLASS="CTooltip" ID="tt14">
+	List of all <b>external pages</b> which were used to link (and enter) to your site (Only the <b>25</b> most often used external pages are shown).
+	Links used by the results of the search engines are excluded here because they have already been included on the previous line within this table.
+	</DIV>
+	<DIV CLASS="CTooltip" ID="tt15">
+	This table shows the list of the most frequently <b>keywords</b> utilized to find your site from Internet Search Engines and Directories.
+	(Keywords from the <b>73</b> most popular Search Engines and Directories are recognized by Awstats, such as Yahoo, Altavista, Lycos, Google, Voila, etc...).
+	</DIV>
+	<DIV CLASS="CTooltip" ID="tt16">
+	Robots (sometimes refer to Spiders) are <b>automatic computer visitors</b> used by many search engines that scan your web site to index it and rank it, collect statistics on Internet Web sites and/or see if your site is still online.<br>
+	Awstats is able to recognize up to <b>298</b> robots.
+	</DIV>
+	<DIV CLASS="CTooltip" ID="tt17">
+	All time related statistics are based on server time.<br>
+	</DIV>
+	<DIV CLASS="CTooltip" ID="tt18">
+	Here, reported data are: <b>average values</b> (calculated from all data between the first and last visit)
+	</DIV>
+	<DIV CLASS="CTooltip" ID="tt19">
+	Here, reported data are: <b>cumulative sums</b> (calculated from all data between the first and last visit)
+	</DIV>
+
+	<DIV CLASS="CTooltip" ID="tt201"> No description for this error. </DIV>
+	<DIV CLASS="CTooltip" ID="tt202"> Request was understood by server but will be processed later. </DIV>
+	<DIV CLASS="CTooltip" ID="tt204"> Server has processed the request but there is no document to send. </DIV>
+	<DIV CLASS="CTooltip" ID="tt206"> Partial content. </DIV>
+	<DIV CLASS="CTooltip" ID="tt301"> Requested document was moved and is now at another address given in answer. </DIV>
+	<DIV CLASS="CTooltip" ID="tt302"> No description for this error. </DIV>
+	<DIV CLASS="CTooltip" ID="tt400"> Syntax error, server didn't understand request. </DIV>
+	<DIV CLASS="CTooltip" ID="tt401"> Tried to reach an <b>URL where a login/password pair was required</b>.<br>A high number within this item could mean that someone (such as a hacker) is attempting to crack, or enter into your site (hoping to enter a secured area by trying different login/password pairs, for instance). </DIV>
+	<DIV CLASS="CTooltip" ID="tt403"> Tried to reach an <b>URL not configured to be reachable, even with an login/password pair</b> (for example, an URL within a directory not defined as "browsable".). </DIV>
+	<DIV CLASS="CTooltip" ID="tt404"> Tried to reach a <b>non existing URL</b>. This error often means that there is an invalid link somewhere in your site or that a visitor mistyped a certain URL. </DIV>
+	<DIV CLASS="CTooltip" ID="tt408"> Server has taken <b>too much time</b> to respond to a request. This error frequently involves either a slow CGI script which the server was required to kill or an extremely congested web server. </DIV>
+	<DIV CLASS="CTooltip" ID="tt500"> Internal error. This error is often caused by a CGI program that had finished abnormally (coredump for example). </DIV>
+	<DIV CLASS="CTooltip" ID="tt501"> Unknown requested action. </DIV>
+	<DIV CLASS="CTooltip" ID="tt502"> Code returned by a HTTP server that works as a proxy or gateway when a real, targeted server doesn't answer successfully to the client's request. </DIV>
+	<DIV CLASS="CTooltip" ID="tt503"> Internal server error. </DIV>
+	<DIV CLASS="CTooltip" ID="tt504"> Gateway Time-out. </DIV>
+	<DIV CLASS="CTooltip" ID="tt505"> HTTP Version Not Supported. </DIV>
+
+<script language="javascript" type="text/javascript">
+function ShowTip(fArg)
+{
+	var tooltipOBJ = (document.getElementById) ? document.getElementById('tt' + fArg) : eval("document.all['tt" + fArg + "']");
+	if (tooltipOBJ != null) {
+		var tooltipLft = (document.body.offsetWidth?document.body.offsetWidth:document.body.style.pixelWidth) - (tooltipOBJ.offsetWidth?tooltipOBJ.offsetWidth:(tooltipOBJ.style.pixelWidth?tooltipOBJ.style.pixelWidth:300)) - 30;
+		if (navigator.appName != 'Netscape') {
+			var tooltipTop = (document.body.scrollTop>=0?document.body.scrollTop+10:event.clientY+10);
+			if ((event.clientX > tooltipLft) && (event.clientY < (tooltipOBJ.scrollHeight?tooltipOBJ.scrollHeight:tooltipOBJ.style.pixelHeight) + 10)) {
+				tooltipTop = (document.body.scrollTop?document.body.scrollTop:document.body.offsetTop) + event.clientY + 20;
+			}
+			tooltipOBJ.style.pixelLeft = tooltipLft; tooltipOBJ.style.pixelTop = tooltipTop;
+		}
+		else {
+			var tooltipTop = 10;
+			tooltipOBJ.style.left = tooltipLft; tooltipOBJ.style.top = tooltipTop;
+		}
+		tooltipOBJ.style.visibility = "visible";
+	}
+}
+function HideTip(fArg)
+{
+	var tooltipOBJ = (document.getElementById) ? document.getElementById('tt' + fArg) : eval("document.all['tt" + fArg + "']");
+	if (tooltipOBJ != null) {
+		tooltipOBJ.style.visibility = "hidden";
+	}
+}
+</script>
+
+<a name="SUMMARY">&nbsp;</a>
+
+
+<table>
+<tr><td width=120 class=AWL style="font-size: 18px arial,verdana,helvetica; font-weight: bold">AWStats
+</td>
+<td class=AWL><a href="http://awstats.sourceforge.net" target="awstatshome"><img src="/awstats-icons/other/awstats_logo1.png" border=0 alt="awstats Official Web Site" title="awstats Official Web Site"></a></td></tr>
+<tr><td class=AWL colspan=2>Free realtime logfile analyzer for advanced web statistics</td></tr>
+</table>
+<a name="MENU">&nbsp;</a><br>
+<table>
+<tr><th class=AWL>Statistics of : </th><td class=AWL><font style="font-size: 14px;">goo.centreweb.net</font></td></tr>
+<tr><th class=AWL valign=top>Last Update :</th><td class=AWL><font style="font-size: 14px;">01 Mar 2013 - 00:11</font></td></tr>
+</table>
+<br>
+<a name="MONTHDAY">&nbsp;</a><BR>
+<div class="tablecontainer">
+<TABLE CLASS="TABLEFRAME" BORDER=0 CELLPADDING=2 CELLSPACING=0 WIDTH="100%">
+<TR><TD class="TABLETITLEFULL" width="70%">Statistics of goo.centreweb.net </TD><TD class="TABLETITLEBLANK">&nbsp;</TD></TR>
+<TR><TD colspan=2><TABLE CLASS="TABLEDATA" BORDER=1 BORDERCOLOR="#ECECEC" CELLPADDING=2 CELLSPACING=0 WIDTH="100%"><TR bgcolor="#ECECEC"><TD><b>First visit</b></TD><TD colspan=3 rowspan=2><font style="font-size: 18px arial,verdana,helvetica; font-weight: normal">Month Feb 2013</font><br></TD><TD><b>Last visit</b></TD></TR>
+<TR bgcolor="#ECECEC"><TD>01 Feb 2013 - 01:49</TD><TD>28 Feb 2013 - 14:38</TD></TR>
+<TR><TD width="20%" bgcolor="#FF9933" onmouseover="ShowTip(2);" onmouseout="HideTip(2);">Unique visitors</TD><TD width="20%" bgcolor="#F3F300" onmouseover="ShowTip(1);" onmouseout="HideTip(1);">Number of visits</TD><TD width="20%" bgcolor="#4477DD" onmouseover="ShowTip(3);" onmouseout="HideTip(3);">Pages</TD><TD width="20%" bgcolor="#66F0FF" onmouseover="ShowTip(4);" onmouseout="HideTip(4);">Hits</TD><TD width="20%" bgcolor="#339944" onmouseover="ShowTip(5);" onmouseout="HideTip(5);">Bytes</TD></TR>
+<TR><TD><b>47</b><br>&nbsp;</TD><TD><b>66</b><br>(1.4&nbsp;visits/visitor)</TD><TD><b>75</b><br>(1.13&nbsp;pages/visit)</TD><TD><b>202</b><br>(3.06&nbsp;hits/visit)</TD><TD><b>18.20 MB</b><br>(282.35&nbsp;KB/visit)</TD></TR>
+<TR valign=bottom><TD align=center colspan=5><CENTER><TABLE><TR valign=bottom><td></td><TD><IMG SRC="/awstats-icons/other/barrevu.png" HEIGHT=54 WIDTH=8 ALT="Unique visitors: 39" title="Unique visitors: 39"><IMG SRC="/awstats-icons/other/barrevv.png" HEIGHT=82 WIDTH=8 ALT="Number of visits: 60" title="Number of visits: 60">&nbsp;<IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=33 WIDTH=8 ALT="Pages: 72" title="Pages: 72"><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=87 WIDTH=8 ALT="Hits: 195" title="Hits: 195"><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=91 WIDTH=8 ALT="Bytes: 18.57 MB" title="Bytes: 18.57 MB"></TD>
+<TD><IMG SRC="/awstats-icons/other/barrevu.png" HEIGHT=65 WIDTH=8 ALT="Unique visitors: 47" title="Unique visitors: 47"><IMG SRC="/awstats-icons/other/barrevv.png" HEIGHT=91 WIDTH=8 ALT="Number of visits: 66" title="Number of visits: 66">&nbsp;<IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=34 WIDTH=8 ALT="Pages: 75" title="Pages: 75"><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=91 WIDTH=8 ALT="Hits: 202" title="Hits: 202"><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=89 WIDTH=8 ALT="Bytes: 18.20 MB" title="Bytes: 18.20 MB"></TD>
+<TD><IMG SRC="/awstats-icons/other/barrevu.png" HEIGHT=3 WIDTH=8 ALT="Unique visitors: 2" title="Unique visitors: 2"><IMG SRC="/awstats-icons/other/barrevv.png" HEIGHT=3 WIDTH=8 ALT="Number of visits: 2" title="Number of visits: 2">&nbsp;<IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=1 WIDTH=8 ALT="Pages: 2" title="Pages: 2"><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=1 WIDTH=8 ALT="Hits: 2" title="Hits: 2"><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=1 WIDTH=8 ALT="Bytes: 7.78 KB" title="Bytes: 7.78 KB"></TD>
+<TD><IMG SRC="/awstats-icons/other/barrevu.png" HEIGHT=1 WIDTH=8 ALT="Unique visitors: " title="Unique visitors: "><IMG SRC="/awstats-icons/other/barrevv.png" HEIGHT=1 WIDTH=8 ALT="Number of visits: " title="Number of visits: ">&nbsp;<IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=1 WIDTH=8 ALT="Pages: " title="Pages: "><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=1 WIDTH=8 ALT="Hits: " title="Hits: "><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=1 WIDTH=8 ALT="Bytes: 0 Bytes" title="Bytes: 0 Bytes"></TD>
+<TD><IMG SRC="/awstats-icons/other/barrevu.png" HEIGHT=1 WIDTH=8 ALT="Unique visitors: " title="Unique visitors: "><IMG SRC="/awstats-icons/other/barrevv.png" HEIGHT=1 WIDTH=8 ALT="Number of visits: " title="Number of visits: ">&nbsp;<IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=1 WIDTH=8 ALT="Pages: " title="Pages: "><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=1 WIDTH=8 ALT="Hits: " title="Hits: "><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=1 WIDTH=8 ALT="Bytes: 0 Bytes" title="Bytes: 0 Bytes"></TD>
+<TD><IMG SRC="/awstats-icons/other/barrevu.png" HEIGHT=1 WIDTH=8 ALT="Unique visitors: " title="Unique visitors: "><IMG SRC="/awstats-icons/other/barrevv.png" HEIGHT=1 WIDTH=8 ALT="Number of visits: " title="Number of visits: ">&nbsp;<IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=1 WIDTH=8 ALT="Pages: " title="Pages: "><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=1 WIDTH=8 ALT="Hits: " title="Hits: "><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=1 WIDTH=8 ALT="Bytes: 0 Bytes" title="Bytes: 0 Bytes"></TD>
+<TD><IMG SRC="/awstats-icons/other/barrevu.png" HEIGHT=1 WIDTH=8 ALT="Unique visitors: " title="Unique visitors: "><IMG SRC="/awstats-icons/other/barrevv.png" HEIGHT=1 WIDTH=8 ALT="Number of visits: " title="Number of visits: ">&nbsp;<IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=1 WIDTH=8 ALT="Pages: " title="Pages: "><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=1 WIDTH=8 ALT="Hits: " title="Hits: "><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=1 WIDTH=8 ALT="Bytes: 0 Bytes" title="Bytes: 0 Bytes"></TD>
+<TD><IMG SRC="/awstats-icons/other/barrevu.png" HEIGHT=1 WIDTH=8 ALT="Unique visitors: " title="Unique visitors: "><IMG SRC="/awstats-icons/other/barrevv.png" HEIGHT=1 WIDTH=8 ALT="Number of visits: " title="Number of visits: ">&nbsp;<IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=1 WIDTH=8 ALT="Pages: " title="Pages: "><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=1 WIDTH=8 ALT="Hits: " title="Hits: "><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=1 WIDTH=8 ALT="Bytes: 0 Bytes" title="Bytes: 0 Bytes"></TD>
+<TD><IMG SRC="/awstats-icons/other/barrevu.png" HEIGHT=1 WIDTH=8 ALT="Unique visitors: " title="Unique visitors: "><IMG SRC="/awstats-icons/other/barrevv.png" HEIGHT=1 WIDTH=8 ALT="Number of visits: " title="Number of visits: ">&nbsp;<IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=1 WIDTH=8 ALT="Pages: " title="Pages: "><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=1 WIDTH=8 ALT="Hits: " title="Hits: "><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=1 WIDTH=8 ALT="Bytes: 0 Bytes" title="Bytes: 0 Bytes"></TD>
+<TD><IMG SRC="/awstats-icons/other/barrevu.png" HEIGHT=1 WIDTH=8 ALT="Unique visitors: " title="Unique visitors: "><IMG SRC="/awstats-icons/other/barrevv.png" HEIGHT=1 WIDTH=8 ALT="Number of visits: " title="Number of visits: ">&nbsp;<IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=1 WIDTH=8 ALT="Pages: " title="Pages: "><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=1 WIDTH=8 ALT="Hits: " title="Hits: "><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=1 WIDTH=8 ALT="Bytes: 0 Bytes" title="Bytes: 0 Bytes"></TD>
+<TD><IMG SRC="/awstats-icons/other/barrevu.png" HEIGHT=1 WIDTH=8 ALT="Unique visitors: " title="Unique visitors: "><IMG SRC="/awstats-icons/other/barrevv.png" HEIGHT=1 WIDTH=8 ALT="Number of visits: " title="Number of visits: ">&nbsp;<IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=1 WIDTH=8 ALT="Pages: " title="Pages: "><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=1 WIDTH=8 ALT="Hits: " title="Hits: "><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=1 WIDTH=8 ALT="Bytes: 0 Bytes" title="Bytes: 0 Bytes"></TD>
+<TD><IMG SRC="/awstats-icons/other/barrevu.png" HEIGHT=1 WIDTH=8 ALT="Unique visitors: " title="Unique visitors: "><IMG SRC="/awstats-icons/other/barrevv.png" HEIGHT=1 WIDTH=8 ALT="Number of visits: " title="Number of visits: ">&nbsp;<IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=1 WIDTH=8 ALT="Pages: " title="Pages: "><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=1 WIDTH=8 ALT="Hits: " title="Hits: "><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=1 WIDTH=8 ALT="Bytes: 0 Bytes" title="Bytes: 0 Bytes"></TD>
+</TR>
+<TR valign=middle cellspacing=0 cellpadding=0><td></td><TD>Jan</TD>
+<TD>Feb</TD>
+<TD>Mar</TD>
+<TD>Apr</TD>
+<TD>May</TD>
+<TD>Jun</TD>
+<TD>Jul</TD>
+<TD>Aug</TD>
+<TD>Sep</TD>
+<TD>Oct</TD>
+<TD>Nov</TD>
+<TD>Dec</TD>
+</TR>
+</TABLE>
+<br>
+<TABLE><TR valign=bottom><TD><IMG SRC="/awstats-icons/other/barrevv.png" HEIGHT=28 WIDTH=4 ALT="Number of visits: 3" title="Number of visits: 3"><IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=9 WIDTH=4 ALT="Pages: 3" title="Pages: 3"><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=27 WIDTH=4 ALT="Hits: 9" title="Hits: 9"><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=39 WIDTH=4 ALT="Bytes: 1.01 MB" title="Bytes: 1.01 MB"></TD>
+<TD><IMG SRC="/awstats-icons/other/barrevv.png" HEIGHT=37 WIDTH=4 ALT="Number of visits: 4" title="Number of visits: 4"><IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=12 WIDTH=4 ALT="Pages: 4" title="Pages: 4"><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=15 WIDTH=4 ALT="Hits: 5" title="Hits: 5"><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=9 WIDTH=4 ALT="Bytes: 214.43 KB" title="Bytes: 214.43 KB"></TD>
+<TD><IMG SRC="/awstats-icons/other/barrevv.png" HEIGHT=10 WIDTH=4 ALT="Number of visits: 1" title="Number of visits: 1"><IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=3 WIDTH=4 ALT="Pages: 1" title="Pages: 1"><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=6 WIDTH=4 ALT="Hits: 2" title="Hits: 2"><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=8 WIDTH=4 ALT="Bytes: 212.61 KB" title="Bytes: 212.61 KB"></TD>
+<TD><IMG SRC="/awstats-icons/other/barrevv.png" HEIGHT=19 WIDTH=4 ALT="Number of visits: 2" title="Number of visits: 2"><IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=6 WIDTH=4 ALT="Pages: 2" title="Pages: 2"><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=24 WIDTH=4 ALT="Hits: 8" title="Hits: 8"><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=32 WIDTH=4 ALT="Bytes: 842.73 KB" title="Bytes: 842.73 KB"></TD>
+<TD><IMG SRC="/awstats-icons/other/barrevv.png" HEIGHT=19 WIDTH=4 ALT="Number of visits: 2" title="Number of visits: 2"><IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=9 WIDTH=4 ALT="Pages: 3" title="Pages: 3"><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=38 WIDTH=4 ALT="Hits: 13" title="Hits: 13"><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=48 WIDTH=4 ALT="Bytes: 1.23 MB" title="Bytes: 1.23 MB"></TD>
+<TD><IMG SRC="/awstats-icons/other/barrevv.png" HEIGHT=19 WIDTH=4 ALT="Number of visits: 2" title="Number of visits: 2"><IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=6 WIDTH=4 ALT="Pages: 2" title="Pages: 2"><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=38 WIDTH=4 ALT="Hits: 13" title="Hits: 13"><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=48 WIDTH=4 ALT="Bytes: 1.25 MB" title="Bytes: 1.25 MB"></TD>
+<TD><IMG SRC="/awstats-icons/other/barrevv.png" HEIGHT=19 WIDTH=4 ALT="Number of visits: 2" title="Number of visits: 2"><IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=6 WIDTH=4 ALT="Pages: 2" title="Pages: 2"><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=32 WIDTH=4 ALT="Hits: 11" title="Hits: 11"><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=21 WIDTH=4 ALT="Bytes: 549.46 KB" title="Bytes: 549.46 KB"></TD>
+<TD><IMG SRC="/awstats-icons/other/barrevv.png" HEIGHT=10 WIDTH=4 ALT="Number of visits: 1" title="Number of visits: 1"><IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=3 WIDTH=4 ALT="Pages: 1" title="Pages: 1"><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=15 WIDTH=4 ALT="Hits: 5" title="Hits: 5"><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=17 WIDTH=4 ALT="Bytes: 437.17 KB" title="Bytes: 437.17 KB"></TD>
+<TD><IMG SRC="/awstats-icons/other/barrevv.png" HEIGHT=19 WIDTH=4 ALT="Number of visits: 2" title="Number of visits: 2"><IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=6 WIDTH=4 ALT="Pages: 2" title="Pages: 2"><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=12 WIDTH=4 ALT="Hits: 4" title="Hits: 4"><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=16 WIDTH=4 ALT="Bytes: 414.73 KB" title="Bytes: 414.73 KB"></TD>
+<TD><IMG SRC="/awstats-icons/other/barrevv.png" HEIGHT=28 WIDTH=4 ALT="Number of visits: 3" title="Number of visits: 3"><IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=9 WIDTH=4 ALT="Pages: 3" title="Pages: 3"><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=15 WIDTH=4 ALT="Hits: 5" title="Hits: 5"><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=16 WIDTH=4 ALT="Bytes: 418.62 KB" title="Bytes: 418.62 KB"></TD>
+<TD><IMG SRC="/awstats-icons/other/barrevv.png" HEIGHT=1 WIDTH=4 ALT="Number of visits: 0" title="Number of visits: 0"><IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=1 WIDTH=4 ALT="Pages: 0" title="Pages: 0"><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=12 WIDTH=4 ALT="Hits: 4" title="Hits: 4"><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=31 WIDTH=4 ALT="Bytes: 813.91 KB" title="Bytes: 813.91 KB"></TD>
+<TD><IMG SRC="/awstats-icons/other/barrevv.png" HEIGHT=37 WIDTH=4 ALT="Number of visits: 4" title="Number of visits: 4"><IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=12 WIDTH=4 ALT="Pages: 4" title="Pages: 4"><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=30 WIDTH=4 ALT="Hits: 10" title="Hits: 10"><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=46 WIDTH=4 ALT="Bytes: 1.20 MB" title="Bytes: 1.20 MB"></TD>
+<TD><IMG SRC="/awstats-icons/other/barrevv.png" HEIGHT=19 WIDTH=4 ALT="Number of visits: 2" title="Number of visits: 2"><IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=6 WIDTH=4 ALT="Pages: 2" title="Pages: 2"><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=27 WIDTH=4 ALT="Hits: 9" title="Hits: 9"><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=34 WIDTH=4 ALT="Bytes: 888.74 KB" title="Bytes: 888.74 KB"></TD>
+<TD><IMG SRC="/awstats-icons/other/barrevv.png" HEIGHT=28 WIDTH=4 ALT="Number of visits: 3" title="Number of visits: 3"><IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=9 WIDTH=4 ALT="Pages: 3" title="Pages: 3"><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=15 WIDTH=4 ALT="Hits: 5" title="Hits: 5"><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=16 WIDTH=4 ALT="Bytes: 411.49 KB" title="Bytes: 411.49 KB"></TD>
+<TD><IMG SRC="/awstats-icons/other/barrevv.png" HEIGHT=46 WIDTH=4 ALT="Number of visits: 5" title="Number of visits: 5"><IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=15 WIDTH=4 ALT="Pages: 5" title="Pages: 5"><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=21 WIDTH=4 ALT="Hits: 7" title="Hits: 7"><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=16 WIDTH=4 ALT="Bytes: 418.94 KB" title="Bytes: 418.94 KB"></TD>
+<TD><IMG SRC="/awstats-icons/other/barrevv.png" HEIGHT=28 WIDTH=4 ALT="Number of visits: 3" title="Number of visits: 3"><IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=9 WIDTH=4 ALT="Pages: 3" title="Pages: 3"><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=15 WIDTH=4 ALT="Hits: 5" title="Hits: 5"><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=16 WIDTH=4 ALT="Bytes: 411.72 KB" title="Bytes: 411.72 KB"></TD>
+<TD><IMG SRC="/awstats-icons/other/barrevv.png" HEIGHT=19 WIDTH=4 ALT="Number of visits: 2" title="Number of visits: 2"><IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=6 WIDTH=4 ALT="Pages: 2" title="Pages: 2"><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=6 WIDTH=4 ALT="Hits: 2" title="Hits: 2"><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=1 WIDTH=4 ALT="Bytes: 9.46 KB" title="Bytes: 9.46 KB"></TD>
+<TD><IMG SRC="/awstats-icons/other/barrevv.png" HEIGHT=91 WIDTH=4 ALT="Number of visits: 10" title="Number of visits: 10"><IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=47 WIDTH=4 ALT="Pages: 16" title="Pages: 16"><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=91 WIDTH=4 ALT="Hits: 31" title="Hits: 31"><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=91 WIDTH=4 ALT="Bytes: 2.35 MB" title="Bytes: 2.35 MB"></TD>
+<TD><IMG SRC="/awstats-icons/other/barrevv.png" HEIGHT=10 WIDTH=4 ALT="Number of visits: 1" title="Number of visits: 1"><IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=3 WIDTH=4 ALT="Pages: 1" title="Pages: 1"><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=9 WIDTH=4 ALT="Hits: 3" title="Hits: 3"><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=16 WIDTH=4 ALT="Bytes: 416.08 KB" title="Bytes: 416.08 KB"></TD>
+<TD><IMG SRC="/awstats-icons/other/barrevv.png" HEIGHT=28 WIDTH=4 ALT="Number of visits: 3" title="Number of visits: 3"><IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=9 WIDTH=4 ALT="Pages: 3" title="Pages: 3"><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=18 WIDTH=4 ALT="Hits: 6" title="Hits: 6"><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=23 WIDTH=4 ALT="Bytes: 614.93 KB" title="Bytes: 614.93 KB"></TD>
+<TD><IMG SRC="/awstats-icons/other/barrevv.png" HEIGHT=1 WIDTH=4 ALT="Number of visits: 0" title="Number of visits: 0"><IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=1 WIDTH=4 ALT="Pages: 0" title="Pages: 0"><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=9 WIDTH=4 ALT="Hits: 3" title="Hits: 3"><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=23 WIDTH=4 ALT="Bytes: 610.43 KB" title="Bytes: 610.43 KB"></TD>
+<TD><IMG SRC="/awstats-icons/other/barrevv.png" HEIGHT=19 WIDTH=4 ALT="Number of visits: 2" title="Number of visits: 2"><IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=9 WIDTH=4 ALT="Pages: 3" title="Pages: 3"><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=18 WIDTH=4 ALT="Hits: 6" title="Hits: 6"><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=16 WIDTH=4 ALT="Bytes: 415.61 KB" title="Bytes: 415.61 KB"></TD>
+<TD><IMG SRC="/awstats-icons/other/barrevv.png" HEIGHT=1 WIDTH=4 ALT="Number of visits: 0" title="Number of visits: 0"><IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=1 WIDTH=4 ALT="Pages: 0" title="Pages: 0"><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=9 WIDTH=4 ALT="Hits: 3" title="Hits: 3"><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=16 WIDTH=4 ALT="Bytes: 419.56 KB" title="Bytes: 419.56 KB"></TD>
+<TD><IMG SRC="/awstats-icons/other/barrevv.png" HEIGHT=19 WIDTH=4 ALT="Number of visits: 2" title="Number of visits: 2"><IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=9 WIDTH=4 ALT="Pages: 3" title="Pages: 3"><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=9 WIDTH=4 ALT="Hits: 3" title="Hits: 3"><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=1 WIDTH=4 ALT="Bytes: 8.10 KB" title="Bytes: 8.10 KB"></TD>
+<TD><IMG SRC="/awstats-icons/other/barrevv.png" HEIGHT=19 WIDTH=4 ALT="Number of visits: 2" title="Number of visits: 2"><IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=6 WIDTH=4 ALT="Pages: 2" title="Pages: 2"><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=32 WIDTH=4 ALT="Hits: 11" title="Hits: 11"><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=21 WIDTH=4 ALT="Bytes: 557.94 KB" title="Bytes: 557.94 KB"></TD>
+<TD><IMG SRC="/awstats-icons/other/barrevv.png" HEIGHT=19 WIDTH=4 ALT="Number of visits: 2" title="Number of visits: 2"><IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=6 WIDTH=4 ALT="Pages: 2" title="Pages: 2"><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=9 WIDTH=4 ALT="Hits: 3" title="Hits: 3"><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=8 WIDTH=4 ALT="Bytes: 207.36 KB" title="Bytes: 207.36 KB"></TD>
+<TD><IMG SRC="/awstats-icons/other/barrevv.png" HEIGHT=10 WIDTH=4 ALT="Number of visits: 1" title="Number of visits: 1"><IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=3 WIDTH=4 ALT="Pages: 1" title="Pages: 1"><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=24 WIDTH=4 ALT="Hits: 8" title="Hits: 8"><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=44 WIDTH=4 ALT="Bytes: 1.14 MB" title="Bytes: 1.14 MB"></TD>
+<TD><IMG SRC="/awstats-icons/other/barrevv.png" HEIGHT=19 WIDTH=4 ALT="Number of visits: 2" title="Number of visits: 2"><IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=6 WIDTH=4 ALT="Pages: 2" title="Pages: 2"><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=24 WIDTH=4 ALT="Hits: 8" title="Hits: 8"><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=37 WIDTH=4 ALT="Bytes: 968.90 KB" title="Bytes: 968.90 KB"></TD>
+<TD>&nbsp;</TD><TD><IMG SRC="/awstats-icons/other/barrevv.png" HEIGHT=22 WIDTH=4 ALT="Number of visits: 2.36" title="Number of visits: 2.36"><IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=8 WIDTH=4 ALT="Pages: 2.68" title="Pages: 2.68"><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=21 WIDTH=4 ALT="Hits: 7.21" title="Hits: 7.21"><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=25 WIDTH=4 ALT="Bytes: 665.55 KB" title="Bytes: 665.55 KB"></TD>
+</TR>
+<TR><TD valign=middle>01<br><font style="font-size: 10px;">Feb</font></TD>
+<TD valign=middle bgcolor="#EAEAEA">02<br><font style="font-size: 10px;">Feb</font></TD>
+<TD valign=middle bgcolor="#EAEAEA">03<br><font style="font-size: 10px;">Feb</font></TD>
+<TD valign=middle>04<br><font style="font-size: 10px;">Feb</font></TD>
+<TD valign=middle>05<br><font style="font-size: 10px;">Feb</font></TD>
+<TD valign=middle>06<br><font style="font-size: 10px;">Feb</font></TD>
+<TD valign=middle>07<br><font style="font-size: 10px;">Feb</font></TD>
+<TD valign=middle>08<br><font style="font-size: 10px;">Feb</font></TD>
+<TD valign=middle bgcolor="#EAEAEA">09<br><font style="font-size: 10px;">Feb</font></TD>
+<TD valign=middle bgcolor="#EAEAEA">10<br><font style="font-size: 10px;">Feb</font></TD>
+<TD valign=middle>11<br><font style="font-size: 10px;">Feb</font></TD>
+<TD valign=middle>12<br><font style="font-size: 10px;">Feb</font></TD>
+<TD valign=middle>13<br><font style="font-size: 10px;">Feb</font></TD>
+<TD valign=middle>14<br><font style="font-size: 10px;">Feb</font></TD>
+<TD valign=middle>15<br><font style="font-size: 10px;">Feb</font></TD>
+<TD valign=middle bgcolor="#EAEAEA">16<br><font style="font-size: 10px;">Feb</font></TD>
+<TD valign=middle bgcolor="#EAEAEA">17<br><font style="font-size: 10px;">Feb</font></TD>
+<TD valign=middle>18<br><font style="font-size: 10px;">Feb</font></TD>
+<TD valign=middle>19<br><font style="font-size: 10px;">Feb</font></TD>
+<TD valign=middle>20<br><font style="font-size: 10px;">Feb</font></TD>
+<TD valign=middle>21<br><font style="font-size: 10px;">Feb</font></TD>
+<TD valign=middle>22<br><font style="font-size: 10px;">Feb</font></TD>
+<TD valign=middle bgcolor="#EAEAEA">23<br><font style="font-size: 10px;">Feb</font></TD>
+<TD valign=middle bgcolor="#EAEAEA">24<br><font style="font-size: 10px;">Feb</font></TD>
+<TD valign=middle>25<br><font style="font-size: 10px;">Feb</font></TD>
+<TD valign=middle>26<br><font style="font-size: 10px;">Feb</font></TD>
+<TD valign=middle>27<br><font style="font-size: 10px;">Feb</font></TD>
+<TD valign=middle>28<br><font style="font-size: 10px;">Feb</font></TD>
+<TD>&nbsp;</TD><TD valign=middle onmouseover="ShowTip(18);" onmouseout="HideTip(18);">Average</TD>
+</TR>
+</TABLE>
+<br>
+</CENTER>
+</TD></TR>
+</TABLE></TD></TR></TABLE></div>
+
+
+<a name="WHEN">&nbsp;</a>
+
+<a name="DAYOFWEEK">&nbsp;</a><BR>
+<div class="tablecontainer">
+<TABLE CLASS="TABLEFRAME" BORDER=0 CELLPADDING=2 CELLSPACING=0 WIDTH="100%">
+<TR><TD class="TABLETITLEFULL" width="70%" onmouseover="ShowTip(18);" onmouseout="HideTip(18);">Days of week </TD><TD class="TABLETITLEBLANK">&nbsp;</TD></TR>
+<TR><TD colspan=2><TABLE CLASS="TABLEDATA" BORDER=1 BORDERCOLOR="#ECECEC" CELLPADDING=2 CELLSPACING=0 WIDTH="100%"><TR><TD align=center><center><TABLE><TR valign=bottom>
+<TD valign=bottom><IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=34 WIDTH=6 ALT="Pages: 5" title="Pages: 5"><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=91 WIDTH=6 ALT="Hits: 13.50" title="Hits: 13.50"><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=91 WIDTH=6 ALT="Bytes: 1.13 MB" title="Bytes: 1.13 MB"></TD>
+<TD valign=bottom><IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=17 WIDTH=6 ALT="Pages: 2.50" title="Pages: 2.50"><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=49 WIDTH=6 ALT="Hits: 7.25" title="Hits: 7.25"><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=61 WIDTH=6 ALT="Bytes: 777.88 KB" title="Bytes: 777.88 KB"></TD>
+<TD valign=bottom><IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=14 WIDTH=6 ALT="Pages: 2" title="Pages: 2"><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=61 WIDTH=6 ALT="Hits: 9" title="Hits: 9"><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=77 WIDTH=6 ALT="Bytes: 986.73 KB" title="Bytes: 986.73 KB"></TD>
+<TD valign=bottom><IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=12 WIDTH=6 ALT="Pages: 1.75" title="Pages: 1.75"><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=46 WIDTH=6 ALT="Hits: 6.75" title="Hits: 6.75"><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=50 WIDTH=6 ALT="Bytes: 635.07 KB" title="Bytes: 635.07 KB"></TD>
+<TD valign=bottom><IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=21 WIDTH=6 ALT="Pages: 3" title="Pages: 3"><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=46 WIDTH=6 ALT="Hits: 6.75" title="Hits: 6.75"><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=45 WIDTH=6 ALT="Bytes: 576.67 KB" title="Bytes: 576.67 KB"></TD>
+<TD valign=bottom><IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=16 WIDTH=6 ALT="Pages: 2.25" title="Pages: 2.25"><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=29 WIDTH=6 ALT="Hits: 4.25" title="Hits: 4.25"><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=29 WIDTH=6 ALT="Bytes: 365.11 KB" title="Bytes: 365.11 KB"></TD>
+<TD valign=bottom><IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=16 WIDTH=6 ALT="Pages: 2.25" title="Pages: 2.25"><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=21 WIDTH=6 ALT="Hits: 3" title="Hits: 3"><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=13 WIDTH=6 ALT="Bytes: 162.19 KB" title="Bytes: 162.19 KB"></TD>
+</TR>
+<TR onmouseover="ShowTip(17);" onmouseout="HideTip(17);">
+<TD>Mon</TD><TD>Tue</TD><TD>Wed</TD><TD>Thu</TD><TD>Fri</TD><TD bgcolor="#EAEAEA">Sat</TD><TD bgcolor="#EAEAEA">Sun</TD></TR></TABLE></center></TD></TR>
+</TABLE></TD></TR></TABLE></div>
+
+<a name="HOUR">&nbsp;</a><BR>
+<div class="tablecontainer">
+<TABLE CLASS="TABLEFRAME" BORDER=0 CELLPADDING=2 CELLSPACING=0 WIDTH="100%">
+<TR><TD class="TABLETITLEFULL" width="70%" onmouseover="ShowTip(19);" onmouseout="HideTip(19);">Hours </TD><TD class="TABLETITLEBLANK">&nbsp;</TD></TR>
+<TR><TD colspan=2><TABLE CLASS="TABLEDATA" BORDER=1 BORDERCOLOR="#ECECEC" CELLPADDING=2 CELLSPACING=0 WIDTH="100%"><TR><TD align=center><center><TABLE><TR>
+<TH width=19 onmouseover="ShowTip(17);" onmouseout="HideTip(17);">0</TH>
+<TH width=19 onmouseover="ShowTip(17);" onmouseout="HideTip(17);">1</TH>
+<TH width=19 onmouseover="ShowTip(17);" onmouseout="HideTip(17);">2</TH>
+<TH width=19 onmouseover="ShowTip(17);" onmouseout="HideTip(17);">3</TH>
+<TH width=19 onmouseover="ShowTip(17);" onmouseout="HideTip(17);">4</TH>
+<TH width=19 onmouseover="ShowTip(17);" onmouseout="HideTip(17);">5</TH>
+<TH width=19 onmouseover="ShowTip(17);" onmouseout="HideTip(17);">6</TH>
+<TH width=19 onmouseover="ShowTip(17);" onmouseout="HideTip(17);">7</TH>
+<TH width=19 onmouseover="ShowTip(17);" onmouseout="HideTip(17);">8</TH>
+<TH width=19 onmouseover="ShowTip(17);" onmouseout="HideTip(17);">9</TH>
+<TH width=19 onmouseover="ShowTip(17);" onmouseout="HideTip(17);">10</TH>
+<TH width=19 onmouseover="ShowTip(17);" onmouseout="HideTip(17);">11</TH>
+<TH width=19 onmouseover="ShowTip(17);" onmouseout="HideTip(17);">12</TH>
+<TH width=19 onmouseover="ShowTip(17);" onmouseout="HideTip(17);">13</TH>
+<TH width=19 onmouseover="ShowTip(17);" onmouseout="HideTip(17);">14</TH>
+<TH width=19 onmouseover="ShowTip(17);" onmouseout="HideTip(17);">15</TH>
+<TH width=19 onmouseover="ShowTip(17);" onmouseout="HideTip(17);">16</TH>
+<TH width=19 onmouseover="ShowTip(17);" onmouseout="HideTip(17);">17</TH>
+<TH width=19 onmouseover="ShowTip(17);" onmouseout="HideTip(17);">18</TH>
+<TH width=19 onmouseover="ShowTip(17);" onmouseout="HideTip(17);">19</TH>
+<TH width=19 onmouseover="ShowTip(17);" onmouseout="HideTip(17);">20</TH>
+<TH width=19 onmouseover="ShowTip(17);" onmouseout="HideTip(17);">21</TH>
+<TH width=19 onmouseover="ShowTip(17);" onmouseout="HideTip(17);">22</TH>
+<TH width=19 onmouseover="ShowTip(17);" onmouseout="HideTip(17);">23</TH>
+</TR>
+<TR>
+<TD onmouseover="ShowTip(17);" onmouseout="HideTip(17);"><IMG alt='' SRC="/awstats-icons/clock/hr1.png" width=10 alt="1:00"></TD>
+<TD onmouseover="ShowTip(17);" onmouseout="HideTip(17);"><IMG alt='' SRC="/awstats-icons/clock/hr2.png" width=10 alt="2:00"></TD>
+<TD onmouseover="ShowTip(17);" onmouseout="HideTip(17);"><IMG alt='' SRC="/awstats-icons/clock/hr3.png" width=10 alt="3:00"></TD>
+<TD onmouseover="ShowTip(17);" onmouseout="HideTip(17);"><IMG alt='' SRC="/awstats-icons/clock/hr4.png" width=10 alt="4:00"></TD>
+<TD onmouseover="ShowTip(17);" onmouseout="HideTip(17);"><IMG alt='' SRC="/awstats-icons/clock/hr5.png" width=10 alt="5:00"></TD>
+<TD onmouseover="ShowTip(17);" onmouseout="HideTip(17);"><IMG alt='' SRC="/awstats-icons/clock/hr6.png" width=10 alt="6:00"></TD>
+<TD onmouseover="ShowTip(17);" onmouseout="HideTip(17);"><IMG alt='' SRC="/awstats-icons/clock/hr7.png" width=10 alt="7:00"></TD>
+<TD onmouseover="ShowTip(17);" onmouseout="HideTip(17);"><IMG alt='' SRC="/awstats-icons/clock/hr8.png" width=10 alt="8:00"></TD>
+<TD onmouseover="ShowTip(17);" onmouseout="HideTip(17);"><IMG alt='' SRC="/awstats-icons/clock/hr9.png" width=10 alt="9:00"></TD>
+<TD onmouseover="ShowTip(17);" onmouseout="HideTip(17);"><IMG alt='' SRC="/awstats-icons/clock/hr10.png" width=10 alt="10:00"></TD>
+<TD onmouseover="ShowTip(17);" onmouseout="HideTip(17);"><IMG alt='' SRC="/awstats-icons/clock/hr11.png" width=10 alt="11:00"></TD>
+<TD onmouseover="ShowTip(17);" onmouseout="HideTip(17);"><IMG alt='' SRC="/awstats-icons/clock/hr12.png" width=10 alt="12:00"></TD>
+<TD onmouseover="ShowTip(17);" onmouseout="HideTip(17);"><IMG alt='' SRC="/awstats-icons/clock/hr1.png" width=10 alt="1:00"></TD>
+<TD onmouseover="ShowTip(17);" onmouseout="HideTip(17);"><IMG alt='' SRC="/awstats-icons/clock/hr2.png" width=10 alt="2:00"></TD>
+<TD onmouseover="ShowTip(17);" onmouseout="HideTip(17);"><IMG alt='' SRC="/awstats-icons/clock/hr3.png" width=10 alt="3:00"></TD>
+<TD onmouseover="ShowTip(17);" onmouseout="HideTip(17);"><IMG alt='' SRC="/awstats-icons/clock/hr4.png" width=10 alt="4:00"></TD>
+<TD onmouseover="ShowTip(17);" onmouseout="HideTip(17);"><IMG alt='' SRC="/awstats-icons/clock/hr5.png" width=10 alt="5:00"></TD>
+<TD onmouseover="ShowTip(17);" onmouseout="HideTip(17);"><IMG alt='' SRC="/awstats-icons/clock/hr6.png" width=10 alt="6:00"></TD>
+<TD onmouseover="ShowTip(17);" onmouseout="HideTip(17);"><IMG alt='' SRC="/awstats-icons/clock/hr7.png" width=10 alt="7:00"></TD>
+<TD onmouseover="ShowTip(17);" onmouseout="HideTip(17);"><IMG alt='' SRC="/awstats-icons/clock/hr8.png" width=10 alt="8:00"></TD>
+<TD onmouseover="ShowTip(17);" onmouseout="HideTip(17);"><IMG alt='' SRC="/awstats-icons/clock/hr9.png" width=10 alt="9:00"></TD>
+<TD onmouseover="ShowTip(17);" onmouseout="HideTip(17);"><IMG alt='' SRC="/awstats-icons/clock/hr10.png" width=10 alt="10:00"></TD>
+<TD onmouseover="ShowTip(17);" onmouseout="HideTip(17);"><IMG alt='' SRC="/awstats-icons/clock/hr11.png" width=10 alt="11:00"></TD>
+<TD onmouseover="ShowTip(17);" onmouseout="HideTip(17);"><IMG alt='' SRC="/awstats-icons/clock/hr12.png" width=10 alt="12:00"></TD>
+</TR>
+<TR valign=bottom>
+<TD><IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=18 WIDTH=6 ALT="Pages: 2" title="Pages: 2"><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=26 WIDTH=6 ALT="Hits: 3" title="Hits: 3"><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=2 WIDTH=6 ALT="Bytes: 16.22 KB" title="Bytes: 16.22 KB"></TD>
+<TD><IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=18 WIDTH=6 ALT="Pages: 2" title="Pages: 2"><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=18 WIDTH=6 ALT="Hits: 2" title="Hits: 2"><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=2 WIDTH=6 ALT="Bytes: 13.02 KB" title="Bytes: 13.02 KB"></TD>
+<TD><IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=52 WIDTH=6 ALT="Pages: 6" title="Pages: 6"><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=69 WIDTH=6 ALT="Hits: 8" title="Hits: 8"><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=8 WIDTH=6 ALT="Bytes: 84.08 KB" title="Bytes: 84.08 KB"></TD>
+<TD><IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=9 WIDTH=6 ALT="Pages: 1" title="Pages: 1"><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=18 WIDTH=6 ALT="Hits: 2" title="Hits: 2"><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=2 WIDTH=6 ALT="Bytes: 16.89 KB" title="Bytes: 16.89 KB"></TD>
+<TD><IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=18 WIDTH=6 ALT="Pages: 2" title="Pages: 2"><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=35 WIDTH=6 ALT="Hits: 4" title="Hits: 4"><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=38 WIDTH=6 ALT="Bytes: 411.24 KB" title="Bytes: 411.24 KB"></TD>
+<TD><IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=18 WIDTH=6 ALT="Pages: 2" title="Pages: 2"><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=43 WIDTH=6 ALT="Hits: 5" title="Hits: 5"><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=7 WIDTH=6 ALT="Bytes: 67.71 KB" title="Bytes: 67.71 KB"></TD>
+<TD><IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=26 WIDTH=6 ALT="Pages: 3" title="Pages: 3"><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=69 WIDTH=6 ALT="Hits: 8" title="Hits: 8"><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=26 WIDTH=6 ALT="Bytes: 283.19 KB" title="Bytes: 283.19 KB"></TD>
+<TD><IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=52 WIDTH=6 ALT="Pages: 6" title="Pages: 6"><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=78 WIDTH=6 ALT="Hits: 9" title="Hits: 9"><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=38 WIDTH=6 ALT="Bytes: 420.44 KB" title="Bytes: 420.44 KB"></TD>
+<TD><IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=1 WIDTH=6 ALT="Pages: 0" title="Pages: 0"><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=35 WIDTH=6 ALT="Hits: 4" title="Hits: 4"><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=56 WIDTH=6 ALT="Bytes: 618.22 KB" title="Bytes: 618.22 KB"></TD>
+<TD><IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=26 WIDTH=6 ALT="Pages: 3" title="Pages: 3"><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=69 WIDTH=6 ALT="Hits: 8" title="Hits: 8"><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=92 WIDTH=6 ALT="Bytes: 1018.36 KB" title="Bytes: 1018.36 KB"></TD>
+<TD><IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=35 WIDTH=6 ALT="Pages: 4" title="Pages: 4"><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=78 WIDTH=6 ALT="Hits: 9" title="Hits: 9"><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=77 WIDTH=6 ALT="Bytes: 842.06 KB" title="Bytes: 842.06 KB"></TD>
+<TD><IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=9 WIDTH=6 ALT="Pages: 1" title="Pages: 1"><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=52 WIDTH=6 ALT="Hits: 6" title="Hits: 6"><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=59 WIDTH=6 ALT="Bytes: 645.89 KB" title="Bytes: 645.89 KB"></TD>
+<TD><IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=1 WIDTH=6 ALT="Pages: 0" title="Pages: 0"><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=35 WIDTH=6 ALT="Hits: 4" title="Hits: 4"><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=56 WIDTH=6 ALT="Bytes: 610.43 KB" title="Bytes: 610.43 KB"></TD>
+<TD><IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=26 WIDTH=6 ALT="Pages: 3" title="Pages: 3"><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=103 WIDTH=6 ALT="Hits: 12" title="Hits: 12"><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=149 WIDTH=6 ALT="Bytes: 1.60 MB" title="Bytes: 1.60 MB"></TD>
+<TD><IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=52 WIDTH=6 ALT="Pages: 6" title="Pages: 6"><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=146 WIDTH=6 ALT="Hits: 17" title="Hits: 17"><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=155 WIDTH=6 ALT="Bytes: 1.67 MB" title="Bytes: 1.67 MB"></TD>
+<TD><IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=35 WIDTH=6 ALT="Pages: 4" title="Pages: 4"><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=112 WIDTH=6 ALT="Hits: 13" title="Hits: 13"><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=95 WIDTH=6 ALT="Bytes: 1.03 MB" title="Bytes: 1.03 MB"></TD>
+<TD><IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=86 WIDTH=6 ALT="Pages: 10" title="Pages: 10"><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=181 WIDTH=6 ALT="Hits: 21" title="Hits: 21"><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=181 WIDTH=6 ALT="Bytes: 1.95 MB" title="Bytes: 1.95 MB"></TD>
+<TD><IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=18 WIDTH=6 ALT="Pages: 2" title="Pages: 2"><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=69 WIDTH=6 ALT="Hits: 8" title="Hits: 8"><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=100 WIDTH=6 ALT="Bytes: 1.08 MB" title="Bytes: 1.08 MB"></TD>
+<TD><IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=35 WIDTH=6 ALT="Pages: 4" title="Pages: 4"><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=86 WIDTH=6 ALT="Hits: 10" title="Hits: 10"><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=111 WIDTH=6 ALT="Bytes: 1.20 MB" title="Bytes: 1.20 MB"></TD>
+<TD><IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=43 WIDTH=6 ALT="Pages: 5" title="Pages: 5"><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=163 WIDTH=6 ALT="Hits: 19" title="Hits: 19"><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=172 WIDTH=6 ALT="Bytes: 1.86 MB" title="Bytes: 1.86 MB"></TD>
+<TD><IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=26 WIDTH=6 ALT="Pages: 3" title="Pages: 3"><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=121 WIDTH=6 ALT="Hits: 14" title="Hits: 14"><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=131 WIDTH=6 ALT="Bytes: 1.41 MB" title="Bytes: 1.41 MB"></TD>
+<TD><IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=9 WIDTH=6 ALT="Pages: 1" title="Pages: 1"><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=18 WIDTH=6 ALT="Hits: 2" title="Hits: 2"><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=19 WIDTH=6 ALT="Bytes: 203.48 KB" title="Bytes: 203.48 KB"></TD>
+<TD><IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=35 WIDTH=6 ALT="Pages: 4" title="Pages: 4"><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=61 WIDTH=6 ALT="Hits: 7" title="Hits: 7"><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=57 WIDTH=6 ALT="Bytes: 624.10 KB" title="Bytes: 624.10 KB"></TD>
+<TD><IMG SRC="/awstats-icons/other/barrevp.png" HEIGHT=9 WIDTH=6 ALT="Pages: 1" title="Pages: 1"><IMG SRC="/awstats-icons/other/barrevh.png" HEIGHT=61 WIDTH=6 ALT="Hits: 7" title="Hits: 7"><IMG SRC="/awstats-icons/other/barrevk.png" HEIGHT=62 WIDTH=6 ALT="Bytes: 678.26 KB" title="Bytes: 678.26 KB"></TD>
+</TR></TABLE></center></TD></TR>
+</TABLE></TD></TR></TABLE></div>
+
+
+<a name="WHO">&nbsp;</a>
+
+<a name="DOMAINS">&nbsp;</a><BR>
+<div class="tablecontainer">
+<TABLE CLASS="TABLEFRAME" BORDER=0 CELLPADDING=2 CELLSPACING=0 WIDTH="100%">
+<TR><TD class="TABLETITLEFULL" width="70%" onmouseover="ShowTip(19);" onmouseout="HideTip(19);">Visitors domains/countries </TD><TD class="TABLETITLEBLANK">&nbsp;</TD></TR>
+<TR><TD colspan=2><TABLE CLASS="TABLEDATA" BORDER=1 BORDERCOLOR="#ECECEC" CELLPADDING=2 CELLSPACING=0 WIDTH="100%"><TR bgcolor="#ECECEC"><TH colspan=2>Domains/Countries</TH><TH>Code</TH><TH bgcolor="#4477DD" width=80>Pages</TH><TH bgcolor="#66F0FF" width=80>Hits</TH><TH bgcolor="#339944" width=80>Bytes</TH><TH>&nbsp;</TH></TR>
+<TR><TD><IMG SRC="/awstats-icons/flags/ip.png" height=14 alt="Unknown"></TD><TD CLASS=AWL>Unknown</TD><TD>ip</TD><TD>38</TD><TD>63</TD><TD>3.94 MB</TD><TD CLASS=AWL><IMG SRC="/awstats-icons/other/barrehp.png" WIDTH=157 HEIGHT=6 ALT="Pages: 38" title="Pages: 38"><br>
+<IMG SRC="/awstats-icons/other/barrehh.png" WIDTH=261 HEIGHT=6 ALT="Hits: 63" title="Hits: 63"><br>
+<IMG SRC="/awstats-icons/other/barrehk.png" WIDTH=122 HEIGHT=6 ALT="Bytes: 3.94 MB" title="Bytes: 3.94 MB"></TD></TR>
+<TR><TD><IMG SRC="/awstats-icons/flags/com.png" height=14 alt="com"></TD><TD CLASS=AWL>Commercial</TD><TD>com</TD><TD>23</TD><TD>50</TD><TD>3.78 MB</TD><TD CLASS=AWL><IMG SRC="/awstats-icons/other/barrehp.png" WIDTH=95 HEIGHT=6 ALT="Pages: 23" title="Pages: 23"><br>
+<IMG SRC="/awstats-icons/other/barrehh.png" WIDTH=207 HEIGHT=6 ALT="Hits: 50" title="Hits: 50"><br>
+<IMG SRC="/awstats-icons/other/barrehk.png" WIDTH=117 HEIGHT=6 ALT="Bytes: 3.78 MB" title="Bytes: 3.78 MB"></TD></TR>
+<TR><TD><IMG SRC="/awstats-icons/flags/net.png" height=14 alt="net"></TD><TD CLASS=AWL>Network</TD><TD>net</TD><TD>9</TD><TD>54</TD><TD>8.45 MB</TD><TD CLASS=AWL><IMG SRC="/awstats-icons/other/barrehp.png" WIDTH=38 HEIGHT=6 ALT="Pages: 9" title="Pages: 9"><br>
+<IMG SRC="/awstats-icons/other/barrehh.png" WIDTH=223 HEIGHT=6 ALT="Hits: 54" title="Hits: 54"><br>
+<IMG SRC="/awstats-icons/other/barrehk.png" WIDTH=261 HEIGHT=6 ALT="Bytes: 8.45 MB" title="Bytes: 8.45 MB"></TD></TR>
+<TR><TD><IMG SRC="/awstats-icons/flags/de.png" height=14 alt="de"></TD><TD CLASS=AWL>Germany</TD><TD>de</TD><TD>3</TD><TD>3</TD><TD>10.33 KB</TD><TD CLASS=AWL><IMG SRC="/awstats-icons/other/barrehp.png" WIDTH=13 HEIGHT=6 ALT="Pages: 3" title="Pages: 3"><br>
+<IMG SRC="/awstats-icons/other/barrehh.png" WIDTH=13 HEIGHT=6 ALT="Hits: 3" title="Hits: 3"><br>
+<IMG SRC="/awstats-icons/other/barrehk.png" WIDTH=2 HEIGHT=6 ALT="Bytes: 10.33 KB" title="Bytes: 10.33 KB"></TD></TR>
+<TR><TD><IMG SRC="/awstats-icons/flags/br.png" height=14 alt="br"></TD><TD CLASS=AWL>Brazil</TD><TD>br</TD><TD>1</TD><TD>2</TD><TD>203.80 KB</TD><TD CLASS=AWL><IMG SRC="/awstats-icons/other/barrehp.png" WIDTH=5 HEIGHT=6 ALT="Pages: 1" title="Pages: 1"><br>
+<IMG SRC="/awstats-icons/other/barrehh.png" WIDTH=9 HEIGHT=6 ALT="Hits: 2" title="Hits: 2"><br>
+<IMG SRC="/awstats-icons/other/barrehk.png" WIDTH=7 HEIGHT=6 ALT="Bytes: 203.80 KB" title="Bytes: 203.80 KB"></TD></TR>
+<TR><TD><IMG SRC="/awstats-icons/flags/uk.png" height=14 alt="uk"></TD><TD CLASS=AWL>United Kingdom</TD><TD>uk</TD><TD>1</TD><TD>3</TD><TD>212.25 KB</TD><TD CLASS=AWL><IMG SRC="/awstats-icons/other/barrehp.png" WIDTH=5 HEIGHT=6 ALT="Pages: 1" title="Pages: 1"><br>
+<IMG SRC="/awstats-icons/other/barrehh.png" WIDTH=13 HEIGHT=6 ALT="Hits: 3" title="Hits: 3"><br>
+<IMG SRC="/awstats-icons/other/barrehk.png" WIDTH=7 HEIGHT=6 ALT="Bytes: 212.25 KB" title="Bytes: 212.25 KB"></TD></TR>
+<TR><TD colspan=3 CLASS=AWL><font color="#666688">Others</font></TD><TD>0</TD><TD>27</TD><TD>1.62 MB</TD>
+<TD CLASS=AWL>&nbsp;</TD></TR>
+</TABLE></TD></TR></TABLE></div>
+
+<a name="VISITOR">&nbsp;</a><BR>
+<div class="tablecontainer">
+<TABLE CLASS="TABLEFRAME" BORDER=0 CELLPADDING=2 CELLSPACING=0 WIDTH="100%">
+<TR><TD class="TABLETITLEFULL" width="70%" onmouseover="ShowTip(19);" onmouseout="HideTip(19);">Hosts (Top 25) &nbsp;  </TD><TD class="TABLETITLEBLANK">&nbsp;</TD></TR>
+<TR><TD colspan=2><TABLE CLASS="TABLEDATA" BORDER=1 BORDERCOLOR="#ECECEC" CELLPADDING=2 CELLSPACING=0 WIDTH="100%"><TR bgcolor="#ECECEC"><TH>Hosts : 89 Known, 41 Unknown (unresolved ip) - 47 Unique visitors</TH><TH bgcolor="#4477DD" width=80>Pages</TH><TH bgcolor="#66F0FF" width=80>Hits</TH><TH bgcolor="#339944" width=80>Bytes</TH><TH width=120>Last visit</TH></TR>
+<tr><td CLASS=AWL>208.115.113.90</td><TD>7</TD><TD>7</TD><TD>32.27 KB</TD><td>27 Feb 2013 - 03:59</td></tr>
+<tr><td CLASS=AWL>41.206.15.18.vgccl.net</td><TD>7</TD><TD>14</TD><TD>1.27 MB</TD><td>18 Feb 2013 - 16:10</td></tr>
+<tr><td CLASS=AWL>91.231.40.53</td><TD>5</TD><TD>5</TD><TD>18.11 KB</TD><td>24 Feb 2013 - 07:56</td></tr>
+<tr><td CLASS=AWL>spider-100-43-83-159.yandex.com</td><TD>5</TD><TD>5</TD><TD>19.44 KB</TD><td>10 Feb 2013 - 14:38</td></tr>
+<tr><td CLASS=AWL>180.76.5.189</td><TD>3</TD><TD>3</TD><TD>11.66 KB</TD><td>10 Feb 2013 - 14:12</td></tr>
+<tr><td CLASS=AWL>static.104.113.9.5.clients.your-server.de</td><TD>3</TD><TD>3</TD><TD>10.33 KB</TD><td>18 Feb 2013 - 05:39</td></tr>
+<tr><td CLASS=AWL>208-115-111-74-reverse.wowrack.com</td><TD>3</TD><TD>3</TD><TD>5.13 KB</TD><td>18 Feb 2013 - 13:42</td></tr>
+<tr><td CLASS=AWL>180.76.5.142</td><TD>2</TD><TD>2</TD><TD>7.78 KB</TD><td>26 Feb 2013 - 22:33</td></tr>
+<tr><td CLASS=AWL>180.76.5.171</td><TD>2</TD><TD>2</TD><TD>7.78 KB</TD><td>18 Feb 2013 - 19:19</td></tr>
+<tr><td CLASS=AWL>180.76.5.88</td><TD>1</TD><TD>1</TD><TD>3.89 KB</TD><td>14 Feb 2013 - 16:02</td></tr>
+<tr><td CLASS=AWL>msnbot-65-55-24-236.search.msn.com</td><TD>1</TD><TD>1</TD><TD>0 Bytes</TD><td>15 Feb 2013 - 21:25</td></tr>
+<tr><td CLASS=AWL>msnbot-157-56-93-187.search.msn.com</td><TD>1</TD><TD>1</TD><TD>0 Bytes</TD><td>18 Feb 2013 - 02:33</td></tr>
+<tr><td CLASS=AWL>msnbot-65-55-24-243.search.msn.com</td><TD>1</TD><TD>1</TD><TD>3.89 KB</TD><td>09 Feb 2013 - 06:05</td></tr>
+<tr><td CLASS=AWL>msnbot-157-55-35-32.search.msn.com</td><TD>1</TD><TD>1</TD><TD>393 Bytes</TD><td>25 Feb 2013 - 14:49</td></tr>
+<tr><td CLASS=AWL>180.76.6.17</td><TD>1</TD><TD>1</TD><TD>0 Bytes</TD><td>16 Feb 2013 - 04:25</td></tr>
+<tr><td CLASS=AWL>c-67-166-227-55.hsd1.ga.comcast.net</td><TD>1</TD><TD>2</TD><TD>203.80 KB</TD><td>07 Feb 2013 - 18:39</td></tr>
+<tr><td CLASS=AWL>180.76.5.7</td><TD>1</TD><TD>1</TD><TD>3.89 KB</TD><td>28 Feb 2013 - 14:38</td></tr>
+<tr><td CLASS=AWL>msnbot-65-55-217-233.search.msn.com</td><TD>1</TD><TD>2</TD><TD>203.80 KB</TD><td>18 Feb 2013 - 22:16</td></tr>
+<tr><td CLASS=AWL>180.76.5.11</td><TD>1</TD><TD>1</TD><TD>3.89 KB</TD><td>22 Feb 2013 - 19:12</td></tr>
+<tr><td CLASS=AWL>msnbot-157-55-33-253.search.msn.com</td><TD>1</TD><TD>1</TD><TD>239 Bytes</TD><td>20 Feb 2013 - 02:18</td></tr>
+<tr><td CLASS=AWL>50-57-68-10.static.cloud-ips.com</td><TD>1</TD><TD>1</TD><TD>332 Bytes</TD><td>18 Feb 2013 - 09:08</td></tr>
+<tr><td CLASS=AWL>msnbot-157-55-32-56.search.msn.com</td><TD>1</TD><TD>1</TD><TD>3.89 KB</TD><td>09 Feb 2013 - 16:22</td></tr>
+<tr><td CLASS=AWL>217.23.231.71</td><TD>1</TD><TD>2</TD><TD>203.80 KB</TD><td>15 Feb 2013 - 06:15</td></tr>
+<tr><td CLASS=AWL>msnbot-157-55-35-113.search.msn.com</td><TD>1</TD><TD>1</TD><TD>393 Bytes</TD><td>20 Feb 2013 - 02:33</td></tr>
+<tr><td CLASS=AWL>180.76.5.172</td><TD>1</TD><TD>1</TD><TD>0 Bytes</TD><td>26 Feb 2013 - 06:48</td></tr>
+<TR><TD CLASS=AWL><font color="#666688">Others</font></TD><TD>22</TD><TD>139</TD><TD>16.20 MB</TD><TD>&nbsp;</TD></TR>
+</TABLE></TD></TR></TABLE></div>
+
+<a name="ROBOTS">&nbsp;</a><BR>
+<div class="tablecontainer">
+<TABLE CLASS="TABLEFRAME" BORDER=0 CELLPADDING=2 CELLSPACING=0 WIDTH="100%">
+<TR><TD class="TABLETITLEFULL" width="70%" onmouseover="ShowTip(19);" onmouseout="HideTip(19);">Robots/Spiders visitors (Top 25) &nbsp; </TD><TD class="TABLETITLEBLANK">&nbsp;</TD></TR>
+<TR><TD colspan=2><TABLE CLASS="TABLEDATA" BORDER=1 BORDERCOLOR="#ECECEC" CELLPADDING=2 CELLSPACING=0 WIDTH="100%"><TR bgcolor="#ECECEC" onmouseover="ShowTip(16);" onmouseout="HideTip(16);"><TH>4 Visiting robots</TH><TH bgcolor="#66F0FF" width=80>Hits</TH><TH bgcolor="#339944" width=80>Bytes</TH><TH width=120>Last visit</TH></TR>
+<TR><TD CLASS=AWL>Googlebot</TD><TD>46</TD><TD>225.69 KB</TD><td>28 Feb 2013 - 06:21</td></TR>
+<TR><TD CLASS=AWL>Unknown robot (identified by 'robot')</TD><TD>2</TD><TD>7.78 KB</TD><td>25 Feb 2013 - 10:48</td></TR>
+<TR><TD CLASS=AWL>IA Archiver</TD><TD>1</TD><TD>239 Bytes</TD><td>08 Feb 2013 - 13:32</td></TR>
+<TR><TD CLASS=AWL>Netcraft Web Server Survey</TD><TD>1</TD><TD>3.89 KB</TD><td>06 Feb 2013 - 02:56</td></TR>
+</TABLE></TD></TR></TABLE></div>
+
+
+<a name="HOW">&nbsp;</a>
+
+<a name="SESSIONS">&nbsp;</a><BR>
+<div class="tablecontainer">
+<TABLE CLASS="TABLEFRAME" BORDER=0 CELLPADDING=2 CELLSPACING=0 WIDTH="100%">
+<TR><TD class="TABLETITLEFULL" width="70%" onmouseover="ShowTip(19);" onmouseout="HideTip(19);">Visits duration </TD><TD class="TABLETITLEBLANK">&nbsp;</TD></TR>
+<TR><TD colspan=2><TABLE CLASS="TABLEDATA" BORDER=1 BORDERCOLOR="#ECECEC" CELLPADDING=2 CELLSPACING=0 WIDTH="100%"><TR bgcolor="#ECECEC" onmouseover="ShowTip(1);" onmouseout="HideTip(1);"><TH>Visits duration</TH><TH bgcolor="#8888DD" width=80>Number of visits</TH></TR>
+<tr><td CLASS=AWL>0s-30s</td><td>65</td></tr>
+<tr><td CLASS=AWL>30s-2mn</td><td>&nbsp;</td></tr>
+<tr><td CLASS=AWL>2mn-5mn</td><td>&nbsp;</td></tr>
+<tr><td CLASS=AWL>5mn-15mn</td><td>1</td></tr>
+<tr><td CLASS=AWL>15mn-30mn</td><td>&nbsp;</td></tr>
+<tr><td CLASS=AWL>30mn-1h</td><td>&nbsp;</td></tr>
+<tr><td CLASS=AWL>1h+</td><td>&nbsp;</td></tr>
+</TABLE></TD></TR></TABLE></div>
+
+<a name="PAGE">&nbsp;</a><a name="ENTRY">&nbsp;</a><a name="EXIT">&nbsp;</a><BR>
+<div class="tablecontainer">
+<TABLE CLASS="TABLEFRAME" BORDER=0 CELLPADDING=2 CELLSPACING=0 WIDTH="100%">
+<TR><TD class="TABLETITLEFULL" width="70%" onmouseover="ShowTip(19);" onmouseout="HideTip(19);">Pages-URL (Top 25) &nbsp;  </TD><TD class="TABLETITLEBLANK">&nbsp;</TD></TR>
+<TR><TD colspan=2><TABLE CLASS="TABLEDATA" BORDER=1 BORDERCOLOR="#ECECEC" CELLPADDING=2 CELLSPACING=0 WIDTH="100%"><TR bgcolor="#ECECEC"><TH>11 different pages</TH><TH bgcolor="#4477DD" width=80>Viewed pages</TH><TH bgcolor="#339944" width=80>Average size</TH><TH bgcolor="#CEC2E8" width=80>Entry pages</TH><TH bgcolor="#C1B2E2" width=80>Exit</TH><TH>&nbsp;</TH></TR>
+<TR><TD CLASS=AWL><A HREF="http://goo.centreweb.net/" target="awstatsbis"><b>HOME PAGE</b></A></TD><TD>34</TD><TD>3.89 KB</TD><TD>28</TD><TD>30</TD><TD CLASS=AWL><IMG SRC="/awstats-icons/other/barrehp.png" WIDTH=261 HEIGHT=6 ALT="Pages: 34" title="Pages: 34"><br><IMG SRC="/awstats-icons/other/barrehk.png" WIDTH=130 HEIGHT=6 ALT="Average size: 3.89 KB" title="Average size: 3.89 KB"><br><IMG SRC="/awstats-icons/other/barrehe.png" WIDTH=215 HEIGHT=6 ALT="Entry pages: 28" title="Entry pages: 28"><br><IMG SRC="/awstats-icons/other/barrehx.png" WIDTH=230 HEIGHT=6 ALT="Exit: 30" title="Exit: 30"></TD></TR>
+<TR><TD CLASS=AWL><A HREF="http://goo.centreweb.net/africa.html" target="awstatsbis">/africa.html</A></TD><TD>17</TD><TD>312 Bytes</TD><TD>15</TD><TD>14</TD><TD CLASS=AWL><IMG SRC="/awstats-icons/other/barrehp.png" WIDTH=131 HEIGHT=6 ALT="Pages: 17" title="Pages: 17"><br><IMG SRC="/awstats-icons/other/barrehk.png" WIDTH=11 HEIGHT=6 ALT="Average size: 312 Bytes" title="Average size: 312 Bytes"><br><IMG SRC="/awstats-icons/other/barrehe.png" WIDTH=115 HEIGHT=6 ALT="Entry pages: 15" title="Entry pages: 15"><br><IMG SRC="/awstats-icons/other/barrehx.png" WIDTH=108 HEIGHT=6 ALT="Exit: 14" title="Exit: 14"></TD></TR>
+<TR><TD CLASS=AWL><A HREF="http://goo.centreweb.net/cheetah.htm" target="awstatsbis">/cheetah.htm</A></TD><TD>7</TD><TD>7.83 KB</TD><TD>6</TD><TD>6</TD><TD CLASS=AWL><IMG SRC="/awstats-icons/other/barrehp.png" WIDTH=54 HEIGHT=6 ALT="Pages: 7" title="Pages: 7"><br><IMG SRC="/awstats-icons/other/barrehk.png" WIDTH=261 HEIGHT=6 ALT="Average size: 7.83 KB" title="Average size: 7.83 KB"><br><IMG SRC="/awstats-icons/other/barrehe.png" WIDTH=46 HEIGHT=6 ALT="Entry pages: 6" title="Entry pages: 6"><br><IMG SRC="/awstats-icons/other/barrehx.png" WIDTH=46 HEIGHT=6 ALT="Exit: 6" title="Exit: 6"></TD></TR>
+<TR><TD CLASS=AWL><A HREF="http://goo.centreweb.net/howto.html" target="awstatsbis">/howto.html</A></TD><TD>3</TD><TD>1.60 KB</TD><TD>3</TD><TD>3</TD><TD CLASS=AWL><IMG SRC="/awstats-icons/other/barrehp.png" WIDTH=23 HEIGHT=6 ALT="Pages: 3" title="Pages: 3"><br><IMG SRC="/awstats-icons/other/barrehk.png" WIDTH=54 HEIGHT=6 ALT="Average size: 1.60 KB" title="Average size: 1.60 KB"><br><IMG SRC="/awstats-icons/other/barrehe.png" WIDTH=23 HEIGHT=6 ALT="Entry pages: 3" title="Entry pages: 3"><br><IMG SRC="/awstats-icons/other/barrehx.png" WIDTH=23 HEIGHT=6 ALT="Exit: 3" title="Exit: 3"></TD></TR>
+<TR><TD CLASS=AWL><A HREF="http://goo.centreweb.net/superballhome.html" target="awstatsbis">/superballhome.html</A></TD><TD>3</TD><TD>795 Bytes</TD><TD>3</TD><TD>3</TD><TD CLASS=AWL><IMG SRC="/awstats-icons/other/barrehp.png" WIDTH=23 HEIGHT=6 ALT="Pages: 3" title="Pages: 3"><br><IMG SRC="/awstats-icons/other/barrehk.png" WIDTH=26 HEIGHT=6 ALT="Average size: 795 Bytes" title="Average size: 795 Bytes"><br><IMG SRC="/awstats-icons/other/barrehe.png" WIDTH=23 HEIGHT=6 ALT="Entry pages: 3" title="Entry pages: 3"><br><IMG SRC="/awstats-icons/other/barrehx.png" WIDTH=23 HEIGHT=6 ALT="Exit: 3" title="Exit: 3"></TD></TR>
+<TR><TD CLASS=AWL><A HREF="http://goo.centreweb.net/worldcup.html" target="awstatsbis">/worldcup.html</A></TD><TD>3</TD><TD>4.29 KB</TD><TD>3</TD><TD>3</TD><TD CLASS=AWL><IMG SRC="/awstats-icons/other/barrehp.png" WIDTH=23 HEIGHT=6 ALT="Pages: 3" title="Pages: 3"><br><IMG SRC="/awstats-icons/other/barrehk.png" WIDTH=143 HEIGHT=6 ALT="Average size: 4.29 KB" title="Average size: 4.29 KB"><br><IMG SRC="/awstats-icons/other/barrehe.png" WIDTH=23 HEIGHT=6 ALT="Entry pages: 3" title="Entry pages: 3"><br><IMG SRC="/awstats-icons/other/barrehx.png" WIDTH=23 HEIGHT=6 ALT="Exit: 3" title="Exit: 3"></TD></TR>
+<TR><TD CLASS=AWL><A HREF="http://goo.centreweb.net/savannah.html" target="awstatsbis">/savannah.html</A></TD><TD>2</TD><TD>900 Bytes</TD><TD>2</TD><TD>1</TD><TD CLASS=AWL><IMG SRC="/awstats-icons/other/barrehp.png" WIDTH=16 HEIGHT=6 ALT="Pages: 2" title="Pages: 2"><br><IMG SRC="/awstats-icons/other/barrehk.png" WIDTH=30 HEIGHT=6 ALT="Average size: 900 Bytes" title="Average size: 900 Bytes"><br><IMG SRC="/awstats-icons/other/barrehe.png" WIDTH=16 HEIGHT=6 ALT="Entry pages: 2" title="Entry pages: 2"><br><IMG SRC="/awstats-icons/other/barrehx.png" WIDTH=8 HEIGHT=6 ALT="Exit: 1" title="Exit: 1"></TD></TR>
+<TR><TD CLASS=AWL><A HREF="http://goo.centreweb.net/cats.html" target="awstatsbis">/cats.html</A></TD><TD>2</TD><TD>119 Bytes</TD><TD>2</TD><TD>2</TD><TD CLASS=AWL><IMG SRC="/awstats-icons/other/barrehp.png" WIDTH=16 HEIGHT=6 ALT="Pages: 2" title="Pages: 2"><br><IMG SRC="/awstats-icons/other/barrehk.png" WIDTH=4 HEIGHT=6 ALT="Average size: 119 Bytes" title="Average size: 119 Bytes"><br><IMG SRC="/awstats-icons/other/barrehe.png" WIDTH=16 HEIGHT=6 ALT="Entry pages: 2" title="Entry pages: 2"><br><IMG SRC="/awstats-icons/other/barrehx.png" WIDTH=16 HEIGHT=6 ALT="Exit: 2" title="Exit: 2"></TD></TR>
+<TR><TD CLASS=AWL><A HREF="http://goo.centreweb.net/Log-in.html" target="awstatsbis">/Log-in.html</A></TD><TD>2</TD><TD>393 Bytes</TD><TD>2</TD><TD>2</TD><TD CLASS=AWL><IMG SRC="/awstats-icons/other/barrehp.png" WIDTH=16 HEIGHT=6 ALT="Pages: 2" title="Pages: 2"><br><IMG SRC="/awstats-icons/other/barrehk.png" WIDTH=13 HEIGHT=6 ALT="Average size: 393 Bytes" title="Average size: 393 Bytes"><br><IMG SRC="/awstats-icons/other/barrehe.png" WIDTH=16 HEIGHT=6 ALT="Entry pages: 2" title="Entry pages: 2"><br><IMG SRC="/awstats-icons/other/barrehx.png" WIDTH=16 HEIGHT=6 ALT="Exit: 2" title="Exit: 2"></TD></TR>
+<TR><TD CLASS=AWL><A HREF="http://goo.centreweb.net/superballfight.html" target="awstatsbis">/superballfight.html</A></TD><TD>1</TD><TD>283 Bytes</TD><TD>1</TD><TD>1</TD><TD CLASS=AWL><IMG SRC="/awstats-icons/other/barrehp.png" WIDTH=8 HEIGHT=6 ALT="Pages: 1" title="Pages: 1"><br><IMG SRC="/awstats-icons/other/barrehk.png" WIDTH=10 HEIGHT=6 ALT="Average size: 283 Bytes" title="Average size: 283 Bytes"><br><IMG SRC="/awstats-icons/other/barrehe.png" WIDTH=8 HEIGHT=6 ALT="Entry pages: 1" title="Entry pages: 1"><br><IMG SRC="/awstats-icons/other/barrehx.png" WIDTH=8 HEIGHT=6 ALT="Exit: 1" title="Exit: 1"></TD></TR>
+<TR><TD CLASS=AWL><A HREF="http://goo.centreweb.net/superballgames.html" target="awstatsbis">/superballgames.html</A></TD><TD>1</TD><TD>261 Bytes</TD><TD>1</TD><TD>1</TD><TD CLASS=AWL><IMG SRC="/awstats-icons/other/barrehp.png" WIDTH=8 HEIGHT=6 ALT="Pages: 1" title="Pages: 1"><br><IMG SRC="/awstats-icons/other/barrehk.png" WIDTH=9 HEIGHT=6 ALT="Average size: 261 Bytes" title="Average size: 261 Bytes"><br><IMG SRC="/awstats-icons/other/barrehe.png" WIDTH=8 HEIGHT=6 ALT="Entry pages: 1" title="Entry pages: 1"><br><IMG SRC="/awstats-icons/other/barrehx.png" WIDTH=8 HEIGHT=6 ALT="Exit: 1" title="Exit: 1"></TD></TR>
+</TABLE></TD></TR></TABLE></div>
+
+<a name="FILETYPES">&nbsp;</a><BR>
+<div class="tablecontainer">
+<TABLE CLASS="TABLEFRAME" BORDER=0 CELLPADDING=2 CELLSPACING=0 WIDTH="100%">
+<TR><TD class="TABLETITLEFULL" width="70%" onmouseover="ShowTip(19);" onmouseout="HideTip(19);">Files type </TD><TD class="TABLETITLEBLANK">&nbsp;</TD></TR>
+<TR><TD colspan=2><TABLE CLASS="TABLEDATA" BORDER=1 BORDERCOLOR="#ECECEC" CELLPADDING=2 CELLSPACING=0 WIDTH="100%"><TR bgcolor="#ECECEC"><TH>Files type</TH><TH bgcolor="#66F0FF" width=80>&nbsp;Hits&nbsp;</TH><TH bgcolor="#66F0FF" width=80>Percent</TH><TH bgcolor="#339944" width=80>Bytes</TH></TR>
+<TR><TD CLASS=AWL>gif</TD><TD>106</TD><TD>52.4 %</TD><TD>16.71 MB</TD></TR>
+<TR><TD CLASS=AWL>html</TD><TD>68</TD><TD>33.6 %</TD><TD>160.65 KB</TD></TR>
+<TR><TD CLASS=AWL>jpg</TD><TD>14</TD><TD>6.9 %</TD><TD>138.23 KB</TD></TR>
+<TR><TD CLASS=AWL>bmp</TD><TD>7</TD><TD>3.4 %</TD><TD>1.14 MB</TD></TR>
+<TR><TD CLASS=AWL>htm</TD><TD>7</TD><TD>3.4 %</TD><TD>54.79 KB</TD></TR>
+</TABLE></TD></TR></TABLE></div>
+
+<a name="OS">&nbsp;</a><BR>
+<div class="tablecontainer">
+<TABLE CLASS="TABLEFRAME" BORDER=0 CELLPADDING=2 CELLSPACING=0 WIDTH="100%">
+<TR><TD class="TABLETITLEFULL" width="70%" onmouseover="ShowTip(19);" onmouseout="HideTip(19);">Operating Systems </TD><TD class="TABLETITLEBLANK">&nbsp;</TD></TR>
+<TR><TD colspan=2><TABLE CLASS="TABLEDATA" BORDER=1 BORDERCOLOR="#ECECEC" CELLPADDING=2 CELLSPACING=0 WIDTH="100%"><TR bgcolor="#ECECEC"><TH colspan=2>OS</TH><TH bgcolor="#66F0FF" width=80>Hits</TH><TH bgcolor="#66F0FF" width=80>Percent</TH></TR>
+<TR><TD width=100><IMG SRC="/awstats-icons/os/unknown.png" alt="Unknown"></TD><TD CLASS=AWL>Unknown</TD><TD>109</TD><TD>53.9 %</TD></TR>
+<TR><TD width=100><IMG SRC="/awstats-icons/os/winnt.png" alt=""></TD><TD CLASS=AWL>Windows NT</TD><TD>51</TD><TD>25.2 %</TD></TR>
+<TR><TD width=100><IMG SRC="/awstats-icons/os/winxp.png" alt=""></TD><TD CLASS=AWL>Windows XP</TD><TD>27</TD><TD>13.3 %</TD></TR>
+<TR><TD width=100><IMG SRC="/awstats-icons/os/linux.png" alt=""></TD><TD CLASS=AWL>Linux</TD><TD>10</TD><TD>4.9 %</TD></TR>
+<TR><TD width=100><IMG SRC="/awstats-icons/os/macintosh.png" alt=""></TD><TD CLASS=AWL>Mac OS</TD><TD>3</TD><TD>1.4 %</TD></TR>
+<TR><TD width=100><IMG SRC="/awstats-icons/os/os2.png" alt=""></TD><TD CLASS=AWL>Warp OS/2</TD><TD>1</TD><TD>0.4 %</TD></TR>
+<TR><TD width=100><IMG SRC="/awstats-icons/os/win2000.png" alt=""></TD><TD CLASS=AWL>Windows 2000</TD><TD>1</TD><TD>0.4 %</TD></TR>
+</TABLE></TD></TR></TABLE></div>
+
+<a name="BROWSER">&nbsp;</a><BR>
+<div class="tablecontainer">
+<TABLE CLASS="TABLEFRAME" BORDER=0 CELLPADDING=2 CELLSPACING=0 WIDTH="100%">
+<TR><TD class="TABLETITLEFULL" width="70%" onmouseover="ShowTip(19);" onmouseout="HideTip(19);">Browsers </TD><TD class="TABLETITLEBLANK">&nbsp;</TD></TR>
+<TR><TD colspan=2><TABLE CLASS="TABLEDATA" BORDER=1 BORDERCOLOR="#ECECEC" CELLPADDING=2 CELLSPACING=0 WIDTH="100%"><TR bgcolor="#ECECEC"><TH colspan=2>Browsers</TH><TH width=80>Grabber</TH><TH bgcolor="#66F0FF" width=80>Hits</TH><TH bgcolor="#66F0FF" width=80>Percent</TH></TR>
+<TR><TD width=100><IMG SRC="/awstats-icons/browser/unknown.png" alt="Unknown"></TD><TD CLASS=AWL>Unknown</TD><TD width=80>?</TD><TD>88</TD><TD>43.5%</TD></TR>
+<TR><TD width=100><IMG SRC="/awstats-icons/browser/netscape.png" alt=""></TD><TD CLASS=AWL>Netscape </TD><TD width=80>No</TD><TD>66</TD><TD>32.6 %</TD></TR>
+<TR><TD width=100><IMG SRC="/awstats-icons/browser/msie.png" alt=""></TD><TD CLASS=AWL>MS Internet Explorer </TD><TD width=80>No</TD><TD>48</TD><TD>23.7 %</TD></TR>
+</TABLE></TD></TR></TABLE></div>
+
+
+<a name="REFERER">&nbsp;</a>
+
+<a name="REFERER">&nbsp;</a><BR>
+<div class="tablecontainer">
+<TABLE CLASS="TABLEFRAME" BORDER=0 CELLPADDING=2 CELLSPACING=0 WIDTH="100%">
+<TR><TD class="TABLETITLEFULL" width="70%" onmouseover="ShowTip(19);" onmouseout="HideTip(19);">Connect to site from </TD><TD class="TABLETITLEBLANK">&nbsp;</TD></TR>
+<TR><TD colspan=2><TABLE CLASS="TABLEDATA" BORDER=1 BORDERCOLOR="#ECECEC" CELLPADDING=2 CELLSPACING=0 WIDTH="100%"><TR bgcolor="#ECECEC"><TH>Origin</TH><TH bgcolor="#4477DD" width=80>Pages</TH><TH bgcolor="#4477DD" width=80>Percent</TH><TH bgcolor="#66F0FF" width=80>Hits</TH><TH bgcolor="#66F0FF" width=80>Percent</TH></TR>
+<TR><TD CLASS=AWL><b>Direct address / Bookmarks</b></TD><TD>59</TD><TD>78.6 %</TD><TD>112</TD><TD>55.4 %</TD></TR>
+<TR><TD CLASS=AWL><b>Links from a NewsGroup</b></TD><TD>&nbsp;</TD><TD>0 %</TD><TD>&nbsp;</TD><TD>0 %</TD></TR>
+<TR onmouseover="ShowTip(13);" onmouseout="HideTip(13);"><TD CLASS=AWL><b>Links from an Internet Search Engine</b> <br>
+<TABLE>
+<TR><TD CLASS=AWL>- Google</TD><TD align=right> 25 </TD></TR>
+<TR><TD CLASS=AWL>- Yahoo</TD><TD align=right> 4 </TD></TR>
+</TABLE></TD>
+<TD valign=top>6</TD><TD valign=top>8 %</TD><TD valign=top>29</TD><TD valign=top>14.3 %</TD></TR>
+<TR onmouseover="ShowTip(14);" onmouseout="HideTip(14);"><TD CLASS=AWL><b>Links from an external page (other web sites except search engines)</b><br>
+<TABLE>
+<TR><TD CLASS=AWL>- <A HREF="http://go.mail.ru/search_images" target="awstatsbis">http://go.mail.ru/search_images</A></TD><TD>6</TD></TR>
+<TR><TD CLASS=AWL>- <A HREF="http://image.baidu.com/i?ct=503316480&z=0&tn=baiduimagedetail" target="awstatsbis">http://image.baidu.com/i?ct=503316480&z=0&tn=baiduimagedetail</A></TD><TD>4</TD></TR>
+<TR><TD CLASS=AWL>- <A HREF="http://www.bing.com/images/search?q=Where+Do+Cheetahs+Live&FORM=RESTAB" target="awstatsbis">http://www.bing.com/images/search?q=Where+Do+Cheetahs+Live&FORM=RESTAB</A></TD><TD>3</TD></TR>
+<TR><TD CLASS=AWL>- <A HREF="http://www.bing.com/images/search?q=Where+Do+Cheetahs+Live+Habitat&FORM=RESTAB" target="awstatsbis">http://www.bing.com/images/search?q=Where+Do+Cheetahs+Live+Habitat&FORM=...</A></TD><TD>2</TD></TR>
+<TR><TD CLASS=AWL>- <A HREF="http://www.bing.com/images/search?q=what++big+++cats++live++in++africa&view=detail&id=D2973F1572A686747F63D369629F4FD619DDBE50&first=1&FORM=IDFRIR" target="awstatsbis">http://www.bing.com/images/search?q=what++big+++cats++live++in++africa&v...</A></TD><TD>2</TD></TR>
+<TR><TD CLASS=AWL>- <A HREF="http://www.bing.com/images/search?q=where+cheetahs+live+map&id=874A52C9B0EBAC91B74512632DB7F2346CC5F203&FORM=IQFRBA&adlt=strict" target="awstatsbis">http://www.bing.com/images/search?q=where+cheetahs+live+map&id=874A52C9B...</A></TD><TD>2</TD></TR>
+<TR><TD CLASS=AWL>- <A HREF="http://www.bing.com/images/search?q=where+do+cheetahs+live&qs=IM&form=QBIR&pq=where+do+cheet&sc=8-14&sp=1&sk=" target="awstatsbis">http://www.bing.com/images/search?q=where+do+cheetahs+live&qs=IM&form=QB...</A></TD><TD>1</TD></TR>
+<TR><TD CLASS=AWL>- <A HREF="http://www.bing.com/images/search?q=africa+map+cheetah+lives+picture&qs=AS&sk=&FORM=QBIR&pq=africa%20map%20cheeta&sc=1-17&sp=1&qs=AS&sk=" target="awstatsbis">http://www.bing.com/images/search?q=africa+map+cheetah+lives+picture&qs=...</A></TD><TD>1</TD></TR>
+<TR><TD CLASS=AWL>- <A HREF="http://www.bing.com/images/search?q=Where+Do+Cheetahs+Live&Form=IQFRDR" target="awstatsbis">http://www.bing.com/images/search?q=Where+Do+Cheetahs+Live&Form=IQFRDR</A></TD><TD>1</TD></TR>
+<TR><TD CLASS=AWL>- <A HREF="http://www.bing.com/images/search?q=Where+Do+Cheetahs+Live&Form=IQFRDR&adlt=strict" target="awstatsbis">http://www.bing.com/images/search?q=Where+Do+Cheetahs+Live&Form=IQFRDR&a...</A></TD><TD>1</TD></TR>
+<TR><TD CLASS=AWL>- <A HREF="http://www.bing.com/images/search?q=Where+Do+Cheetahs+Live+Habitat&Form=IQFRDR" target="awstatsbis">http://www.bing.com/images/search?q=Where+Do+Cheetahs+Live+Habitat&Form=...</A></TD><TD>1</TD></TR>
+<TR><TD CLASS=AWL>- <A HREF="http://www.bing.com/images/search?q=zaire+africa&qpvt=zaire+africa&FORM=IGRE" target="awstatsbis">http://www.bing.com/images/search?q=zaire+africa&qpvt=zaire+africa&FORM=...</A></TD><TD>1</TD></TR>
+<TR><TD CLASS=AWL>- <A HREF="http://www.bing.com/images/search?q=where+cheetahs+live&qpvt=where+cheetahs+live&FORM=IQFRML&adlt=strict" target="awstatsbis">http://www.bing.com/images/search?q=where+cheetahs+live&qpvt=where+cheet...</A></TD><TD>1</TD></TR>
+<TR><TD CLASS=AWL>- <A HREF="http://www.bing.com/images/search?q=maps+of+cheetah+habitats&id=A3B21C7EE6838C45A526285E0CC8F9E03461E9A7&FORM=IQFRBA" target="awstatsbis">http://www.bing.com/images/search?q=maps+of+cheetah+habitats&id=A3B21C7E...</A></TD><TD>1</TD></TR>
+<TR><TD CLASS=AWL>- <A HREF="http://www.bing.com/images/search?q=where+cheetahs+live&id=B7A57D881E9F990EE1F356A80E3800206749BAC7&FORM=IQFRBA" target="awstatsbis">http://www.bing.com/images/search?q=where+cheetahs+live&id=B7A57D881E9F9...</A></TD><TD>1</TD></TR>
+<TR><TD CLASS=AWL>- <A HREF="http://www.bing.com/images/search?q=where+do+cheetahs+live&qs=n&form=QBIR&pq=where+do+cheetahs+live&sc=0-0&sp=-1&sk=" target="awstatsbis">http://www.bing.com/images/search?q=where+do+cheetahs+live&qs=n&form=QBI...</A></TD><TD>1</TD></TR>
+<TR><TD CLASS=AWL>- <A HREF="http://www.bing.com/images/results.aspx?q=where+cheetahs+live&form=MSNH14&pq=where+cheetahs&sc=8-14&sp=1&qs=AS&sk=" target="awstatsbis">http://www.bing.com/images/results.aspx?q=where+cheetahs+live&form=MSNH1...</A></TD><TD>1</TD></TR>
+<TR><TD CLASS=AWL>- <A HREF="http://www.bing.com/images/search?q=largest+country+in+africa&id=096A48EA9575EDAED21D62752D696C2AD95C1FAA&FORM=IQFRBA" target="awstatsbis">http://www.bing.com/images/search?q=largest+country+in+africa&id=096A48E...</A></TD><TD>1</TD></TR>
+<TR><TD CLASS=AWL>- <A HREF="http://www.bing.com/images/search?q=do+cheetahs+live+in+asia&FORM=HDRSC2" target="awstatsbis">http://www.bing.com/images/search?q=do+cheetahs+live+in+asia&FORM=HDRSC2</A></TD><TD>1</TD></TR>
+<TR><TD CLASS=AWL>- <A HREF="http://www.bing.com/images/search?q=major+countries+in+africa&qs=n&form=QBIR&pq=major+countries+in+africa&sc=1-25&sp=-1&sk=" target="awstatsbis">http://www.bing.com/images/search?q=major+countries+in+africa&qs=n&form=...</A></TD><TD>1</TD></TR>
+<TR><TD CLASS=AWL>- <A HREF="http://www.bing.com/images/search?q=where+do+cheetahs+live&go=&qs=n&form=QBIR&pq=where+do+cheetahs+live&sc=8-22&sp=-1&sk=" target="awstatsbis">http://www.bing.com/images/search?q=where+do+cheetahs+live&go=&qs=n&form...</A></TD><TD>1</TD></TR>
+<TR><TD CLASS=AWL>- <A HREF="http://www.bing.com/images/search?q=a+map+of+where+Cheetahs+live+in+Africa&go=&qs=bs&form=QBIR" target="awstatsbis">http://www.bing.com/images/search?q=a+map+of+where+Cheetahs+live+in+Afri...</A></TD><TD>1</TD></TR>
+<TR><TD CLASS=AWL>- <A HREF="http://www.bing.com/images/search?q=largest+country+in+africa&id=096A48EA9575EDAED21D62752D696C2AD95C1FAA&FORM=IQFRBA&adlt=strict" target="awstatsbis">http://www.bing.com/images/search?q=largest+country+in+africa&id=096A48E...</A></TD><TD>1</TD></TR>
+<TR><TD CLASS=AWL>- <A HREF="http://www.bing.com/images/search?q=where+do+cheetahs+live&qs=IM&form=QBIR&pq=where+do+cheetahs+&sc=8-18&sp=1&sk=&adlt=strict" target="awstatsbis">http://www.bing.com/images/search?q=where+do+cheetahs+live&qs=IM&form=QB...</A></TD><TD>1</TD></TR>
+<TR><TD CLASS=AWL>- <A HREF="http://www.bing.com/images/search?q=africa+habitats&id=E50DE62724F30AF3756B7E67058A3D0DE8632A51&FORM=IQFRBA" target="awstatsbis">http://www.bing.com/images/search?q=africa+habitats&id=E50DE62724F30AF37...</A></TD><TD>1</TD></TR>
+<TR><TD CLASS=AWL><font color="#666688">- Others</font></TD><TD>8</TD></TABLE></TD>
+<TD valign=top>1</TD><TD valign=top>1.3 %</TD><TD valign=top>46</TD><TD valign=top>22.7 %</TD></TR>
+<TR><TD CLASS=AWL><b>Links from an internal page (other page on same site)</b></TD><TD>9</TD><TD>12 %</TD><TD>15</TD><TD>7.4 %</TD></TR>
+<TR><TD CLASS=AWL><b>Origin unknown</b></TD><TD>&nbsp;</TD><TD>0 %</TD><TD>&nbsp;</TD><TD>0 %</TD></TR>
+</TABLE></TD></TR></TABLE></div>
+
+
+<a name="KEYS">&nbsp;</a>
+
+<a name="KEYPHRASES">&nbsp;</a><a name="KEYWORDS">&nbsp;</a><BR>
+<table width="100%"><tr><td width="50%" valign=top>
+<div class="tablecontainer">
+<TABLE CLASS="TABLEFRAME" BORDER=0 CELLPADDING=2 CELLSPACING=0 WIDTH="100%">
+<TR><TD class="TABLETITLEFULL" width="95%" onmouseover="ShowTip(19);" onmouseout="HideTip(19);">Search&nbsp;Keyphrases (Top 20)<br> </TD><TD class="TABLETITLEBLANK">&nbsp;</TD></TR>
+<TR><TD colspan=2><TABLE CLASS="TABLEDATA" BORDER=1 BORDERCOLOR="#ECECEC" CELLPADDING=2 CELLSPACING=0 WIDTH="100%"><TR bgcolor="#ECECEC" onmouseover="ShowTip(15);" onmouseout="HideTip(15);"><TH>10 different keyphrases</TH><TH bgcolor="#8888DD" width=80>Search</TH><TH bgcolor="#8888DD" width=80>Percent</TH></TR>
+<TR><TD CLASS=AWL>largest country in africa</TD><TD>5</TD><TD>26.3 %</TD></TR>
+<TR><TD CLASS=AWL>what is the largest country in africa</TD><TD>3</TD><TD>15.7 %</TD></TR>
+<TR><TD CLASS=AWL>the largest country in africa</TD><TD>2</TD><TD>10.5 %</TD></TR>
+<TR><TD CLASS=AWL>biggest country in africa</TD><TD>2</TD><TD>10.5 %</TD></TR>
+<TR><TD CLASS=AWL>where cheetah live</TD><TD>2</TD><TD>10.5 %</TD></TR>
+<TR><TD CLASS=AWL>cheetah lives</TD><TD>1</TD><TD>5.2 %</TD></TR>
+<TR><TD CLASS=AWL>were ceetahs live</TD><TD>1</TD><TD>5.2 %</TD></TR>
+<TR><TD CLASS=AWL>where is zaire</TD><TD>1</TD><TD>5.2 %</TD></TR>
+<TR><TD CLASS=AWL>largest county in africa</TD><TD>1</TD><TD>5.2 %</TD></TR>
+<TR><TD CLASS=AWL>which is the largest country in africa</TD><TD>1</TD><TD>5.2 %</TD></TR>
+</TABLE></TD></TR></TABLE></div>
+
+</td>
+<td width="50%" valign=top>
+<div class="tablecontainer">
+<TABLE CLASS="TABLEFRAME" BORDER=0 CELLPADDING=2 CELLSPACING=0 WIDTH="100%">
+<TR><TD class="TABLETITLEFULL" width="95%" onmouseover="ShowTip(19);" onmouseout="HideTip(19);">Search&nbsp;Keywords (Top 25)<br> </TD><TD class="TABLETITLEBLANK">&nbsp;</TD></TR>
+<TR><TD colspan=2><TABLE CLASS="TABLEDATA" BORDER=1 BORDERCOLOR="#ECECEC" CELLPADDING=2 CELLSPACING=0 WIDTH="100%"><TR bgcolor="#ECECEC" onmouseover="ShowTip(15);" onmouseout="HideTip(15);"><TH>17 different keywords</TH><TH bgcolor="#8888DD" width=80>Search</TH><TH bgcolor="#8888DD" width=80>Percent</TH></TR>
+<TR><TD CLASS=AWL>africa</TD><TD>14</TD><TD>16.6 %</TD></TR>
+<TR><TD CLASS=AWL>in</TD><TD>14</TD><TD>16.6 %</TD></TR>
+<TR><TD CLASS=AWL>country</TD><TD>13</TD><TD>15.4 %</TD></TR>
+<TR><TD CLASS=AWL>largest</TD><TD>12</TD><TD>14.2 %</TD></TR>
+<TR><TD CLASS=AWL>the</TD><TD>6</TD><TD>7.1 %</TD></TR>
+<TR><TD CLASS=AWL>is</TD><TD>5</TD><TD>5.9 %</TD></TR>
+<TR><TD CLASS=AWL>live</TD><TD>3</TD><TD>3.5 %</TD></TR>
+<TR><TD CLASS=AWL>what</TD><TD>3</TD><TD>3.5 %</TD></TR>
+<TR><TD CLASS=AWL>where</TD><TD>3</TD><TD>3.5 %</TD></TR>
+<TR><TD CLASS=AWL>cheetah</TD><TD>3</TD><TD>3.5 %</TD></TR>
+<TR><TD CLASS=AWL>biggest</TD><TD>2</TD><TD>2.3 %</TD></TR>
+<TR><TD CLASS=AWL>county</TD><TD>1</TD><TD>1.1 %</TD></TR>
+<TR><TD CLASS=AWL>which</TD><TD>1</TD><TD>1.1 %</TD></TR>
+<TR><TD CLASS=AWL>ceetahs</TD><TD>1</TD><TD>1.1 %</TD></TR>
+<TR><TD CLASS=AWL>zaire</TD><TD>1</TD><TD>1.1 %</TD></TR>
+<TR><TD CLASS=AWL>lives</TD><TD>1</TD><TD>1.1 %</TD></TR>
+<TR><TD CLASS=AWL>were</TD><TD>1</TD><TD>1.1 %</TD></TR>
+</TABLE></TD></TR></TABLE></div>
+
+</td>
+</tr></table>
+
+<a name="OTHER">&nbsp;</a>
+
+<a name="ERRORS">&nbsp;</a><BR>
+<div class="tablecontainer">
+<TABLE CLASS="TABLEFRAME" BORDER=0 CELLPADDING=2 CELLSPACING=0 WIDTH="100%">
+<TR><TD class="TABLETITLEFULL" width="70%" onmouseover="ShowTip(19);" onmouseout="HideTip(19);">HTTP Error codes </TD><TD class="TABLETITLEBLANK">&nbsp;</TD></TR>
+<TR><TD colspan=2><TABLE CLASS="TABLEDATA" BORDER=1 BORDERCOLOR="#ECECEC" CELLPADDING=2 CELLSPACING=0 WIDTH="100%"><TR bgcolor="#ECECEC"><TH colspan=2>HTTP Error codes</TH><TH bgcolor="#66F0FF" width=80>Hits</TH><TH bgcolor="#66F0FF" width=80>Percent</TH><TH bgcolor="#339944" width=80>Bytes</TH></TR>
+<TR onmouseover="ShowTip(404);" onmouseout="HideTip(404);"><TD><a href="awstats.goo.centreweb.net.errors404.html" target="awstatsbis">404</a></TD><TD CLASS=AWL>Document Not Found</TD><TD>21</TD><TD>87.5 %</TD><TD>6.02 KB</TD></TR>
+<TR onmouseover="ShowTip(401);" onmouseout="HideTip(401);"><TD>401</TD><TD CLASS=AWL>Unauthorized</TD><TD>3</TD><TD>12.5 %</TD><TD>1.42 KB</TD></TR>
+</TABLE></TD></TR></TABLE></div>
+
+<br><br><br>
+<FONT COLOR="#000000"><b>Advanced Web Statistics 5.0 (build 1.345)</b> - <a href="http://awstats.sourceforge.net" target="awstatshome">Created by awstats</a></font><br>
+<br>
+
+
+</body>
+</html>
